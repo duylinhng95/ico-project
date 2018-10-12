@@ -23,4 +23,6 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 Route::group(['prefix'=>'admin','middleware'=> 'auth.admin'],function (){
 	Route::get('/', 'AdminController@index');
+	Route::post('/homepage/data_without_url', 'AdminController@data_without_url');
+	Route::post('/homepage/page2', 'AdminController@page2');
 });
