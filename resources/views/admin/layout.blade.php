@@ -17,6 +17,8 @@
   <link rel="stylesheet" href="{{ asset('css/admin/adminlte.min.css')}}">
   <!-- Google Font: Source Sans Pro -->
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+    <!-- jQuery -->
+  <script rel="javascript" type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 </head>
 <!--
 BODY TAG OPTIONS:
@@ -131,8 +133,7 @@ to get the desired effect
 
   <!-- REQUIRED SCRIPTS -->
 
-  <!-- jQuery -->
-  <script src="{{asset('plugins/jquery/jquery.min.js')}}"></script>
+
   <!-- Bootstrap -->
   <script src="{{asset('plugins/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
   <!-- AdminLTE -->
