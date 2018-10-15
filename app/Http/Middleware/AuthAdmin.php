@@ -16,8 +16,10 @@ class AuthAdmin
      */
     public function handle($request, Closure $next)
     {
-        $role = Auth::user()->role;
-        if($role==2)
+        $role = Auth::user();
+        if(!$role)
+            return redirect('/login');
+        if($role->role==2)
             return $next($request);
         else
             return redirect('/');
