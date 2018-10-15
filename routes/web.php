@@ -39,5 +39,13 @@ Route::group(['prefix'=>'admin','middleware'=> 'auth.admin'],function (){
 		Route::get('/page6/partner/{id}', 'AdminController@page6_partner_edit');
 		Route::post('/page6/partner/{id}', 'AdminController@page6_partner_update');
 		Route::get('/page6/partner/{id}/delete', 'AdminController@page6_partner_delete');
-});
+	});
+
+	Route::group(['prefix'=>'announcement'], function(){
+		Route::get('/','AnnouncementController@index');
+		Route::post('/create', 'AnnouncementController@create');
+		Route::get('/{id}', 'AnnouncementController@show');
+		Route::post('/edit/{id}', 'AnnouncementController@edit');
+		Route::get('/delete/{id}', 'AnnouncementController@delete');
+	});
 });
