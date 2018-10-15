@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateIndexTable extends Migration
+class CreateAnouncementTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,9 @@ class CreateIndexTable extends Migration
      */
     public function up()
     {
-        Schema::create('index', function (Blueprint $table) {
+        Schema::create('anouncement', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('section');
-            $table->string('name');
-            $table->string('content')->nullable();
-            $table->string('url')->nullable();
+            $table->string('title');
             $table->timestamps();
         });
     }
@@ -30,6 +27,6 @@ class CreateIndexTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('index');
+        Schema::dropIfExists('anouncement');
     }
 }

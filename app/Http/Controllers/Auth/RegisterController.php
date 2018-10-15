@@ -69,7 +69,8 @@ class RegisterController extends Controller
             'email' => $data['email'],
             'password' => bcrypt($data['password']),
             'vertification_token' => $verify_token,
-            'referal_token' => $ref_token
+            'referal_token' => $ref_token,
+            'role' => 0
         ]);
     }
 }

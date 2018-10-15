@@ -20,8 +20,8 @@ class CreateUsersTable extends Migration
             $table->string('password');
             $table->string('vertification_token')->nullable();
             $table->tinyInteger('is_kyc');
-            $table->string('referal_token');
-            $table->string('address');
+            $table->string('referal_token')->nullable();
+            $table->string('address')->nullable();
             $table->string('phone')->nullable();
             $table->string('city')->nullable();
             $table->string('country')->nullable();

@@ -1,560 +1,961 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta http-equiv="x-ua-compatible" content="ie=edge">
-
-  <title>AdminLTE 3 | Dashboard 3</title>
-
-  <!-- Font Awesome Icons -->
-  <link rel="stylesheet" href="{{ asset('plugins/font-awesome/css/font-awesome.min.css')}}">
-
-  <!-- IonIcons -->
-  <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
-  <!-- Theme style -->
-  <link rel="stylesheet" href="{{ asset('css/admin/adminlte.min.css')}}">
-  <!-- Google Font: Source Sans Pro -->
-  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
-</head>
-<!--
-BODY TAG OPTIONS:
-=================
-Apply one or more of the following classes to to the body tag
-to get the desired effect
-|---------------------------------------------------------|
-|LAYOUT OPTIONS | sidebar-collapse                        |
-|               | sidebar-mini                            |
-|---------------------------------------------------------|
--->
-
-<body class="hold-transition sidebar-mini">
-  <div class="wrapper">
-    <!-- Navbar -->
-    <nav class="main-header navbar navbar-expand bg-white navbar-light border-bottom">
-
-
-    
-      <!-- Right navbar links -->
-      <ul class="navbar-nav ml-auto">
-        <!-- Messages Dropdown Menu -->
-
-        <li class="nav-item">
-          <a class="nav-link" href="#"><i class="fa fa-sign-out"></i></a>
-        </li>
-      </ul>
-    </nav>
-    <!-- /.navbar -->
-
-    <!-- Main Sidebar Container -->
-    <aside class="main-sidebar sidebar-dark-primary elevation-4">
-      <!-- Brand Logo -->
-      <a href="index3.html" class="brand-link">
-        <img src="#" alt="Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
-        <span class="brand-text font-weight-light">Logo </span>
-      </a>
-
-      <!-- Sidebar -->
-      <div class="sidebar">
-        <!-- Sidebar Menu -->
-        <nav class="mt-2">
-          <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
-            <!-- Add icons to the links using the .nav-icon class
-               with font-awesome or any other icon font library -->
-            <li class="nav-item">
-              <a href="pages/widgets.html" class="nav-link">
-                <i class="nav-icon fa fa-th"></i>
-                <p>
-                  Widgets
-                  <span class="right badge badge-danger">New</span>
-                </p>
-              </a>
-            </li>
-            <li class="nav-item has-treeview">
-              <a href="#" class="nav-link">
-                <i class="nav-icon fa fa-pie-chart"></i>
-                <p>
-                  Charts
-                  <i class="right fa fa-angle-left"></i>
-                </p>
-              </a>
-              <ul class="nav nav-treeview">
-                <li class="nav-item">
-                  <a href="pages/charts/chartjs.html" class="nav-link">
-                    <i class="fa fa-circle-o nav-icon"></i>
-                    <p>ChartJS</p>
-                  </a>
-                </li>
-                <li class="nav-item">
-                  <a href="pages/charts/flot.html" class="nav-link">
-                    <i class="fa fa-circle-o nav-icon"></i>
-                    <p>Flot</p>
-                  </a>
-                </li>
-                <li class="nav-item">
-                  <a href="pages/charts/inline.html" class="nav-link">
-                    <i class="fa fa-circle-o nav-icon"></i>
-                    <p>Inline</p>
-                  </a>
-                </li>
-              </ul>
-            </li>
-            <li class="nav-item has-treeview">
-              <a href="#" class="nav-link">
-                <i class="nav-icon fa fa-tree"></i>
-                <p>
-                  UI Elements
-                  <i class="fa fa-angle-left right"></i>
-                </p>
-              </a>
-              <ul class="nav nav-treeview">
-                <li class="nav-item">
-                  <a href="pages/UI/general.html" class="nav-link">
-                    <i class="fa fa-circle-o nav-icon"></i>
-                    <p>General</p>
-                  </a>
-                </li>
-                <li class="nav-item">
-                  <a href="pages/UI/icons.html" class="nav-link">
-                    <i class="fa fa-circle-o nav-icon"></i>
-                    <p>Icons</p>
-                  </a>
-                </li>
-                <li class="nav-item">
-                  <a href="pages/UI/buttons.html" class="nav-link">
-                    <i class="fa fa-circle-o nav-icon"></i>
-                    <p>Buttons</p>
-                  </a>
-                </li>
-                <li class="nav-item">
-                  <a href="pages/UI/sliders.html" class="nav-link">
-                    <i class="fa fa-circle-o nav-icon"></i>
-                    <p>Sliders</p>
-                  </a>
-                </li>
-              </ul>
-            </li>
-            <li class="nav-item has-treeview">
-              <a href="#" class="nav-link">
-                <i class="nav-icon fa fa-edit"></i>
-                <p>
-                  Forms
-                  <i class="fa fa-angle-left right"></i>
-                </p>
-              </a>
-              <ul class="nav nav-treeview">
-                <li class="nav-item">
-                  <a href="pages/forms/general.html" class="nav-link">
-                    <i class="fa fa-circle-o nav-icon"></i>
-                    <p>General Elements</p>
-                  </a>
-                </li>
-                <li class="nav-item">
-                  <a href="pages/forms/advanced.html" class="nav-link">
-                    <i class="fa fa-circle-o nav-icon"></i>
-                    <p>Advanced Elements</p>
-                  </a>
-                </li>
-                <li class="nav-item">
-                  <a href="pages/forms/editors.html" class="nav-link">
-                    <i class="fa fa-circle-o nav-icon"></i>
-                    <p>Editors</p>
-                  </a>
-                </li>
-              </ul>
-            </li>
-            <li class="nav-item has-treeview">
-              <a href="#" class="nav-link">
-                <i class="nav-icon fa fa-table"></i>
-                <p>
-                  Tables
-                  <i class="fa fa-angle-left right"></i>
-                </p>
-              </a>
-              <ul class="nav nav-treeview">
-                <li class="nav-item">
-                  <a href="pages/tables/simple.html" class="nav-link">
-                    <i class="fa fa-circle-o nav-icon"></i>
-                    <p>Simple Tables</p>
-                  </a>
-                </li>
-                <li class="nav-item">
-                  <a href="pages/tables/data.html" class="nav-link">
-                    <i class="fa fa-circle-o nav-icon"></i>
-                    <p>Data Tables</p>
-                  </a>
-                </li>
-              </ul>
-            </li>
-            <li class="nav-header">Something</li>
-
-            <li class="nav-item has-treeview">
-              <a href="#" class="nav-link">
-                <i class="nav-icon fa fa-plus-square-o"></i>
-                <p>
-                  Extras
-                  <i class="fa fa-angle-left right"></i>
-                </p>
-              </a>
-              <ul class="nav nav-treeview">
-                <li class="nav-item">
-                  <a href="pages/examples/404.html" class="nav-link">
-                    <i class="fa fa-circle-o nav-icon"></i>
-                    <p>Error 404</p>
-                  </a>
-                </li>
-                <li class="nav-item">
-                  <a href="pages/examples/500.html" class="nav-link">
-                    <i class="fa fa-circle-o nav-icon"></i>
-                    <p>Error 500</p>
-                  </a>
-                </li>
-                <li class="nav-item">
-                  <a href="pages/examples/blank.html" class="nav-link">
-                    <i class="fa fa-circle-o nav-icon"></i>
-                    <p>Blank Page</p>
-                  </a>
-                </li>
-                <li class="nav-item">
-                  <a href="starter.html" class="nav-link">
-                    <i class="fa fa-circle-o nav-icon"></i>
-                    <p>Starter Page</p>
-                  </a>
-                </li>
-              </ul>
-            </li>
-
-            <li class="nav-header">LABELS</li>
-            <li class="nav-item">
-              <a href="#" class="nav-link">
-                <i class="nav-icon fa fa-circle-o text-danger"></i>
-                <p class="text">Important</p>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a href="#" class="nav-link">
-                <i class="nav-icon fa fa-circle-o text-warning"></i>
-                <p>Warning</p>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a href="#" class="nav-link">
-                <i class="nav-icon fa fa-circle-o text-info"></i>
-                <p>Informational</p>
-              </a>
-            </li>
-          </ul>
-        </nav>
-        <!-- /.sidebar-menu -->
-      </div>
-      <!-- /.sidebar -->
-    </aside>
-
-    <!-- Content Wrapper. Contains page content -->
-    <div class="content-wrapper">
-      <!-- Content Header (Page header) -->
-      <div class="content-header">
-        <div class="container-fluid">
-          <div class="row mb-2">
-            <div class="col-sm-6">
-              <h1 class="m-0 text-dark">Dashboard v3</h1>
-            </div><!-- /.col -->
-            <div class="col-sm-6">
-              <ol class="breadcrumb float-sm-right">
-                <li class="breadcrumb-item"><a href="#">Home</a></li>
-                <li class="breadcrumb-item active">Dashboard v3</li>
-              </ol>
-            </div><!-- /.col -->
-          </div><!-- /.row -->
-        </div><!-- /.container-fluid -->
-      </div>
-      <!-- /.content-header -->
-
-      <!-- Main content -->
-      <div class="content">
-        <div class="container-fluid">
-          <div class="row">
-            <div class="col-lg-6">
-              <div class="card">
-                <div class="card-header no-border">
-                  <div class="d-flex justify-content-between">
-                    <h3 class="card-title">Online Store Visitors</h3>
-                    <a href="javascript:void(0);">View Report</a>
-                  </div>
-                </div>
-                <div class="card-body">
-                  <div class="d-flex">
-                    <p class="d-flex flex-column">
-                      <span class="text-bold text-lg">820</span>
-                      <span>Visitors Over Time</span>
-                    </p>
-                    <p class="ml-auto d-flex flex-column text-right">
-                      <span class="text-success">
-                        <i class="fa fa-arrow-up"></i> 12.5%
-                      </span>
-                      <span class="text-muted">Since last week</span>
-                    </p>
-                  </div>
-                  <!-- /.d-flex -->
-
-                  <div class="position-relative mb-4">
-                    <canvas id="visitors-chart" height="200"></canvas>
-                  </div>
-
-                  <div class="d-flex flex-row justify-content-end">
-                    <span class="mr-2">
-                      <i class="fa fa-square text-primary"></i> This Week
-                    </span>
-
-                    <span>
-                      <i class="fa fa-square text-gray"></i> Last Week
-                    </span>
-                  </div>
-                </div>
-              </div>
-              <!-- /.card -->
-
-              <div class="card">
-                <div class="card-header no-border">
-                  <h3 class="card-title">Products</h3>
-                  <div class="card-tools">
-                    <a href="#" class="btn btn-tool btn-sm">
-                      <i class="fa fa-download"></i>
-                    </a>
-                    <a href="#" class="btn btn-tool btn-sm">
-                      <i class="fa fa-bars"></i>
-                    </a>
-                  </div>
-                </div>
-                <div class="card-body p-0">
-                  <table class="table table-striped table-valign-middle">
-                    <thead>
-                      <tr>
-                        <th>Product</th>
-                        <th>Price</th>
-                        <th>Sales</th>
-                        <th>More</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <td>
-                          <img src="dist/img/default-150x150.png" alt="Product 1" class="img-circle img-size-32 mr-2">
-                          Some Product
-                        </td>
-                        <td>$13 USD</td>
-                        <td>
-                          <small class="text-success mr-1">
-                            <i class="fa fa-arrow-up"></i>
-                            12%
-                          </small>
-                          12,000 Sold
-                        </td>
-                        <td>
-                          <a href="#" class="text-muted">
-                            <i class="fa fa-search"></i>
-                          </a>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>
-                          <img src="dist/img/default-150x150.png" alt="Product 1" class="img-circle img-size-32 mr-2">
-                          Another Product
-                        </td>
-                        <td>$29 USD</td>
-                        <td>
-                          <small class="text-warning mr-1">
-                            <i class="fa fa-arrow-down"></i>
-                            0.5%
-                          </small>
-                          123,234 Sold
-                        </td>
-                        <td>
-                          <a href="#" class="text-muted">
-                            <i class="fa fa-search"></i>
-                          </a>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>
-                          <img src="dist/img/default-150x150.png" alt="Product 1" class="img-circle img-size-32 mr-2">
-                          Amazing Product
-                        </td>
-                        <td>$1,230 USD</td>
-                        <td>
-                          <small class="text-danger mr-1">
-                            <i class="fa fa-arrow-down"></i>
-                            3%
-                          </small>
-                          198 Sold
-                        </td>
-                        <td>
-                          <a href="#" class="text-muted">
-                            <i class="fa fa-search"></i>
-                          </a>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>
-                          <img src="dist/img/default-150x150.png" alt="Product 1" class="img-circle img-size-32 mr-2">
-                          Perfect Item
-                          <span class="badge bg-danger">NEW</span>
-                        </td>
-                        <td>$199 USD</td>
-                        <td>
-                          <small class="text-success mr-1">
-                            <i class="fa fa-arrow-up"></i>
-                            63%
-                          </small>
-                          87 Sold
-                        </td>
-                        <td>
-                          <a href="#" class="text-muted">
-                            <i class="fa fa-search"></i>
-                          </a>
-                        </td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
-              </div>
-              <!-- /.card -->
-            </div>
-            <!-- /.col-md-6 -->
-            <div class="col-lg-6">
-              <div class="card">
-                <div class="card-header no-border">
-                  <div class="d-flex justify-content-between">
-                    <h3 class="card-title">Sales</h3>
-                    <a href="javascript:void(0);">View Report</a>
-                  </div>
-                </div>
-                <div class="card-body">
-                  <div class="d-flex">
-                    <p class="d-flex flex-column">
-                      <span class="text-bold text-lg">$18,230.00</span>
-                      <span>Sales Over Time</span>
-                    </p>
-                    <p class="ml-auto d-flex flex-column text-right">
-                      <span class="text-success">
-                        <i class="fa fa-arrow-up"></i> 33.1%
-                      </span>
-                      <span class="text-muted">Since last month</span>
-                    </p>
-                  </div>
-                  <!-- /.d-flex -->
-
-                  <div class="position-relative mb-4">
-                    <canvas id="sales-chart" height="200"></canvas>
-                  </div>
-
-                  <div class="d-flex flex-row justify-content-end">
-                    <span class="mr-2">
-                      <i class="fa fa-square text-primary"></i> This year
-                    </span>
-
-                    <span>
-                      <i class="fa fa-square text-gray"></i> Last year
-                    </span>
-                  </div>
-                </div>
-              </div>
-              <!-- /.card -->
-
-              <div class="card">
-                <div class="card-header no-border">
-                  <h3 class="card-title">Online Store Overview</h3>
-                  <div class="card-tools">
-                    <a href="#" class="btn btn-sm btn-tool">
-                      <i class="fa fa-download"></i>
-                    </a>
-                    <a href="#" class="btn btn-sm btn-tool">
-                      <i class="fa fa-bars"></i>
-                    </a>
-                  </div>
-                </div>
-                <div class="card-body">
-                  <div class="d-flex justify-content-between align-items-center border-bottom mb-3">
-                    <p class="text-success text-xl">
-                      <i class="ion ion-ios-refresh-empty"></i>
-                    </p>
-                    <p class="d-flex flex-column text-right">
-                      <span class="font-weight-bold">
-                        <i class="ion ion-android-arrow-up text-success"></i> 12%
-                      </span>
-                      <span class="text-muted">CONVERSION RATE</span>
-                    </p>
-                  </div>
-                  <!-- /.d-flex -->
-                  <div class="d-flex justify-content-between align-items-center border-bottom mb-3">
-                    <p class="text-warning text-xl">
-                      <i class="ion ion-ios-cart-outline"></i>
-                    </p>
-                    <p class="d-flex flex-column text-right">
-                      <span class="font-weight-bold">
-                        <i class="ion ion-android-arrow-up text-warning"></i> 0.8%
-                      </span>
-                      <span class="text-muted">SALES RATE</span>
-                    </p>
-                  </div>
-                  <!-- /.d-flex -->
-                  <div class="d-flex justify-content-between align-items-center mb-0">
-                    <p class="text-danger text-xl">
-                      <i class="ion ion-ios-people-outline"></i>
-                    </p>
-                    <p class="d-flex flex-column text-right">
-                      <span class="font-weight-bold">
-                        <i class="ion ion-android-arrow-down text-danger"></i> 1%
-                      </span>
-                      <span class="text-muted">REGISTRATION RATE</span>
-                    </p>
-                  </div>
-                  <!-- /.d-flex -->
-                </div>
-              </div>
-            </div>
-            <!-- /.col-md-6 -->
-          </div>
-          <!-- /.row -->
+@extends('admin.layout')
+@section('content-header')
+<div class="row mb-2">
+  <div class="col-sm-6">
+    <h1 class="m-0 text-dark">Dashboard</h1>
+  </div><!-- /.col -->
+</div>
+@stop
+@section('content')
+<!-- Page 1 HTML -->
+<div class="row">
+  <div class="col-lg-12">
+    <div class="card card-info collapsed-card">
+      <div class="card-header no-border">
+        <h3 class="card-title">Page 1</h3>
+        <div class="card-tools">
+          <button type="button" class="btn btn-tool" data-widget="collapse"><i class="fa fa-plus"></i>
+          </button>
         </div>
-        <!-- /.container-fluid -->
       </div>
-      <!-- /.content -->
+      <div class="card-body">
+        <form class="form-horizontal" action="{{url('admin/homepage/data_without_url')}}" method="post">
+          {!!csrf_field()!!}
+          <input type="hidden" name="section" value="social">
+            <div class="form-group">
+              <label class="col-sm-2 control-label">Title line 1</label>
+
+              <div class="col-sm-12">
+                <input type="text" class="form-control" name="title1" value="{{$page1[0]->content}}">
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-sm-2 control-label">Title line 2</label>
+
+              <div class="col-sm-12">
+                <input type="text" class="form-control" name="title2" value="{{$page1[1]->content}}">
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-sm-2 control-label">Description</label>
+
+              <div class="col-sm-12">
+                <input type="text" class="form-control" name="description" value="{{$page1[2]->content}}">
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-sm-2 control-label">Link Video</label>
+
+              <div class="col-sm-12">
+                <input type="text" class="form-control" name="linkvideo" value="{{$page1[3]->content}}">
+              </div>
+            </div>
+          <!-- /.card-body -->
+          <div class="card-footer">
+            <button type="submit" class="btn btn-info">Save</button>
+          </div>
+          <!-- /.card-footer -->
+        </form>
+      </div>
     </div>
-    <!-- /.content-wrapper -->
-
-    <!-- Control Sidebar -->
-    <aside class="control-sidebar control-sidebar-dark">
-      <!-- Control sidebar content goes here -->
-    </aside>
-    <!-- /.control-sidebar -->
-
-    <!-- Main Footer -->
-    <footer class="main-footer">
-      <!-- To the right -->
-      <div class="float-right d-none d-sm-block-down">
-        Anything you want
-      </div>
-      <!-- Default to the left -->
-      <strong>Copyright &copy; 2018 <a href="https://adminlte.io">AdminLTE.io</a>.</strong> All rights reserved.
-    </footer>
   </div>
-  <!-- ./wrapper -->
+</div>
+<!-- Social -->
+<div class="row">
+  <div class="col-lg-12">
+    <div class="card card-info collapsed-card">
+      <div class="card-header no-border">
+        <h3 class="card-title">Social Links</h3>
+        <div class="card-tools">
+          <button type="button" class="btn btn-tool" data-widget="collapse"><i class="fa fa-plus"></i>
+          </button>
+        </div>
+      </div>
+      <div class="card-body">
+        <form class="form-horizontal" action="{{url('admin/homepage/data_without_url')}}" method="post">
+          {!!csrf_field()!!}
+          <input type="hidden" name="section" value="social">
+            <div class="form-group">
+              <label>Reddit:</label>
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text"><i class="fa fa-reddit"></i></span>
+                </div>
+                <input type="text" name="reddit" class="form-control" value="{{$social[0]->content}}">
+              </div>
+            </div>
+            <div class="form-group">
+              <label>Telegram:</label>
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text"><i class="fa fa-telegram"></i></span>
+                </div>
+                <input type="text" name="telegram" class="form-control" value="{{$social[0]->content}}">
+              </div>
+            </div>
+            <div class="form-group">
+              <label>Twitter:</label>
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text"><i class="fa fa-twitter"></i></span>
+                </div>
+                <input type="text" name="twitter" class="form-control" value="{{$social[0]->content}}">
+              </div>
+            </div>
+            <div class="form-group">
+              <label>Bitcointalk:</label>
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text"><i class="fa fa-bitcoin"></i></span>
+                </div>
+                <input type="text" name="bitcointalk" class="form-control" value="{{$social[0]->content}}">
+              </div>
+            </div>
+            <div class="form-group">
+              <label>Medium:</label>
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text"><i class="fa fa-medium"></i></span>
+                </div>
+                <input type="text" name="medium" class="form-control" value="{{$social[0]->content}}">
+              </div>
+            </div>
+          <!-- /.card-body -->
+          <div class="card-footer">
+            <button type="submit" class="btn btn-info">Save</button>
+          </div>
+          <!-- /.card-footer -->
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Page 2 -->
+<div class="row">
+  <div class="col-lg-12">
+    <div class="card card-info collapsed-card">
+      <div class="card-header no-border">
+        <h3 class="card-title">Page 2</h3>
+        <div class="card-tools">
+          <button type="button" class="btn btn-tool" data-widget="collapse"><i class="fa fa-plus"></i>
+          </button>
+        </div>
+      </div>
+      <div class="card-body">
+        <form class="form-horizontal" action="{{url('admin/homepage/page2')}}" method="post" enctype="multipart/form-data">
+          {!!csrf_field()!!}
+            <div class="form-group">
+              <label>Title1:</label>
+              <div class="input-group">
+                <input type="text" name="title1" class="form-control" value="{{$page2['title1']->content}}">
+              </div>
+            </div>
+            <div class="form-group">
+              <label>Description1:</label>
+              <div class="input-group">
+                <input type="text" name="description1" class="form-control" value="{{$page2['description1']->content}}">
+              </div>
+            </div>
+            <div class="form-group">
+              <label>Title2:</label>
+              <div class="input-group">
+                <input type="text" name="title2" class="form-control" value="{{$page2['title2']->content}}"> 
+              </div>
+            </div>
+            <div class="form-group">
+              <label>Description2:</label>
+              <div class="input-group">
+                <input type="text" name="description2" class="form-control" value="{{$page2['description2']->content}}">
+              </div>
+            </div>
+            <div class="form-group">
+              <label>Whitepaper:</label>
+              <div class="input-group">
+                <input type="text" name="whitepaper" class="form-control" value="{{$page2['whitepaper']->content}}">
+              </div>
+            </div>
+            <div class="form-group">
+              <label>Image1:</label>
+              <div class="input-group col-sm-6">
+                <input type="file" name="image1" class="form-control" accept='image/*'>
+              </div>
+               @if ($errors->has('image1'))
+                    <span class="help-block" style="color:red;">
+                        <strong>{{ $errors->first('image1') }}</strong>
+                    </span>
+               @endif
+            </div>
+            <div class="form-group">
+              <label>Preview Image 1:</label>
+              <div class="col-sm-2">
+                 <img class="img-thumbnail img-fluid" src="{{asset('page/images/page2').'/'.$page2['image1']->content}}" alt="Image 1">
+               </div>
+            </div>
+            <!-- Image 2 -->
+            <div class="form-group">
+              <label>Image2:</label>
+              <div class="input-group col-sm-6">
+                <input type="file" name="image2" class="form-control" accept='image/*'>
+              </div>
+              @if ($errors->has('image2'))
+                    <span class="help-block" style="color:red;">
+                        <strong>{{ $errors->first('image2') }}</strong>
+                    </span>
+               @endif
+            </div>
+            <div class="form-group">
+              <label>Preview Image 2:</label>
+              <div class="col-sm-2">
+                 <img class="img-thumbnail img-fluid" src="{{asset('page/images/page2').'/'.$page2['image2']->content}}" alt="Image 2">
+               </div>
+            </div>
+            <!-- Image 3 -->
+            <div class="form-group">
+              <label>Image3:</label>
+              <div class="input-group col-sm-6">
+                <input type="file" name="image3" class="form-control" accept='image/*'>
+              </div>
+              @if ($errors->has('image3'))
+                    <span class="help-block" style="color:red;">
+                        <strong>{{ $errors->first('image3') }}</strong>
+                    </span>
+               @endif
+            </div>
+            <div class="form-group">
+              <label>Preview Image 3:</label>
+              <div class="col-sm-2">
+                 <img class="img-thumbnail img-fluid" src="{{asset('page/images/page2').'/'.$page2['image3']->content}}" alt="Image 3">
+               </div>
+            </div>
+            <!-- Image 4 -->
+            <div class="form-group">
+              <label>Image4:</label>
+              <div class="input-group col-sm-6">
+                <input type="file" name="image4" class="form-control" accept='image/*'>
+              </div>
+              @if ($errors->has('image4'))
+                    <span class="help-block" style="color:red;">
+                        <strong>{{ $errors->first('image4') }}</strong>
+                    </span>
+               @endif
+            </div>
+            <div class="form-group">
+              <label>Preview Image 4:</label>
+              <div class="col-sm-2">
+                 <img class="img-thumbnail img-fluid" src="{{asset('page/images/page2').'/'.$page2['image4']->content}}" alt="Image 4">
+               </div>
+            </div>
+          <!-- /.card-body -->
+          <div class="card-footer">
+            <button type="submit" class="btn btn-info">Save</button>
+          </div>
+          <!-- /.card-footer -->
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Page 3 -->
+<div class="row">
+  <div class="col-lg-12">
+    <div class="card card-info collapsed-card">
+      <div class="card-header no-border">
+        <h3 class="card-title">Page 3</h3>
+        <div class="card-tools">
+          <button type="button" class="btn btn-tool" data-widget="collapse"><i class="fa fa-plus"></i>
+          </button>
+        </div>
+      </div>
+      <div class="card-body">
+        <form class="form-horizontal" action="{{url('admin/homepage/page3')}}" method="post"  enctype="multipart/form-data">
+          {!!csrf_field()!!}
+          <!-- Part 1 -->
+            <div class="form-group">
+              <label class="col-sm-2 control-label">Logo 1:</label>
+              <div class="input-group col-sm-12">
+                <input type="file" name="logo1" class="form-control" accept='image/*'>
+              </div>
+               @if ($errors->has('logo1'))
+                    <span class="help-block" style="color:red;">
+                        <strong>{{ $errors->first('logo1') }}</strong>
+                    </span>
+               @endif
+            </div>
+            <div class="form-group">
+              <label>Preview Logo 1:</label>
+              <div class="col-sm-2">
+                 <img class="img-thumbnail img-fluid" src="{{asset('page/images/page3').'/'.$page3['logo1']->content}}" alt="Logo 1">
+               </div>
+            </div>
+            <div class="form-group">
+              <label class="col-sm-2 control-label">Title line 1</label>
 
-  <!-- REQUIRED SCRIPTS -->
+              <div class="col-sm-12">
+                <input type="text" class="form-control" name="title1" value="{{$page3['title1']->content}}">
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-sm-2 control-label">Description 1</label>
 
-  <!-- jQuery -->
-  <script src="{{asset('plugins/jquery/jquery.min.js')}}"></script>
-  <!-- Bootstrap -->
-  <script src="{{asset('plugins/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
-  <!-- AdminLTE -->
-  <script src="{{asset('js/admin/adminlte.js')}}"></script>
+              <div class="col-sm-12">
+                <input type="text" class="form-control" name="description1" value="{{$page3['description1']->content}}">
+              </div>
+            </div>
+            <!-- Part 2 -->
+            <div class="form-group">
+              <label class="col-sm-2 control-label">Logo 2:</label>
+              <div class="input-group col-sm-12">
+                <input type="file" name="logo2" class="form-control" accept='image/*'>
+              </div>
+               @if ($errors->has('logo2'))
+                    <span class="help-block" style="color:red;">
+                        <strong>{{ $errors->first('logo2') }}</strong>
+                    </span>
+               @endif
+            </div>
+            <div class="form-group">
+              <label>Preview Logo 2:</label>
+              <div class="col-sm-2">
+                 <img class="img-thumbnail img-fluid" src="{{asset('page/images/page3').'/'.$page3['logo2']->content}}" alt="Logo 2">
+               </div>
+            </div>
+            <div class="form-group">
+              <label class="col-sm-2 control-label">Title line 2</label>
 
-  <!-- OPTIONAL SCRIPTS -->
-  <script src="{{asset('plugins/chart.js/Chart.min.js')}}"></script>
-  <script src="{{asset('js/admin/demo.js')}}"></script>
-  <script src="{{asset('js/admin/pages/dashboard3.js')}}"></script>
-</body>
+              <div class="col-sm-12">
+                <input type="text" class="form-control" name="title2"  value="{{$page3['title2']->content}}">
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-sm-2 control-label">Description 2</label>
 
-</html>
+              <div class="col-sm-12">
+                <input type="text" class="form-control" name="description2"  value="{{$page3['description2']->content}}">
+              </div>
+            </div>
+            <!-- Part 3 -->
+            <div class="form-group">
+              <label class="col-sm-2 control-label">Logo 3:</label>
+              <div class="input-group col-sm-12">
+                <input type="file" name="logo3" class="form-control" accept='image/*'>
+              </div>
+               @if ($errors->has('logo3'))
+                    <span class="help-block" style="color:red;">
+                        <strong>{{ $errors->first('logo3') }}</strong>
+                    </span>
+               @endif
+            </div>
+            <div class="form-group">
+              <label>Preview Logo 3:</label>
+              <div class="col-sm-2">
+                 <img class="img-thumbnail img-fluid" src="{{asset('page/images/page3').'/'.$page3['logo3']->content}}" alt="Logo 3">
+               </div>
+            </div>
+            <div class="form-group">
+              <label class="col-sm-2 control-label">Title line 3</label>
+
+              <div class="col-sm-12">
+                <input type="text" class="form-control" name="title3" value="{{$page3['title3']->content}}">
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-sm-2 control-label">Description 3</label>
+
+              <div class="col-sm-12">
+                <input type="text" class="form-control" name="description3" value="{{$page3['description3']->content}}">
+              </div>
+            </div>
+            <!-- Part 4 -->
+            <div class="form-group">
+              <label class="col-sm-2 control-label">Logo 4:</label>
+              <div class="input-group col-sm-12" >
+                <input type="file" name="logo4" class="form-control" accept='image/*'>
+              </div>
+               @if ($errors->has('logo4'))
+                    <span class="help-block" style="color:red;">
+                        <strong>{{ $errors->first('logo4') }}</strong>
+                    </span>
+               @endif
+            </div>
+            <div class="form-group">
+              <label>Preview Logo 4:</label>
+              <div class="col-sm-2">
+                 <img class="img-thumbnail img-fluid" src="{{asset('page/images/page3').'/'.$page3['logo4']->content}}" alt="Logo 4">
+               </div>
+            </div>
+
+            <div class="form-group">
+              <label class="col-sm-2 control-label">Title line 4</label>
+
+              <div class="col-sm-12">
+                <input type="text" class="form-control" name="title4" value="{{$page3['title4']->content}}">
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-sm-2 control-label">Description 4</label>
+
+              <div class="col-sm-12">
+                <input type="text" class="form-control" name="description4" value="{{$page3['description4']->content}}">
+              </div>
+            </div>
+          <!-- /.card-body -->
+          <div class="card-footer">
+            <button type="submit" class="btn btn-info">Save</button>
+          </div>
+          <!-- /.card-footer -->
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Page 4 -->
+<div class="row">
+  <div class="col-lg-12">
+    <div class="card card-info collapsed-card">
+      <div class="card-header no-border">
+        <h3 class="card-title">Page 4</h3>
+        <div class="card-tools">
+          <button type="button" class="btn btn-tool" data-widget="collapse"><i class="fa fa-plus"></i>
+          </button>
+        </div>
+      </div>
+      <div class="card-body">
+        <form class="form-horizontal" action="{{url('admin/homepage/page4')}}" method="post"  enctype="multipart/form-data">
+          {!!csrf_field()!!}
+            <div class="form-group">
+              <label class="col-sm-2 control-label">Timeline Image:</label>
+              <div class="input-group col-sm-12">
+                <input type="file" name="timeline" class="form-control" accept='image/*'>
+              </div>
+               @if ($errors->has('timeline'))
+                    <span class="help-block" style="color:red;">
+                        <strong>{{ $errors->first('timeline') }}</strong>
+                    </span>
+               @endif
+            </div>
+            <div class="form-group">
+              <label>Preview Timeline image:</label>
+              <div class="col-sm-6">
+                 <img class="img-thumbnail img-fluid"  alt="Timeline" src="{{asset('page/images/page4').'/'.$page4['timeline']->content}}">
+               </div>
+            </div>
+            <div class="form-group">
+              <label class="col-sm-2 control-label">Title</label>
+
+              <div class="col-sm-12">
+                <input type="text" class="form-control" name="title" value="{{$page4['title']->content}}">
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-sm-2 control-label">Description</label>
+
+              <div class="col-sm-12">
+                <input type="text" class="form-control" name="description" value="{{$page4['description']->content}}">
+              </div>
+            </div>
+          <!-- /.card-body -->
+          <div class="card-footer">
+            <button type="submit" class="btn btn-info">Save</button>
+          </div>
+          <!-- /.card-footer -->
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Page 5 -->
+<div class="row">
+  <div class="col-lg-12">
+    <div class="card card-info collapsed-card">
+      <div class="card-header no-border">
+        <h3 class="card-title">Page 5</h3>
+        <div class="card-tools">
+          <button type="button" class="btn btn-tool" data-widget="collapse"><i class="fa fa-plus"></i>
+          </button>
+        </div>
+      </div>
+      <div class="card-body">
+        <form class="form-horizontal" action="{{url('admin/homepage/page5')}}" method="post"  enctype="multipart/form-data">
+          {!!csrf_field()!!}
+            <div class="form-group">
+              <label class="col-sm-2 control-label">Title</label>
+
+              <div class="col-sm-12">
+                <input type="text" class="form-control" name="title" value="{{$page5['title']->content}}">
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-sm-2 control-label">Description</label>
+
+              <div class="col-sm-12">
+                <input type="text" class="form-control" name="description" value="{{$page5['description']->content}}">
+              </div>
+            </div>
+          <!-- /.card-body -->
+          <div class="card-footer">
+            <button type="submit" class="btn btn-info">Save</button>
+          </div>
+          <!-- /.card-footer -->
+        </form>
+        <div class="card">
+          <div class="card-header">
+            <h3 class="card-title">Advisors List</h3>
+            <div class="card-tools">
+              <button type="button" class="btn btn-tool" data-toggle="modal" data-target="#advisorModal"><i class="fa fa-plus"></i></button>
+          </button>
+            </div>
+          </div>
+          <div class="card-body">
+            <table class="table table-striped" id="table_advisor">
+              <tbody>
+                <tr>
+                  <th>Name</th>
+                  <th>Position</th>
+                  <th>Description</th>
+                  <th style="width: 20%;">Image</th>
+                  <th>Action</th>
+                </tr>
+                @foreach ($page5['advisor'] as $advisor)
+                <tr id="advisor{{$advisor->id}}">
+                  <td>{{$advisor->name}}</td>
+                  <td>{{$advisor->position}}</td>
+                  <td>{{$advisor->description}}</td>
+                  <td><img class="img-thumbnail img-fluid"  alt="Timeline" src='{{asset("page/images/page5")."/".$advisor->avatar }}'></td>
+                  <td style="vertical-align: middle;">
+                    <div style="margin: auto; text-align: center;">
+                      <button type="button" class="btn btn-success" onclick="editAdvisor({{$advisor->id}})">Edit</button>
+                      <button type="button" class="btn btn-danger" onclick="deleteAdvisor({{$advisor->id}})">Delete</button>
+                    </div>
+                  </td>
+                </tr>
+                @endforeach
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Page 6 -->
+<div class="row">
+  <div class="col-lg-12">
+    <div class="card card-info collapsed-card">
+      <div class="card-header no-border">
+        <h3 class="card-title">Page 6</h3>
+        <div class="card-tools">
+          <button type="button" class="btn btn-tool" data-widget="collapse"><i class="fa fa-plus"></i>
+          </button>
+        </div>
+      </div>
+      <div class="card-body">
+        <form class="form-horizontal" action="{{url('admin/homepage/page6')}}" method="post"  enctype="multipart/form-data">
+          {!!csrf_field()!!}
+            <div class="form-group">
+              <label class="col-sm-2 control-label">Title</label>
+
+              <div class="col-sm-12">
+                <input type="text" class="form-control" name="title" value="{{$page6['title']->content}}">
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-sm-2 control-label">Description</label>
+
+              <div class="col-sm-12">
+                <input type="text" class="form-control" name="description" value="{{$page6['description']->content}}">
+              </div>
+            </div>
+          <!-- /.card-body -->
+          <div class="card-footer">
+            <button type="submit" class="btn btn-info">Save</button>
+          </div>
+          <!-- /.card-footer -->
+        </form>
+        <div class="card">
+          <div class="card-header">
+            <h3 class="card-title">Partners List</h3>
+            <div class="card-tools">
+              <button type="button" class="btn btn-tool" data-toggle="modal" data-target="#partnerModal"><i class="fa fa-plus"></i></button>
+          </button>
+            </div>
+          </div>
+          <div class="card-body">
+            <table class="table table-striped" id="table_partner">
+              <tbody>
+                <tr>
+                  <th>Name</th>
+                  <th>Link</th>
+                  <th style="width: 20%;">Image</th>
+                  <th>Action</th>
+                </tr>
+                @foreach ($page6['partner'] as $partner)
+                <tr id="partner{{$partner->id}}">
+                  <td>{{$partner->name}}</td>
+                  <td>{{$partner->link}}</td>
+                  <td><img class="img-thumbnail img-fluid"  alt="Timeline" src='{{asset("page/images/page6")."/".$partner->image }}'></td>
+                  <td style="vertical-align: middle;">
+                    <div style="margin: auto; text-align: center;">
+                      <button type="button" class="btn btn-success" onclick="editPartner({{$partner->id}})">Edit</button>
+                      <button type="button" class="btn btn-danger" onclick="deletePartner({{$partner->id}})">Delete</button>
+                    </div>
+                  </td>
+                </tr>
+                @endforeach
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Modal Page 5 -->
+<div id="advisorModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header" style="display: block;">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Add New Advisor</h4>
+      </div>
+      <div class="modal-body">
+        <form class="form-horizontal" enctype="multipart/form-data" id="formAdvisor">
+          {!!csrf_field()!!}
+          <div class="form-group">
+            <label class="col-sm-2 control-label">Name</label>
+
+            <div class="col-sm-12">
+              <input type="text" class="form-control" name="name">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-sm-2 control-label">Position</label>
+
+            <div class="col-sm-12">
+              <input type="text" class="form-control" name="position">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-sm-2 control-label">Description</label>
+
+            <div class="col-sm-12">
+              <input type="text" class="form-control" name="description">
+            </div>
+          </div>
+
+          <div class="form-group">
+              <label class="col-sm-2 control-label">Avatar:</label>
+              <div class="input-group col-sm-12">
+                <input type="file" name="avatar" class="form-control" accept='image/*'>
+              </div>
+               @if ($errors->has('avatar'))
+                    <span class="help-block" style="color:red;">
+                        <strong>{{ $errors->first('avatar') }}</strong>
+                    </span>
+               @endif
+            </div>
+      </div>
+      </form>
+      <div class="modal-footer">
+        <button class="btn btn-default" id="createAdvisor" data-dismiss="modal">Submit</button>
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+<div id="advisorModalEdit" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header" style="display: block;">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Edit Advisor</h4>
+      </div>
+      <div class="modal-body">
+        <form class="form-horizontal" enctype="multipart/form-data" id="formEditAdvisor">
+          {!!csrf_field()!!}
+          <div class="form-group">
+            <label class="col-sm-2 control-label">Name</label>
+
+            <div class="col-sm-12">
+              <input type="text" class="form-control" name="name" id="advisorName">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-sm-2 control-label">Position</label>
+
+            <div class="col-sm-12">
+              <input type="text" class="form-control" name="position" id="advisorPosition">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-sm-2 control-label">Description</label>
+
+            <div class="col-sm-12">
+              <input type="text" class="form-control" name="description" id="advisorDescription">
+            </div>
+          </div>
+          <div class="form-group">
+              <label class="col-sm-2 control-label">Avatar:</label>
+              <div class="col-sm-2">
+                 <img class="img-thumbnail img-fluid" alt="Avatar" id="advisorAvatar">
+               </div>
+              <div class="input-group col-sm-12">
+                <input type="file" name="avatar" class="form-control" accept='image/*'>
+              </div>
+               @if ($errors->has('avatar'))
+                    <span class="help-block" style="color:red;">
+                        <strong>{{ $errors->first('avatar') }}</strong>
+                    </span>
+               @endif
+            </div>
+      </div>
+      </form>
+      <div class="modal-footer">
+        <button class="btn btn-default" data-dismiss="modal" id="submitEditAdvisor">Submit</button>
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+<!-- End Modal Page 5 -->
+<!-- Modal Page 6 -->
+<div id="partnerModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header" style="display: block;">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Add New Partner</h4>
+      </div>
+      <div class="modal-body">
+        <form class="form-horizontal" enctype="multipart/form-data" id="formPartner">
+          {!!csrf_field()!!}
+          <div class="form-group">
+            <label class="col-sm-2 control-label">Name</label>
+
+            <div class="col-sm-12">
+              <input type="text" class="form-control" name="name">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-sm-2 control-label">Link</label>
+
+            <div class="col-sm-12">
+              <input type="text" class="form-control" name="link">
+            </div>
+          </div>
+          <div class="form-group">
+              <label class="col-sm-4 control-label">Partner's Image:</label>
+              <div class="input-group col-sm-12">
+                <input type="file" name="image" class="form-control" accept='image/*'>
+              </div>
+               @if ($errors->has('image'))
+                    <span class="help-block" style="color:red;">
+                        <strong>{{ $errors->first('image') }}</strong>
+                    </span>
+               @endif
+            </div>
+      </div>
+      </form>
+      <div class="modal-footer">
+        <button class="btn btn-default" id="createPartner" data-dismiss="modal">Submit</button>
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+<div id="partnerModalEdit" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header" style="display: block;">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Edit Partner</h4>
+      </div>
+      <div class="modal-body">
+        <form class="form-horizontal" enctype="multipart/form-data" id="formEditPartner">
+          {!!csrf_field()!!}
+          <div class="form-group">
+            <label class="col-sm-2 control-label">Name</label>
+
+            <div class="col-sm-12">
+              <input type="text" class="form-control" name="name" id="partnerName">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-sm-2 control-label">Link</label>
+
+            <div class="col-sm-12">
+              <input type="text" class="form-control" name="position" id="partnerLink">
+            </div>
+          </div>
+          <div class="form-group">
+              <label class="col-sm-4 control-label">Partner's Image:</label>
+              <div class="col-sm-2">
+                 <img class="img-thumbnail img-fluid" alt="Image" id="partnerImage">
+               </div>
+              <div class="input-group col-sm-12">
+                <input type="file" name="image" class="form-control" accept='image/*'>
+              </div>
+               @if ($errors->has('image'))
+                    <span class="help-block" style="color:red;">
+                        <strong>{{ $errors->first('image') }}</strong>
+                    </span>
+               @endif
+            </div>
+      </div>
+      </form>
+      <div class="modal-footer">
+        <button class="btn btn-default" data-dismiss="modal" id="submitEditPartner">Submit</button>
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+<!-- End Modal Page 6 -->
+<!-- Script for Page 5 -->
+<script>
+$(document).ready(function(){
+  $("#createAdvisor").click(function(){
+    var data = new FormData();
+    $.ajax({
+      url:"{{url('admin/homepage/page5/advisor')}}",
+      data:new FormData($("#formAdvisor")[0]),
+      dataType:'json',
+      async:false,
+      type:'post',
+      processData: false,
+      contentType: false,
+      success:function(response){
+        console.log(response.data);
+        res = response.data;
+        $("#table_advisor").find('tbody').append("<tr id='advisor"+res.id+"'><td>"+res.name+"</td><td>"+res.position+"</td>"+"<td>"+res.description+"</td>"+'<td><img class="img-thumbnail img-fluid"  alt="Timeline" src="{{asset("page/images/page5")}}'+'/'+res.avatar+'"></td>'+"<td style='vertical-align: middle;'> <div style='margin: auto; text-align: center;'><button type='button' class='btn btn-success' onclick='editAdvisor("+res.id+")'>Edit</button> <button type='button' class='btn btn-danger' onclick='deleteAdvisor("+res.id+")'>Delete</button></div></td><tr>");
+      },
+    });
+  });
+});
+// Edit Form
+function editAdvisor(id){
+  $.ajax({
+    url:"{{url('admin/homepage/page5/advisor')}}/"+id,
+    type: 'get',
+    processData: false,
+    contentType: false,
+    success:function(response){
+      var res = response.data;
+      $("#advisorName").val(res.name);
+      $("#advisorPosition").val(res.position);
+      $("#advisorDescription").val(res.description);
+      $("#advisorAvatar").attr('src','{{asset("page/images/page5")}}/'+res.avatar);
+      $("#submitEditAdvisor").attr('onclick','updateAdvisor('+res.id+')');
+      $("#advisorModalEdit").modal('show');
+    },
+  });
+};
+// Update Advisor
+function updateAdvisor(id){
+  $.ajax({
+      url:"{{url('admin/homepage/page5/advisor')}}/"+id,
+      data:new FormData($("#formEditAdvisor")[0]),
+      dataType:'json',
+      async:false,
+      type:'post',
+      processData: false,
+      contentType: false,
+      success:function(response){
+        res = response.data;
+        $("#table_advisor").find('#advisor'+id).html("<td>"+res.name+"</td><td>"+res.position+"</td>"+"<td>"+res.description+"</td>"+'<td><img class="img-thumbnail img-fluid"  alt="Timeline" src="{{asset("page/images/page5")}}'+'/'+res.avatar+'"></td>'+"</td>"+"<td style='vertical-align: middle;'> <div style='margin: auto; text-align: center;'><button type='button' class='btn btn-success' onclick='editAdvisor("+id+")'>Edit</button> <button type='button' class='btn btn-danger' onclick='deleteAdvisor("+id+")'>Delete</button></div></td>");
+      },
+  });
+};
+function deleteAdvisor(id){
+  $.ajax({
+    url:"{{url('admin/homepage/page5/advisor')}}/"+id+"/delete",
+      dataType:'json',
+      async:false,
+      type:'get',
+      processData: false,
+      contentType: false,
+      success:function(response){
+        console.log(response);
+        $("#table_advisor").find('#advisor'+id).html(" ");
+      },
+  });
+}
+</script>
+<!-- Script for page 6 -->
+<script>
+  $(document).ready(function(){
+  $("#createPartner").click(function(){
+    $.ajax({
+      url:"{{url('admin/homepage/page6/partner')}}",
+      data:new FormData($("#formPartner")[0]),
+      dataType:'json',
+      async:false,
+      type:'post',
+      processData: false,
+      contentType: false,
+      success:function(response){
+        console.log(response.data);
+        res = response.data;
+        $("#table_partner").find('tbody').append("<tr id='partner"+res.id+"'><td>"+res.name+"</td><td>"+res.link+"</td>"+'<td><img class="img-thumbnail img-fluid"  alt="Timeline" src="{{asset("page/images/page6")}}'+'/'+res.image+'"></td>'+"<td style='vertical-align: middle;'> <div style='margin: auto; text-align: center;'><button type='button' class='btn btn-success' onclick='editPartner("+res.id+")'>Edit</button> <button type='button' class='btn btn-danger' onclick='deletePartner("+res.id+")'>Delete</button></div></td><tr>");
+      },
+    });
+  });
+});
+// Edit Form
+function editPartner(id){
+  $.ajax({
+    url:"{{url('admin/homepage/page6/partner')}}/"+id,
+    type: 'get',
+    processData: false,
+    contentType: false,
+    success:function(response){
+      var res = response.data;
+      $("#partnerName").val(res.name);
+      $("#partnerLink").val(res.link);
+      $("#partnerImage").attr('src','{{asset("page/images/page6")}}/'+res.image);
+      $("#submitEditPartner").attr('onclick','updatePartner('+res.id+')');
+      $("#partnerModalEdit").modal('show');
+    },
+  });
+};
+// Update Partner
+function updatePartner(id){
+  $.ajax({
+      url:"{{url('admin/homepage/page6/partner')}}/"+id,
+      data:new FormData($("#formEditPartner")[0]),
+      dataType:'json',
+      async:false,
+      type:'post',
+      processData: false,
+      contentType: false,
+      success:function(response){
+        res = response.data;
+        $("#table_partner").find('#partner'+id).html("<td>"+res.name+"</td><td>"+res.link+"</td>"+'<td><img class="img-thumbnail img-fluid"  alt="Timeline" src="{{asset("page/images/page6")}}'+'/'+res.image+'"></td>'+"</td>"+"<td style='vertical-align: middle;'> <div style='margin: auto; text-align: center;'><button type='button' class='btn btn-success' onclick='editPartner("+id+")'>Edit</button> <button type='button' class='btn btn-danger' onclick='deletePartner("+id+")'>Delete</button></div></td>");
+      },
+  });
+};
+function deletePartner(id){
+  $.ajax({
+    url:"{{url('admin/homepage/page6/partner')}}/"+id+"/delete",
+      dataType:'json',
+      async:false,
+      type:'get',
+      processData: false,
+      contentType: false,
+      success:function(response){
+        console.log(response);
+        $("#table_partner").find('#partner'+id).html(" ");
+      },
+  });
+}
+</script>
+@stop
