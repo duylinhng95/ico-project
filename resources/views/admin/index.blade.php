@@ -26,28 +26,28 @@
               <label class="col-sm-2 control-label">Title line 1</label>
 
               <div class="col-sm-12">
-                <input type="text" class="form-control" name="title1" value="{{$page1[0]->content}}">
+                <input type="text" class="form-control" name="title1" value="{{$page1['title1']->content}}">
               </div>
             </div>
             <div class="form-group">
               <label class="col-sm-2 control-label">Title line 2</label>
 
               <div class="col-sm-12">
-                <input type="text" class="form-control" name="title2" value="{{$page1[1]->content}}">
+                <input type="text" class="form-control" name="title2" value="{{$page1['title2']->content}}">
               </div>
             </div>
             <div class="form-group">
               <label class="col-sm-2 control-label">Description</label>
 
               <div class="col-sm-12">
-                <input type="text" class="form-control" name="description" value="{{$page1[2]->content}}">
+                <input type="text" class="form-control" name="description" value="{{$page1['description']->content}}">
               </div>
             </div>
             <div class="form-group">
               <label class="col-sm-2 control-label">Link Video</label>
 
               <div class="col-sm-12">
-                <input type="text" class="form-control" name="linkvideo" value="{{$page1[3]->content}}">
+                <input type="text" class="form-control" name="linkvideo" value="{{$page1['linkvideo']->content}}">
               </div>
             </div>
           <!-- /.card-body -->
@@ -81,7 +81,7 @@
                 <div class="input-group-prepend">
                   <span class="input-group-text"><i class="fa fa-reddit"></i></span>
                 </div>
-                <input type="text" name="reddit" class="form-control" value="{{$social[0]->content}}">
+                <input type="text" name="reddit" class="form-control" value="{{$social['reddit']->content}}">
               </div>
             </div>
             <div class="form-group">
@@ -90,7 +90,7 @@
                 <div class="input-group-prepend">
                   <span class="input-group-text"><i class="fa fa-telegram"></i></span>
                 </div>
-                <input type="text" name="telegram" class="form-control" value="{{$social[0]->content}}">
+                <input type="text" name="telegram" class="form-control" value="{{$social['telegram']->content}}">
               </div>
             </div>
             <div class="form-group">
@@ -99,7 +99,7 @@
                 <div class="input-group-prepend">
                   <span class="input-group-text"><i class="fa fa-twitter"></i></span>
                 </div>
-                <input type="text" name="twitter" class="form-control" value="{{$social[0]->content}}">
+                <input type="text" name="twitter" class="form-control" value="{{$social['twitter']->content}}">
               </div>
             </div>
             <div class="form-group">
@@ -108,7 +108,7 @@
                 <div class="input-group-prepend">
                   <span class="input-group-text"><i class="fa fa-bitcoin"></i></span>
                 </div>
-                <input type="text" name="bitcointalk" class="form-control" value="{{$social[0]->content}}">
+                <input type="text" name="bitcointalk" class="form-control" value="{{$social['bitcointalk']->content}}">
               </div>
             </div>
             <div class="form-group">
@@ -117,7 +117,7 @@
                 <div class="input-group-prepend">
                   <span class="input-group-text"><i class="fa fa-medium"></i></span>
                 </div>
-                <input type="text" name="medium" class="form-control" value="{{$social[0]->content}}">
+                <input type="text" name="medium" class="form-control" value="{{$social['medium']->content}}">
               </div>
             </div>
           <!-- /.card-body -->
