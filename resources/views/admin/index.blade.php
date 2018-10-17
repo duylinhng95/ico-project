@@ -21,7 +21,7 @@
       <div class="card-body">
         <form class="form-horizontal" action="{{url('admin/homepage/data_without_url')}}" method="post">
           {!!csrf_field()!!}
-          <input type="hidden" name="section" value="social">
+          <input type="hidden" name="section" value="page1">
             <div class="form-group">
               <label class="col-sm-2 control-label">Title line 1</label>
 
@@ -520,7 +520,7 @@
                   <td>{{$advisor->name}}</td>
                   <td>{{$advisor->position}}</td>
                   <td>{{$advisor->description}}</td>
-                  <td><img class="img-thumbnail img-fluid"  alt="Timeline" src='{{asset("page/images/page5")."/".$advisor->avatar }}'></td>
+                  <td><img class="img-thumbnail img-fluid"  alt="Avatar" src='{{asset("page/images/page5")."/".$advisor->avatar }}'></td>
                   <td style="vertical-align: middle;">
                     <div style="margin: auto; text-align: center;">
                       <button type="button" class="btn btn-success" onclick="editAdvisor({{$advisor->id}})">Edit</button>
@@ -752,11 +752,11 @@
           <div class="form-group">
               <label class="col-sm-4 control-label">Partner's Image:</label>
               <div class="input-group col-sm-12">
-                <input type="file" name="image" class="form-control" accept='image/*'>
+                <input type="file" name="imageP" class="form-control" accept='image/*'>
               </div>
-               @if ($errors->has('image'))
+               @if ($errors->has('imageP'))
                     <span class="help-block" style="color:red;">
-                        <strong>{{ $errors->first('image') }}</strong>
+                        <strong>{{ $errors->first('imageP') }}</strong>
                     </span>
                @endif
             </div>

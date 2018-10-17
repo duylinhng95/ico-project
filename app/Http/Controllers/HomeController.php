@@ -23,7 +23,7 @@ class HomeController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {
+    {    
         $role = Auth::user()->role;
         if($role == 2)
             return redirect('/admin');
@@ -31,7 +31,5 @@ class HomeController extends Controller
             return redirect('/user');
         elseif($role == 1)
             return redirect('/mod');
-        else
-            return view('home');
     }
 }

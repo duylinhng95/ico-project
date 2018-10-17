@@ -141,12 +141,16 @@ class AdminController extends Controller
     	$destinationPath = public_path('/page/images/page2');
     	// Delete old file
     	$page2 = Index::where('section', 'page2')->where('name', 'like', 'image%')->get();
+
     	if($request->hasFile('image1'))
     	{
     		$file = $request->file('image1');
-            $filename = $file->getClientOriginalName('image1');
-        	$oldfile = $page2[0]->content;
-        	unlink($destinationPath.'/'.$oldfile);
+            $filename = time().'_'.$file->getClientOriginalName('image1');
+            if(count($page2))
+            {
+                $oldfile = $page2[0]->content;
+                unlink($destinationPath.'/'.$oldfile);
+            }
         	$file->move($destinationPath, $filename);
             Index::updateOrCreate(
             	['section' => 'page2', 'name' => 'image1'], ['content' => $filename]
@@ -155,9 +159,12 @@ class AdminController extends Controller
     	if($request->hasFile('image2'))
         {
             $file2 = $request->file('image2');
-            $filename2 = $file2->getClientOriginalName('image2');
-            $oldfile2 = $page2[1]->content;
-        	unlink($destinationPath.'/'.$oldfile2);
+            $filename2 = time().'_'.$file2->getClientOriginalName('image2');
+            if(count($page2)>1)
+            {
+                $oldfile2 = $page2[1]->content;
+                unlink($destinationPath.'/'.$oldfile2);
+            }
         	$file2->move($destinationPath, $filename2);
             Index::updateOrCreate(
             	['section' => 'page2', 'name' => 'image2'], ['content' => $filename2]
@@ -166,9 +173,11 @@ class AdminController extends Controller
     	if($request->hasFile('image3'))
         {
             $file3 = $request->file('image3');
-            $filename3 = str_replace(' ', '_', $file3->getClientOriginalName('image3'));
-            $oldfile3 = $page2[2]->content;
-        	unlink($destinationPath.'/'.$oldfile3);
+            $filename3 = time().'_'.$file3->getClientOriginalName('image3');
+            if(count($page2)>2){
+                $oldfile3 = $page2[2]->content;
+                unlink($destinationPath.'/'.$oldfile3);
+            }
         	$file3->move($destinationPath, $filename3);
             Index::updateOrCreate(
             	['section' => 'page2', 'name' => 'image3'], ['content' => $filename3]
@@ -177,9 +186,11 @@ class AdminController extends Controller
     	if($request->hasFile('image4'))
         {
             $file4 = $request->file('image4');
-            $filename4 = str_replace(' ', '_', $file4->getClientOriginalName('image4'));
-            $oldfile4 = $page2[3]->content;
-        	unlink($destinationPath.'/'.$oldfile4);
+            $filename4 = time().'_'.$file4->getClientOriginalName('image4');
+            if(count($page2)>3){
+                $oldfile4 = $page2[3]->content;
+                unlink($destinationPath.'/'.$oldfile4);
+            }
         	$file4->move($destinationPath, $filename4);
             Index::updateOrCreate(
             	['section' => 'page2', 'name' => 'image4'], ['content' => $filename4]
@@ -204,8 +215,10 @@ class AdminController extends Controller
     	{
     		$file = $request->file('logo1');
             $filename = $file->getClientOriginalName('logo1');
-            $oldfile = $page3[0]->content;
-            unlink($destinationPath.'/'.$oldfile);
+            if(count($page3)){
+                $oldfile = $page3[0]->content;
+                unlink($destinationPath.'/'.$oldfile);
+            }
         	$file->move($destinationPath, $filename);
             Index::updateOrCreate(
             	['section' => 'page3', 'name' => 'logo1'], ['content' => $filename]
@@ -215,8 +228,10 @@ class AdminController extends Controller
     	{
     		$file2 = $request->file('logo2');
             $filename2 = $file2->getClientOriginalName('logo2');
-            $oldfile2 = $page3[0]->content;
-            unlink($destinationPath.'/'.$oldfile2);
+            if(count($page3)>1){
+                $oldfile2 = $page3[1]->content;
+                unlink($destinationPath.'/'.$oldfile2);
+            }
         	$file2->move($destinationPath, $filename2);
             Index::updateOrCreate(
             	['section' => 'page3', 'name' => 'logo2'], ['content' => $filename2]
@@ -226,8 +241,11 @@ class AdminController extends Controller
     	{
     		$file3 = $request->file('logo3');
             $filename3 = $file3->getClientOriginalName('logo3');
-            $oldfile3 = $page3[0]->content;
-            unlink($destinationPath.'/'.$oldfile3);
+            if(count($page3)>2)
+            {
+                $oldfile3 = $page3[2]->content;
+                unlink($destinationPath.'/'.$oldfile3);
+            }
         	$file3->move($destinationPath, $filename3);
             Index::updateOrCreate(
             	['section' => 'page3', 'name' => 'logo3'], ['content' => $filename3]
@@ -237,8 +255,11 @@ class AdminController extends Controller
     	{
     		$file4 = $request->file('logo4');
             $filename4 = $file4->getClientOriginalName('logo4');
-            $oldfile4 = $page3[0]->content;
-            unlink($destinationPath.'/'.$oldfile4);
+            if(count($page3)>3)
+            {
+                $oldfile4 = $page3[3]->content;
+                unlink($destinationPath.'/'.$oldfile4);                
+            }
         	$file4->move($destinationPath, $filename4);
             Index::updateOrCreate(
             	['section' => 'page3', 'name' => 'logo4'], ['content' => $filename4]
@@ -261,8 +282,10 @@ class AdminController extends Controller
     	{
     		// Delete Old file
     		$page4 = Index::where('section', 'page4')->where('name', 'timeline')->first();
-	    	$oldfile = $page4->content;
-            unlink($destinationPath.'/'.$oldfile);
+            if($page4){
+                $oldfile = $page4->content;
+                unlink($destinationPath.'/'.$oldfile);
+            }
     		$file = $request->file('timeline');
             $filename = $file->getClientOriginalName('timeline');
         	$file->move($destinationPath, $filename);
@@ -273,7 +296,7 @@ class AdminController extends Controller
     	return redirect('/admin');
     }
     public function page5(Request $request){
-    	$input = $request->$request->except('_token');
+    	$input = $request->except('_token');
     	foreach ($input as $k=>$rq)
     	{
     		Index::updateOrCreate(
@@ -286,7 +309,6 @@ class AdminController extends Controller
     public function page5_advisor(Request $request){
     	$input = $request->except('avatar');
     	$destinationPath = public_path('/page/images/page5');
-
     	if($request->hasFile('avatar'))
     	{
     		$file= $request->file('avatar');
@@ -347,13 +369,12 @@ class AdminController extends Controller
     }
 
     public function page6_partner(Request $request){
-    	$input = $request->except('image');
+    	$input = $request->except('imageP');
     	$destinationPath = public_path('/page/images/page6');
-
-    	if($request->hasFile('image'))
+    	if($request->hasFile('imageP'))
     	{
-    		$file= $request->file('image');
-    		$filename = time().'_'.$file->getClientOriginalName('image');
+    		$file= $request->file('imageP');
+    		$filename = time().'_'.$file->getClientOriginalName('imageP');
     		$file->move($destinationPath, $filename);
     		$input['image'] = $filename;
     	}
