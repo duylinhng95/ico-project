@@ -21,7 +21,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::group(['prefix'=>'admin','middleware'=> 'auth.admin'],function (){
 	Route::get('/', 'AdminController@index');
 	Route::group(['prefix'=>'homepage'],function(){
-		Route::post('/data_without_url', 'AdminController@data_without_url');
+		Route::post('/page1', 'AdminController@page1');
 		Route::post('/page2', 'AdminController@page2');
 		Route::post('/page3', 'AdminController@page3');
 		Route::post('/page4', 'AdminController@page4');

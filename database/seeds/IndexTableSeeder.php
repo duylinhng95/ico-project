@@ -13,373 +13,333 @@ class IndexTableSeeder extends Seeder
     public function run()
     {
         Index::create( [
-		'id'=>5,
-		'section'=>'page1',
-		'name'=>'title1',
-		'content'=>'Title1',
+		'id'=>1,
+		'section'=>'page6',
+		'name'=>'title',
+		'content'=>'The partner',
 		'url'=>NULL,
-		'created_at'=>'2018-10-12 08:55:11',
-		'updated_at'=>'2018-10-12 09:00:33'
+		'created_at'=>'2018-10-15 00:43:17',
+		'updated_at'=>'2018-10-16 22:51:22'
 		] );
 					
 		Index::create( [
-		'id'=>6,
-		'section'=>'page1',
-		'name'=>'title2',
-		'content'=>'Title2',
+		'id'=>2,
+		'section'=>'page6',
+		'name'=>'description',
+		'content'=>'Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam',
 		'url'=>NULL,
-		'created_at'=>'2018-10-12 08:55:12',
-		'updated_at'=>'2018-10-12 08:55:12'
+		'created_at'=>'2018-10-15 00:43:17',
+		'updated_at'=>'2018-10-16 22:51:22'
 		] );
 					
 		Index::create( [
 		'id'=>7,
 		'section'=>'page1',
-		'name'=>'description',
-		'content'=>'Des',
+		'name'=>'title1',
+		'content'=>'ICO',
 		'url'=>NULL,
-		'created_at'=>'2018-10-12 08:55:12',
-		'updated_at'=>'2018-10-12 08:55:12'
+		'created_at'=>'2018-10-16 21:54:57',
+		'updated_at'=>'2018-10-16 21:54:57'
 		] );
 					
 		Index::create( [
 		'id'=>8,
 		'section'=>'page1',
-		'name'=>'linkvideo',
-		'content'=>'Link',
+		'name'=>'title2',
+		'content'=>'Project Name',
 		'url'=>NULL,
-		'created_at'=>'2018-10-12 08:55:12',
-		'updated_at'=>'2018-10-12 08:55:12'
+		'created_at'=>'2018-10-16 21:54:57',
+		'updated_at'=>'2018-10-16 21:54:57'
+		] );
+					
+		Index::create( [
+		'id'=>9,
+		'section'=>'page1',
+		'name'=>'description',
+		'content'=>'Des 1',
+		'url'=>NULL,
+		'created_at'=>'2018-10-16 21:54:57',
+		'updated_at'=>'2018-10-16 22:18:22'
+		] );
+					
+		Index::create( [
+		'id'=>10,
+		'section'=>'page1',
+		'name'=>'linkvideo',
+		'content'=>'https://youtube.com',
+		'url'=>NULL,
+		'created_at'=>'2018-10-16 21:54:57',
+		'updated_at'=>'2018-10-16 22:18:44'
+		] );
+					
+		Index::create( [
+		'id'=>11,
+		'section'=>'page2',
+		'name'=>'title1',
+		'content'=>'Who is ABC project?',
+		'url'=>NULL,
+		'created_at'=>'2018-10-16 22:25:37',
+		'updated_at'=>'2018-10-16 22:25:37'
+		] );
+					
+		Index::create( [
+		'id'=>12,
+		'section'=>'page2',
+		'name'=>'description1',
+		'content'=>'Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam',
+		'url'=>NULL,
+		'created_at'=>'2018-10-16 22:25:37',
+		'updated_at'=>'2018-10-16 22:25:37'
+		] );
+					
+		Index::create( [
+		'id'=>13,
+		'section'=>'page2',
+		'name'=>'title2',
+		'content'=>'Get more familiar with our projects',
+		'url'=>NULL,
+		'created_at'=>'2018-10-16 22:25:37',
+		'updated_at'=>'2018-10-16 22:25:37'
+		] );
+					
+		Index::create( [
+		'id'=>14,
+		'section'=>'page2',
+		'name'=>'description2',
+		'content'=>'Lorem ipsum dolor sit amet, consec',
+		'url'=>NULL,
+		'created_at'=>'2018-10-16 22:25:37',
+		'updated_at'=>'2018-10-16 22:25:37'
+		] );
+					
+		Index::create( [
+		'id'=>15,
+		'section'=>'page2',
+		'name'=>'whitepaper',
+		'content'=>'#',
+		'url'=>NULL,
+		'created_at'=>'2018-10-16 22:25:37',
+		'updated_at'=>'2018-10-16 22:25:37'
+		] );
+					
+		Index::create( [
+		'id'=>16,
+		'section'=>'page2',
+		'name'=>'image1',
+		'content'=>'1539754279_slide1.png',
+		'url'=>NULL,
+		'created_at'=>'2018-10-16 22:28:47',
+		'updated_at'=>'2018-10-16 22:31:19'
+		] );
+					
+		Index::create( [
+		'id'=>17,
+		'section'=>'page2',
+		'name'=>'image2',
+		'content'=>'1539754279_slide1.png',
+		'url'=>NULL,
+		'created_at'=>'2018-10-16 22:31:19',
+		'updated_at'=>'2018-10-16 22:31:19'
+		] );
+					
+		Index::create( [
+		'id'=>18,
+		'section'=>'page2',
+		'name'=>'image3',
+		'content'=>'1539754279_slide1.png',
+		'url'=>NULL,
+		'created_at'=>'2018-10-16 22:31:19',
+		'updated_at'=>'2018-10-16 22:31:19'
+		] );
+					
+		Index::create( [
+		'id'=>19,
+		'section'=>'page2',
+		'name'=>'image4',
+		'content'=>'1539754279_slide1.png',
+		'url'=>NULL,
+		'created_at'=>'2018-10-16 22:31:19',
+		'updated_at'=>'2018-10-16 22:31:19'
+		] );
+					
+		Index::create( [
+		'id'=>20,
+		'section'=>'page3',
+		'name'=>'title1',
+		'content'=>'Lorem ipsum',
+		'url'=>NULL,
+		'created_at'=>'2018-10-16 22:37:13',
+		'updated_at'=>'2018-10-16 22:37:13'
 		] );
 					
 		Index::create( [
 		'id'=>21,
-		'section'=>'social',
-		'name'=>'reddit',
-		'content'=>'Reddit',
+		'section'=>'page3',
+		'name'=>'description1',
+		'content'=>'Lorem ipsum dolor sit amet, consectetuer adipiscing elit,  sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.',
 		'url'=>NULL,
-		'created_at'=>'2018-10-12 09:17:20',
-		'updated_at'=>'2018-10-12 09:17:20'
+		'created_at'=>'2018-10-16 22:37:13',
+		'updated_at'=>'2018-10-16 22:37:13'
 		] );
 					
 		Index::create( [
 		'id'=>22,
-		'section'=>'social',
-		'name'=>'telegram',
-		'content'=>'Telegram',
+		'section'=>'page3',
+		'name'=>'title2',
+		'content'=>'Lorem ipsum',
 		'url'=>NULL,
-		'created_at'=>'2018-10-12 09:17:20',
-		'updated_at'=>'2018-10-12 09:17:20'
+		'created_at'=>'2018-10-16 22:37:13',
+		'updated_at'=>'2018-10-16 22:37:13'
 		] );
 					
 		Index::create( [
 		'id'=>23,
-		'section'=>'social',
-		'name'=>'twitter',
-		'content'=>'Twitter',
+		'section'=>'page3',
+		'name'=>'description2',
+		'content'=>'Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.',
 		'url'=>NULL,
-		'created_at'=>'2018-10-12 09:17:20',
-		'updated_at'=>'2018-10-12 09:17:20'
+		'created_at'=>'2018-10-16 22:37:13',
+		'updated_at'=>'2018-10-16 22:37:13'
 		] );
 					
 		Index::create( [
 		'id'=>24,
-		'section'=>'social',
-		'name'=>'bitcointalk',
-		'content'=>'Bitcointalk',
+		'section'=>'page3',
+		'name'=>'title3',
+		'content'=>'Lorem ipsum',
 		'url'=>NULL,
-		'created_at'=>'2018-10-12 09:17:20',
-		'updated_at'=>'2018-10-12 09:17:20'
+		'created_at'=>'2018-10-16 22:37:13',
+		'updated_at'=>'2018-10-16 22:37:13'
 		] );
 					
 		Index::create( [
 		'id'=>25,
-		'section'=>'social',
-		'name'=>'medium',
-		'content'=>'Medium',
+		'section'=>'page3',
+		'name'=>'description3',
+		'content'=>'Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.',
 		'url'=>NULL,
-		'created_at'=>'2018-10-12 09:17:20',
-		'updated_at'=>'2018-10-12 09:17:20'
+		'created_at'=>'2018-10-16 22:37:13',
+		'updated_at'=>'2018-10-16 22:37:13'
+		] );
+					
+		Index::create( [
+		'id'=>26,
+		'section'=>'page3',
+		'name'=>'title4',
+		'content'=>'Lorem ipsum',
+		'url'=>NULL,
+		'created_at'=>'2018-10-16 22:37:13',
+		'updated_at'=>'2018-10-16 22:37:13'
+		] );
+					
+		Index::create( [
+		'id'=>27,
+		'section'=>'page3',
+		'name'=>'description4',
+		'content'=>'Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.',
+		'url'=>NULL,
+		'created_at'=>'2018-10-16 22:37:13',
+		'updated_at'=>'2018-10-16 22:37:13'
 		] );
 					
 		Index::create( [
 		'id'=>28,
-		'section'=>'page2',
-		'name'=>'whitepaper',
-		'content'=>'Whitepaper link',
+		'section'=>'page3',
+		'name'=>'logo1',
+		'content'=>'feature-icon-01.png',
 		'url'=>NULL,
-		'created_at'=>'2018-10-12 09:57:02',
-		'updated_at'=>'2018-10-13 03:08:33'
+		'created_at'=>'2018-10-16 22:37:13',
+		'updated_at'=>'2018-10-16 22:37:13'
 		] );
 					
 		Index::create( [
 		'id'=>29,
-		'section'=>'page2',
-		'name'=>'image1',
-		'content'=>'Ky nguyen.png',
+		'section'=>'page3',
+		'name'=>'logo2',
+		'content'=>'feature-icon-02.png',
 		'url'=>NULL,
-		'created_at'=>'2018-10-12 09:57:02',
-		'updated_at'=>'2018-10-14 06:13:55'
+		'created_at'=>'2018-10-16 22:37:13',
+		'updated_at'=>'2018-10-16 22:37:13'
 		] );
 					
 		Index::create( [
 		'id'=>30,
-		'section'=>'page2',
-		'name'=>'image2',
-		'content'=>'logo1.jpg',
+		'section'=>'page3',
+		'name'=>'logo3',
+		'content'=>'feature-icon-03.png',
 		'url'=>NULL,
-		'created_at'=>'2018-10-12 09:57:02',
-		'updated_at'=>'2018-10-13 03:08:33'
+		'created_at'=>'2018-10-16 22:37:13',
+		'updated_at'=>'2018-10-16 22:37:13'
 		] );
 					
 		Index::create( [
 		'id'=>31,
-		'section'=>'page2',
-		'name'=>'image3',
-		'content'=>'logo2.jpg',
+		'section'=>'page3',
+		'name'=>'logo4',
+		'content'=>'feature-icon-04.png',
 		'url'=>NULL,
-		'created_at'=>'2018-10-12 09:57:02',
-		'updated_at'=>'2018-10-13 03:08:33'
+		'created_at'=>'2018-10-16 22:37:13',
+		'updated_at'=>'2018-10-16 22:37:13'
 		] );
 					
 		Index::create( [
 		'id'=>32,
-		'section'=>'page2',
-		'name'=>'image4',
-		'content'=>'new0112-jpg.jpg',
+		'section'=>'page4',
+		'name'=>'title',
+		'content'=>'Our timelines',
 		'url'=>NULL,
-		'created_at'=>'2018-10-12 09:57:02',
-		'updated_at'=>'2018-10-13 03:08:33'
+		'created_at'=>'2018-10-16 22:38:38',
+		'updated_at'=>'2018-10-16 22:38:38'
 		] );
 					
 		Index::create( [
 		'id'=>33,
-		'section'=>'page2',
-		'name'=>'title1',
-		'content'=>'Title 1',
+		'section'=>'page4',
+		'name'=>'description',
+		'content'=>'Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam',
 		'url'=>NULL,
-		'created_at'=>'2018-10-12 10:04:46',
-		'updated_at'=>'2018-10-13 03:08:33'
+		'created_at'=>'2018-10-16 22:38:38',
+		'updated_at'=>'2018-10-16 22:38:38'
 		] );
 					
 		Index::create( [
 		'id'=>34,
-		'section'=>'page2',
-		'name'=>'description1',
-		'content'=>'Des 1',
+		'section'=>'page4',
+		'name'=>'timeline',
+		'content'=>'timeline-big-image.png',
 		'url'=>NULL,
-		'created_at'=>'2018-10-12 10:04:46',
-		'updated_at'=>'2018-10-13 03:08:33'
+		'created_at'=>'2018-10-16 22:38:38',
+		'updated_at'=>'2018-10-16 22:38:38'
 		] );
 					
 		Index::create( [
 		'id'=>35,
-		'section'=>'page2',
-		'name'=>'title2',
-		'content'=>'Title 2',
+		'section'=>'page5',
+		'name'=>'title',
+		'content'=>'Advisor',
 		'url'=>NULL,
-		'created_at'=>'2018-10-12 10:04:46',
-		'updated_at'=>'2018-10-13 03:08:33'
+		'created_at'=>'2018-10-16 22:42:23',
+		'updated_at'=>'2018-10-16 22:42:23'
 		] );
 					
 		Index::create( [
 		'id'=>36,
-		'section'=>'page2',
-		'name'=>'description2',
-		'content'=>'Des 2',
+		'section'=>'page5',
+		'name'=>'description',
+		'content'=>'Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam',
 		'url'=>NULL,
-		'created_at'=>'2018-10-12 10:04:46',
-		'updated_at'=>'2018-10-13 03:08:33'
+		'created_at'=>'2018-10-16 22:42:23',
+		'updated_at'=>'2018-10-16 22:42:23'
 		] );
 					
 		Index::create( [
 		'id'=>37,
-		'section'=>'page3',
-		'name'=>'title1',
-		'content'=>'Title 1',
+		'section'=>'page1',
+		'name'=>'background',
+		'content'=>'1539772153_background.png',
 		'url'=>NULL,
-		'created_at'=>'2018-10-13 02:53:52',
-		'updated_at'=>'2018-10-13 02:53:52'
-		] );
-					
-		Index::create( [
-		'id'=>38,
-		'section'=>'page3',
-		'name'=>'description1',
-		'content'=>'Des 1',
-		'url'=>NULL,
-		'created_at'=>'2018-10-13 02:53:52',
-		'updated_at'=>'2018-10-13 02:53:52'
-		] );
-					
-		Index::create( [
-		'id'=>39,
-		'section'=>'page3',
-		'name'=>'title2',
-		'content'=>'Title 2',
-		'url'=>NULL,
-		'created_at'=>'2018-10-13 02:53:52',
-		'updated_at'=>'2018-10-13 02:53:52'
-		] );
-					
-		Index::create( [
-		'id'=>40,
-		'section'=>'page3',
-		'name'=>'description2',
-		'content'=>'Des 2',
-		'url'=>NULL,
-		'created_at'=>'2018-10-13 02:53:52',
-		'updated_at'=>'2018-10-13 02:53:52'
-		] );
-					
-		Index::create( [
-		'id'=>41,
-		'section'=>'page3',
-		'name'=>'title3',
-		'content'=>'Title 3',
-		'url'=>NULL,
-		'created_at'=>'2018-10-13 02:53:52',
-		'updated_at'=>'2018-10-13 02:53:52'
-		] );
-					
-		Index::create( [
-		'id'=>42,
-		'section'=>'page3',
-		'name'=>'description3',
-		'content'=>'Des 3',
-		'url'=>NULL,
-		'created_at'=>'2018-10-13 02:53:52',
-		'updated_at'=>'2018-10-13 02:53:52'
-		] );
-					
-		Index::create( [
-		'id'=>43,
-		'section'=>'page3',
-		'name'=>'title4',
-		'content'=>'Title 4',
-		'url'=>NULL,
-		'created_at'=>'2018-10-13 02:53:52',
-		'updated_at'=>'2018-10-13 02:53:52'
-		] );
-					
-		Index::create( [
-		'id'=>44,
-		'section'=>'page3',
-		'name'=>'description4',
-		'content'=>'Des 4',
-		'url'=>NULL,
-		'created_at'=>'2018-10-13 02:53:52',
-		'updated_at'=>'2018-10-13 02:53:52'
-		] );
-					
-		Index::create( [
-		'id'=>45,
-		'section'=>'page3',
-		'name'=>'logo1',
-		'content'=>'Capture import xero.PNG',
-		'url'=>NULL,
-		'created_at'=>'2018-10-13 02:53:52',
-		'updated_at'=>'2018-10-13 02:53:52'
-		] );
-					
-		Index::create( [
-		'id'=>46,
-		'section'=>'page3',
-		'name'=>'logo2',
-		'content'=>'cay_hong_loc-2.jpg',
-		'url'=>NULL,
-		'created_at'=>'2018-10-13 02:53:52',
-		'updated_at'=>'2018-10-13 02:53:52'
-		] );
-					
-		Index::create( [
-		'id'=>47,
-		'section'=>'page3',
-		'name'=>'logo3',
-		'content'=>'cay-hong-loc-3a.jpg',
-		'url'=>NULL,
-		'created_at'=>'2018-10-13 02:53:52',
-		'updated_at'=>'2018-10-13 02:53:52'
-		] );
-					
-		Index::create( [
-		'id'=>48,
-		'section'=>'page3',
-		'name'=>'logo4',
-		'content'=>'cay-trau-ba.jpg',
-		'url'=>NULL,
-		'created_at'=>'2018-10-13 02:53:52',
-		'updated_at'=>'2018-10-13 02:53:52'
-		] );
-					
-		Index::create( [
-		'id'=>49,
-		'section'=>'page4',
-		'name'=>'title',
-		'content'=>'Timeline title',
-		'url'=>NULL,
-		'created_at'=>'2018-10-13 03:44:48',
-		'updated_at'=>'2018-10-13 03:44:48'
-		] );
-					
-		Index::create( [
-		'id'=>50,
-		'section'=>'page4',
-		'name'=>'description',
-		'content'=>'Timeline Des',
-		'url'=>NULL,
-		'created_at'=>'2018-10-13 03:44:48',
-		'updated_at'=>'2018-10-13 03:44:48'
-		] );
-					
-		Index::create( [
-		'id'=>51,
-		'section'=>'page4',
-		'name'=>'timeline',
-		'content'=>'imgpsh_fullsize.jpg',
-		'url'=>NULL,
-		'created_at'=>'2018-10-13 03:45:00',
-		'updated_at'=>'2018-10-13 03:45:00'
-		] );
-							
-		Index::create( [
-		'id'=>53,
-		'section'=>'page5',
-		'name'=>'title',
-		'content'=>'Title Page 5',
-		'url'=>NULL,
-		'created_at'=>'2018-10-14 07:23:12',
-		'updated_at'=>'2018-10-14 07:23:12'
-		] );
-					
-		Index::create( [
-		'id'=>54,
-		'section'=>'page5',
-		'name'=>'description',
-		'content'=>'Description Page 5',
-		'url'=>NULL,
-		'created_at'=>'2018-10-14 07:23:12',
-		'updated_at'=>'2018-10-14 07:23:12'
-		] );
-					
-		Index::create( [
-		'id'=>56,
-		'section'=>'page6',
-		'name'=>'title',
-		'content'=>'Title Page 6',
-		'url'=>NULL,
-		'created_at'=>'2018-10-14 07:24:37',
-		'updated_at'=>'2018-10-14 07:24:37'
-		] );
-					
-		Index::create( [
-		'id'=>57,
-		'section'=>'page6',
-		'name'=>'description',
-		'content'=>'Description Page 6',
-		'url'=>NULL,
-		'created_at'=>'2018-10-14 07:24:37',
-		'updated_at'=>'2018-10-14 07:24:37'
+		'created_at'=>'2018-10-17 03:29:13',
+		'updated_at'=>'2018-10-17 03:29:13'
 		] );
     }
 }

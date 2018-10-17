@@ -96,20 +96,26 @@ class AdminController extends Controller
     	return view('admin.index', compact('page1', 'social', 'page2', 'page3', 'page4', 'page5', 'page6'));
     }
 
-    public function data_without_url(Request $request){
-    	foreach($request->all() as $k => $rq)
+    public function page1(Request $request){
+        $input = $request->except('_token', 'background');
+        $destinationPath = public_path('/page/images/page1');
+        if($request->hasFile('background'))
+        {
+            $file= $request->file('background');
+            $filename = time().'_'.$file->getClientOriginalName('background');
+            $file->move($destinationPath, $filename);
+            $input['background'] = $filename;
+        }
+    	foreach($input as $k => $rq)
     	{
-    		if($k != '_token')
-    		{	
-    			if($k == 'section') 
-    				{
-    					$section = $rq;
-    					continue;
-    				}
-    			Index::updateOrCreate(
-    				['section' => $section, 'name' => $k], ['content' => $rq]
-    				);
-    		}
+			if($k == 'section') 
+				{
+					$section = $rq;
+					continue;
+				}
+			Index::updateOrCreate(
+				['section' => $section, 'name' => $k], ['content' => $rq]
+				);
     	}
     	return redirect('/admin');
     }

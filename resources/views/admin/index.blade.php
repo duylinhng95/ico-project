@@ -19,7 +19,7 @@
         </div>
       </div>
       <div class="card-body">
-        <form class="form-horizontal" action="{{url('admin/homepage/data_without_url')}}" method="post">
+        <form class="form-horizontal" action="{{url('admin/homepage/page1')}}" method="post" enctype="multipart/form-data">
           {!!csrf_field()!!}
           <input type="hidden" name="section" value="page1">
             <div class="form-group">
@@ -50,6 +50,23 @@
                 <input type="text" class="form-control" name="linkvideo" value="{{$page1['linkvideo']->content}}">
               </div>
             </div>
+            <div class="form-group">
+              <label>Background Image:</label>
+              <div class="input-group col-sm-6">
+                <input type="file" name="background" class="form-control" accept='image/*'>
+              </div>
+               @if ($errors->has('background'))
+                    <span class="help-block" style="color:red;">
+                        <strong>{{ $errors->first('background') }}</strong>
+                    </span>
+               @endif
+            </div>
+            <div class="form-group">
+              <label>Preview Background Image:</label>
+              <div class="col-sm-2">
+                 <img class="img-thumbnail img-fluid" src="{{asset('page/images/page1').'/'.$page1['background']->content}}" alt="background">
+               </div>
+            </div>
           <!-- /.card-body -->
           <div class="card-footer">
             <button type="submit" class="btn btn-info">Save</button>
@@ -72,7 +89,7 @@
         </div>
       </div>
       <div class="card-body">
-        <form class="form-horizontal" action="{{url('admin/homepage/data_without_url')}}" method="post">
+        <form class="form-horizontal" action="{{url('admin/homepage/page1')}}" method="post">
           {!!csrf_field()!!}
           <input type="hidden" name="section" value="social">
             <div class="form-group">

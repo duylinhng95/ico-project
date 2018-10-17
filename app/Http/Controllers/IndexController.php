@@ -13,7 +13,7 @@ class IndexController extends Controller
     	$data = Index::all();
         $example = new Index;
         $advisors = Advisor::all();
-        $partners = Partner::all();
+        $partners = Partner::all()->toArray();
         $page1= [
             'title1'=> $example,
             'title2'=>$example,

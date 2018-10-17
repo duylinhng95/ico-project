@@ -94,11 +94,7 @@
             </a>
           </div>
           <div class="header-bg">
-
-
-            <img class=" img-fluid clip-polygon" src="{{ asset('landing-page/resources/img/header-right-image.png') }}" alt="ico thumbnail video">
-
-
+            <img class=" img-fluid clip-polygon" src="{{asset('page/images/page1').'/'.$page1['background']->content}}" alt="ico thumbnail video">
           </div>
 
         </div>
@@ -291,84 +287,25 @@
 
     <div class="container">
       <h2>
-        The partner
+        {{$page6['title']->content}}
       </h2>
       <p class="heading-brief">
-        Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam
+        {{$page6['description']->content}}
       </p>
-      <div class="row first-row">
-        <div class="col-lg-3 col-md-6 col-sm-12">
+      @foreach(array_chunk($page6['partner'], 4) as $partners)
+        <div class="row first-row">
+          @foreach($partners as $partner)
+            <div class="col-lg-3 col-md-6 col-sm-12">
 
-          <figure class="figure">
-            <a href="#"><img src="{{ asset('landing-page/resources/img/header_bg.jpg') }}" class="figure-img img-fluid rounded" alt="A generic square placeholder image with rounded corners in a figure."></a>
+            <figure class="figure">
+              <a href="{{$partner['link']}}"><img src='{{asset("page/images/page6")."/".$partner["image"] }}' class="figure-img img-fluid rounded" alt="Image1"></a>
 
-            <figcaption class="figure-caption text-center">A caption for the above image.</figcaption>
-          </figure>
+              <figcaption class="figure-caption text-center">{{$partner['name']}}</figcaption>
+            </figure>
+          </div>
+          @endforeach
         </div>
-        <div class="col-lg-3 col-md-6 col-sm-12">
-
-          <figure class="figure">
-            <a href="#"><img src="{{ asset('landing-page/resources/img/header_bg.jpg') }}" class="figure-img img-fluid rounded" alt="A generic square placeholder image with rounded corners in a figure."></a>
-
-            <figcaption class="figure-caption text-center">A caption for the above image.</figcaption>
-          </figure>
-        </div>
-        <div class="col-lg-3 col-md-6 col-sm-12">
-
-          <figure class="figure">
-            <a href="#"><img src="{{ asset('landing-page/resources/img/header_bg.jpg') }}" class="figure-img img-fluid rounded" alt="A generic square placeholder image with rounded corners in a figure."></a>
-
-            <figcaption class="figure-caption text-center">A caption for the above image.</figcaption>
-          </figure>
-        </div>
-        <div class="col-lg-3 col-md-6 col-sm-12">
-
-          <figure class="figure">
-            <a href="#"><img src="{{ asset('landing-page/resources/img/header_bg.jpg') }}" class="figure-img img-fluid rounded" alt="A generic square placeholder image with rounded corners in a figure."></a>
-
-            <figcaption class="figure-caption text-center">A caption for the above image.</figcaption>
-          </figure>
-        </div>
-
-      </div>
-      <div class="row second-row">
-        <div class="col-lg-3 col-md-6 col-sm-12">
-
-          <figure class="figure">
-            <a href="#"><img src="{{ asset('landing-page/resources/img/header_bg.jpg') }}" class="figure-img img-fluid rounded" alt="A generic square placeholder image with rounded corners in a figure."></a>
-
-            <figcaption class="figure-caption text-center">A caption for the above image.</figcaption>
-          </figure>
-
-        </div>
-        <div class="col-lg-3 col-md-6 col-sm-12">
-
-          <figure class="figure">
-            <a href="#"><img src="{{ asset('landing-page/resources/img/header_bg.jpg') }}" class="figure-img img-fluid rounded" alt="A generic square placeholder image with rounded corners in a figure."></a>
-
-            <figcaption class="figure-caption text-center">A caption for the above image.</figcaption>
-          </figure>
-        </div>
-        <div class="col-lg-3 col-md-6 col-sm-12">
-
-          <figure class="figure">
-            <a href="#"><img src="{{ asset('landing-page/resources/img/header_bg.jpg') }}" class="figure-img img-fluid rounded" alt="A generic square placeholder image with rounded corners in a figure."></a>
-
-            <figcaption class="figure-caption text-center">A caption for the above image.</figcaption>
-          </figure>
-        </div>
-        <div class="col-lg-3 col-md-6 col-sm-12">
-
-          <figure class="figure">
-            <a href="#"><img src="{{ asset('landing-page/resources/img/header_bg.jpg') }}" class="figure-img img-fluid rounded" alt="A generic square placeholder image with rounded corners in a figure."></a>
-
-            <figcaption class="figure-caption text-center">A caption for the above image.</figcaption>
-          </figure>
-        </div>
-      </div>
-
-
-
+      @endforeach
     </div>
 
   </section>
@@ -381,11 +318,10 @@
         <div class="col-lg-3 col-md-3 col-sm-12">
           <h2 class="footer-heading">Social</h2>
           <ul class="footer-list">
-            <li>Facebook</li>
-            <li>Twitter</li>
-            <li>Reddit</li>
-            <li>Medium</li>
-            <li>Bitcointal</li>
+            <li><a href="{{$social['twitter']->content}}">Twitter</a></li>
+            <li><a href="{{$social['reddit']->content}}">Reddit</a></li>
+            <li><a href="{{$social['medium']->content}}">Medium</a></li>
+            <li><a href="{{$social['bitcointalk']->content}}">Bitcointalk</a></li>
           </ul>
         </div>
         <div class="col-lg-3 col-md-3 col-sm-12">
