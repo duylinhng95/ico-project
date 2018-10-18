@@ -19,6 +19,39 @@
 </head>
 
 <body>
+<div class="modal fade" id="annoucementModal" tabindex="-1" role="dialog" aria-labelledby="annoucementModalTitle"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+
+          <a href="#">
+            <img src="resources/img/logo.png" alt=" logo" class="logo">
+          </a>
+          <h5 class="modal-title" id="annoucementModalTitle">Annoucement</h5>
+
+        </div>
+        <div class="modal-body">
+          <div class="announcement-list">
+            <div class="annoucement-item">
+              <h6>News</h6>
+              <p>Lorem ipsum dolor sit amet, lorem ipsum</p>
+              <span class="time"> 40m ago </span>
+              <i class="far fa-comment"> 0</i>
+            </div>
+            <div class="annoucement-item">
+              <h6>News</h6>
+              <p>Lorem ipsum dolor sit amet, lorem ipsum</p>
+              <span class="time"> 40m ago </span>
+              <i class="far fa-comment"> 0</i>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </div>
   <header>
     <nav class="navbar navbar-expand-lg fixed-top">
       <div class="container-fluid">
@@ -35,14 +68,13 @@
               <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Roadmap</a>
+              <a class="nav-link" href="#timeline_section">Roadmap</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Team</a>
+              <a class="nav-link" href="#advisor_section">Team</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Annoucement</a>
-            </li>
+            <a class="nav-link" href="#" data-toggle="modal" data-target="#annoucementModal">Annoucement</a>            </li>
             <li class="nav-item">
               <a class="nav-link" href="#">Whitepaper</a>
             </li>
@@ -56,34 +88,49 @@
     <div class="intro-text-box">
 
       <div class="row">
-        <div class="clear-padding col-lg-6 col-md-6 col-sm-12 ">
-          <div class="container">
-            <div class="intro">
-              <h1>{{$page1['title1']->content}}
-                <br><span>{{$page1['title2']->content}}</span> </h1>
-              <p>{{$page1['description']->content}}</p>
-              <a class="btn red-button" href="{{url('/login')}}"> <em>Login</em> </a>
-              <!-- Social -->
-              <div class="list-button">
-                <div class="icon-link">
-                  <a href="{{$social['reddit']->content}}"><img src="{{ asset('landing-page/resources/img/IconLink01.png') }}" alt="Icon link description" class="icon-circle-button" /></a>
-                </div>
-                <div class="icon-link">
-                  <a href="{{$social['telegram']->content}}"><img src="{{ asset('landing-page/resources/img/IconLink02.png') }}" class="icon-circle-button" alt="Icon link description" /></a>
-                </div>
-                <div class="icon-link">
-                  <a href="{{$social['twitter']->content}}"><img src="{{ asset('landing-page/resources/img/IconLink03.png') }}" class="icon-circle-button" alt="Icon link description" /></a>
-                </div>
-                <div class="icon-link">
-                  <a href="{{$social['bitcointalk']->content}}"><img src="{{ asset('landing-page/resources/img/IconLink04.png') }}" class="icon-circle-button" alt="Icon link description" /></a>
-                </div>
-                <div class="icon-link">
-                  <a href="{{$social['medium']->content}}"><img src="{{ asset('landing-page/resources/img/IconLink05.png') }}" class="icon-circle-button" alt="Icon link description" /></a>
+      <div class="clear-padding col-lg-6 col-md-6 col-sm-12 ml-auto height-full-view">
+          <div class="play-icon-box">
+            <a href="#">
+              <img class="img-fluid play-icon" src="{{ asset('landing-page/resources/img/play_icon.png') }}" alt="play">
+            </a>
+          </div>
+        </div>
+
+        <div class="background-cover">
+
+          <div class="clear-padding col-lg-6 col-md-6 col-sm-12 ">
+            <div class="container">
+              <div class="intro">
+                <h1>{{$page1['title1']->content}}
+                  <br><span>{{$page1['title2']->content}}</span> </h1>
+                <p>{{$page1['description']->content}}</p>
+                <a class="btn red-button" href="{{url('/login')}}"> <em>Login</em> </a>
+                <!-- Social -->
+                <div class="list-button">
+                  <div class="icon-link">
+                    <a href="{{$social['reddit']->content}}"><img src="{{ asset('landing-page/resources/img/IconLink01.png') }}" alt="Icon link description" class="icon-circle-button" /></a>
+                  </div>
+                  <div class="icon-link">
+                    <a href="{{$social['telegram']->content}}"><img src="{{ asset('landing-page/resources/img/IconLink02.png') }}" class="icon-circle-button" alt="Icon link description" /></a>
+                  </div>
+                  <div class="icon-link">
+                    <a href="{{$social['twitter']->content}}"><img src="{{ asset('landing-page/resources/img/IconLink03.png') }}" class="icon-circle-button" alt="Icon link description" /></a>
+                  </div>
+                  <div class="icon-link">
+                    <a href="{{$social['bitcointalk']->content}}"><img src="{{ asset('landing-page/resources/img/IconLink04.png') }}" class="icon-circle-button" alt="Icon link description" /></a>
+                  </div>
+                  <div class="icon-link">
+                    <a href="{{$social['medium']->content}}"><img src="{{ asset('landing-page/resources/img/IconLink05.png') }}" class="icon-circle-button" alt="Icon link description" /></a>
+                  </div>
                 </div>
               </div>
+
             </div>
 
           </div>
+        </div>
+        <div class="below-image">
+        <img class="img-fluid right-image" src="{{asset('page/images/page1').'/'.$page1['background']->content}}" alt="ico thumbnail video">
 
         </div>
         <div class=" clear-padding col-lg-6 col-md-6 col-sm-12">
@@ -211,7 +258,7 @@
       </div>
     </div>
   </section>
-  <section class="timeline-section js--timeline-section">
+  <section id="timeline-section" class="timeline-section js--timeline-section">
 
     <div class="container section-heading">
       <h2>{{$page4['title']->content}}</h2>
@@ -222,7 +269,7 @@
 
   </section>
   <!-- Page 5 -->
-  <section class="advisor-section js--advisor-section">
+  <section id="advisor-section" class="advisor-section js--advisor-section">
     <div class="container-fluid">
       <h2>
         {{$page5['title']->content}}
