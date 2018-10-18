@@ -12,7 +12,7 @@
 */
 
 Route::get('/test', function () {
-    return view('home');
+    return view('landingpage/announcement');
 });
 Route::get('/', 'IndexController@index');
 Auth::routes();
