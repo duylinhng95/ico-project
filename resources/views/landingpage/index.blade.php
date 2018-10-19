@@ -90,7 +90,7 @@
       <div class="row">
       <div class="clear-padding col-lg-6 col-md-6 col-sm-12 ml-auto height-full-view">
           <div class="play-icon-box">
-            <a href="#">
+            <a href="{{$page1['linkvideo']->content}}">
               <img class="img-fluid play-icon" src="{{ asset('landing-page/resources/img/play_icon.png') }}" alt="play">
             </a>
           </div>
@@ -130,19 +130,7 @@
           </div>
         </div>
         <div class="below-image">
-        <img class="img-fluid right-image" src="{{asset('page/images/page1').'/'.$page1['background']->content}}" alt="ico thumbnail video">
-
-        </div>
-        <div class=" clear-padding col-lg-6 col-md-6 col-sm-12">
-
-          <div class="play-icon-box">
-            <a href="{{$page1['linkvideo']->content}}">
-              <img class="img-fluid play-icon" src="{{ asset('landing-page/resources/img/play_icon.png') }}" alt="play">
-            </a>
-          </div>
-          <div class="header-bg">
-            <img class=" img-fluid clip-polygon" src="{{asset('page/images/page1').'/'.$page1['background']->content}}" alt="ico thumbnail video">
-          </div>
+          <img class="img-fluid right-image" src="{{asset('page/images/page1').'/'.$page1['background']->content}}" alt="ico thumbnail video">
 
         </div>
       </div>
