@@ -14,6 +14,9 @@
 Route::get('/test', function () {
     return view('landingpage/announcement');
 });
+Route::get('/login_test', function () {
+	return view('login/index');
+});
 Route::get('/', 'IndexController@index');
 Auth::routes();
 

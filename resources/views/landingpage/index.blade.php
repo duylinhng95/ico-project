@@ -14,44 +14,14 @@
  
   <link href="{{ asset('landing-page/resources/css/styles.min.css') }}" rel="stylesheet">
   <link href="{{ asset('landing-page/resources/css/queries.min.css') }}" rel="stylesheet">
+  <link href="{{ asset('landing-page/resources/css/homepage.min.css') }}" rel="stylesheet">
+  <link href="{{ asset('landing-page/resources/css/homepage-queries.min.css') }}" rel="stylesheet">
 
 
 </head>
 
 <body>
-<div class="modal fade" id="annoucementModal" tabindex="-1" role="dialog" aria-labelledby="annoucementModalTitle"
-    aria-hidden="true">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
 
-          <a href="#">
-            <img src="resources/img/logo.png" alt=" logo" class="logo">
-          </a>
-          <h5 class="modal-title" id="annoucementModalTitle">Annoucement</h5>
-
-        </div>
-        <div class="modal-body">
-          <div class="announcement-list">
-            <div class="annoucement-item">
-              <h6>News</h6>
-              <p>Lorem ipsum dolor sit amet, lorem ipsum</p>
-              <span class="time"> 40m ago </span>
-              <i class="far fa-comment"> 0</i>
-            </div>
-            <div class="annoucement-item">
-              <h6>News</h6>
-              <p>Lorem ipsum dolor sit amet, lorem ipsum</p>
-              <span class="time"> 40m ago </span>
-              <i class="far fa-comment"> 0</i>
-            </div>
-          </div>
-
-        </div>
-
-      </div>
-    </div>
-  </div>
   <header>
     <nav class="navbar navbar-expand-lg fixed-top">
       <div class="container-fluid">
@@ -345,8 +315,7 @@
 
   </section>
   <footer>
-    <div class="container-fluid">
-      <div class="row">
+  <div class="row">
         <div class="col-lg-3 col-md-3 col-sm-12">
           <img class="img-fluid footer-logo" src="{{ asset('landing-page/resources/img/logo.png') }} " alt="logo">
         </div>
@@ -378,7 +347,6 @@
           </ul>
         </div>
       </div>
-    </div>
   </footer>
   <script src="{{ asset('landing-page/vendors/js/jquery.min.js') }}"></script>
   <script src="{{ asset('landing-page/vendors/js/jquery.waypoints.min.js') }}"></script>
