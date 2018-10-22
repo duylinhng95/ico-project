@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use App\Index;
 use App\Advisor;
 use App\Partner;
+use Mail;
+use App\Mail\Verify;
 
 class IndexController extends Controller
 {

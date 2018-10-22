@@ -6,6 +6,8 @@ use App\User;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
+use Mail;
+use App\Mail\Verify;
 
 class RegisterController extends Controller
 {
@@ -64,13 +66,22 @@ class RegisterController extends Controller
     {
         $verify_token = str_random(32);
         $ref_token = md5($data['email']);
-        return User::create([
+        $user = User::create([
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => bcrypt($data['password']),
             'vertification_token' => $verify_token,
             'referal_token' => $ref_token,
+            'is_kyc' => 0,
             'role' => 0
         ]);
+        Mail::to($data['email'])
+        ->send(new Verify([
+            'verify_token' => $user->vertification_token,
+            'name' => $user->name,
+            'email' => $user->email,
+            ])
+        );
+        return $user;
     }
 }
