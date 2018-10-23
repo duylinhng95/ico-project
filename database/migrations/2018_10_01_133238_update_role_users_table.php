@@ -14,7 +14,7 @@ class UpdateRoleUsersTable extends Migration
     public function up()
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->tinyInteger('role');
+            $table->tinyInteger('role')->nullable();
         });
     }
 

@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Login</title>
+  <title>Register to {{$brand['brandName']->content}}</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz"
@@ -30,14 +30,25 @@
                  
           <div  id="register-box" class="login-box register ">
               <h2 class="welcome-title">
-                  Let join in us!
+                  Let join us!
               </h2>
               <form class="login-form" method="POST" action="{{ route('register') }}">
                  {{ csrf_field() }}
+                  <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
+
+                      <input  class="form-control"
+                             id="usr"  placeholder="Your Full Name" value="{{ old('name') }}" required autofocus name="name">
+                             @if ($errors->has('name'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('name') }}</strong>
+                                    </span>
+                                @endif
+
+                  </div>
                   <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
 
                       <input  class="form-control"
-                             id="usr"  placeholder="Email" value="{{ old('email') }}" required autofocus>
+                             id="usr"  placeholder="Email" value="{{ old('email') }}" required autofocus name="email">
                              @if ($errors->has('email'))
                                     <span class="help-block">
                                         <strong>{{ $errors->first('email') }}</strong>
@@ -46,11 +57,11 @@
 
                   </div>
                   <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
-                      <input type="password" name="password_user" class="form-control"  id="password_user"
+                      <input type="password" name="password" class="form-control"  id="password_user"
                              placeholder="Password" required>
-                             @if ($errors->has('password_user'))
+                             @if ($errors->has('password'))
                                     <span class="help-block">
-                                        <strong>{{ $errors->first('password_user') }}</strong>
+                                        <strong>{{ $errors->first('password') }}</strong>
                                     </span>
                                 @endif
                   </div>
@@ -78,7 +89,7 @@
 
       </div>
       <div class="col-lg-6 col-md-12 col-sm-12 right-side">
-        <img src="landing-page/resources/img/logo.png" alt="logo" class="img-fluid logo">
+        <img src="{{asset('page/images/brand').'/'.$brand['brandImg']->content}}" alt="logo" class="img-fluid logo">
       </div>
     </div>
   </div>

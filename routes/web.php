@@ -18,6 +18,7 @@ Route::get('/', 'IndexController@index');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+// Admin Page
 Route::group(['prefix'=>'admin','middleware'=> 'auth.admin'],function (){
 	Route::get('/', 'AdminController@index');
 	Route::group(['prefix'=>'homepage'],function(){
@@ -47,3 +48,5 @@ Route::group(['prefix'=>'admin','middleware'=> 'auth.admin'],function (){
 		Route::get('/delete/{id}', 'AnnouncementController@delete');
 	});
 });
+// User Control
+Route::get('/verify/{token}', 'UserController@verify');
