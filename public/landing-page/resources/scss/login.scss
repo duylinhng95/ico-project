@@ -1,0 +1,82 @@
+body {
+  background-color: #333333;
+}
+
+
+
+.right-side {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+.login-box,
+.register-box {
+  .welcome-title {
+    padding-top: 2em;
+    text-align: left;
+    padding-left: 2em;
+    padding-right: 1em;
+    font-weight: bold;
+    color: #333333;
+    font-size: 1.8em;
+  }
+  background-color: #fff;
+  border-radius: 10px;
+  .login-form {
+    padding: 3em 1em;
+    margin: 1em 1em;
+
+    .forgot-psw {
+      display: block;
+      width: 100%;
+      color: #ccc;
+      font-style: italic;
+      text-align: right;
+      font-size: 1em;
+    }
+    .form-group {
+      label {
+        font-size: 1.5em;
+      }
+      input {
+        color: #e63b4a;
+        font-weight: bold;
+        font-size: 1.3em;
+        border-radius: 0;
+        padding: 1em;
+        background-color: #333333;
+      }
+    }
+    .agree-text,
+    .term-text {
+      margin-top: 1em;
+      font-size: 1.1em;
+    }
+    .term-text {
+      font-weight: bold;
+    }
+  }
+
+  .login-button,
+  .sign-up-button {
+    margin-right: 10px;
+    font-size: 1.5em;
+    width: 40%;
+    padding: 0.4 0;
+    margin-bottom: 10px;
+  }
+}
+
+.login-wrapper {
+  flex-direction: column-reverse;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  max-width: 100%;
+  .logo {
+    width: 70%;
+    height: auto;
+    padding: 5em;
+    margin: 0 auto;
+  }
+}

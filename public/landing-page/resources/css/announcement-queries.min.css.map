@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "",
+    "sources": [
+        "../scss/announcement-queries.scss"
+    ],
+    "names": [],
+    "file": "announcement-queries.min.css"
+}
