@@ -6,14 +6,23 @@ use Illuminate\Http\Request;
 use App\Index;
 use App\Advisor;
 use App\Partner;
+use Mail;
+use App\Mail\Verify;
 
 class IndexController extends Controller
 {
     public function index(){
-    	$data = Index::all();
+        $data = Index::all();
         $example = new Index;
         $advisors = Advisor::all();
-        $partners = Partner::all()->toArray();
+        $partners = Partner::all();
+        $brand = [
+            'brandName' => $example,
+            'brandImg' => $example,
+            'telegramChina' => $example,
+            'telegramGlobal' => $example,
+            'telegramKorea' => $example,
+        ];
         $page1= [
             'title1'=> $example,
             'title2'=>$example,
@@ -21,6 +30,7 @@ class IndexController extends Controller
             'linkvideo'=>$example,
         ];
         $social= [
+            'facebook' => $example,
             'reddit'=> $example,
             'telegram'=>$example,
             'twitter'=>$example,
@@ -67,6 +77,9 @@ class IndexController extends Controller
         ];
         foreach($data as $d){
             switch ($d->section) {
+                case 'brand':
+                    $brand[$d->name] = $d;
+                    break;
                 case 'page1':
                     $page1[$d->name] = $d ;
                     break;
@@ -91,8 +104,7 @@ class IndexController extends Controller
             }
         }
         $page5['advisor'] = $advisors;
-        $page6['partner'] = $partners;
-
-        return view('landingpage/index', compact('page1', 'social', 'page2', 'page3', 'page4', 'page5', 'page6'));
+        $page6['partner'] = $partners->toArray();
+        return view('landingpage.index', compact('page1', 'social', 'page2', 'page3', 'page4', 'page5', 'page6', 'brand'));
     }
 }

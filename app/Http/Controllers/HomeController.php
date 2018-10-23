@@ -27,7 +27,7 @@ class HomeController extends Controller
         $role = Auth::user()->role;
         if($role == 2)
             return redirect('/admin');
-        elseif($role == 0)
+        elseif($role == 0 && Auth::user()->vertification_token == 0)
             return redirect('/user');
         elseif($role == 1)
             return redirect('/mod');

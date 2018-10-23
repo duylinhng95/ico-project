@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>ICO Project</title>
+  <title>{{$brand['brandName']->content}}</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz"
@@ -26,7 +26,7 @@
     <nav class="navbar navbar-expand-lg fixed-top">
       <div class="container-fluid">
         <a class="navbar-brand" href="#">
-          <img src="{{ asset('landing-page/resources/img/logo.png') }}" alt=" logo" class="logo">
+          <img src="{{asset('page/images/brand').'/'.$brand['brandImg']->content}}" alt=" logo" class="logo">
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
           aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -317,7 +317,7 @@
   <footer>
   <div class="row">
         <div class="col-lg-3 col-md-3 col-sm-12">
-          <img class="img-fluid footer-logo" src="{{ asset('landing-page/resources/img/logo.png') }} " alt="logo">
+          <img class="img-fluid footer-logo" src="{{asset('page/images/brand').'/'.$brand['brandImg']->content}} " alt="logo">
         </div>
         <div class="col-lg-3 col-md-3 col-sm-12">
           <h2 class="footer-heading">Social</h2>
