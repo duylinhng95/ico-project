@@ -11,7 +11,7 @@
 |
 */
 
-Route::get('/test', function () {
+Route::get('/announcement', function () {
     return view('landingpage/announcement');
 });
 Route::get('/login_test', function () {

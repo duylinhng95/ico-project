@@ -32,13 +32,13 @@
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item active">
-              <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+              <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#timeline_section">Roadmap</a>
+              <a class="nav-link" href="/#timeline-section">Roadmap</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#advisor_section">Team</a>
+              <a class="nav-link" href="/#advisor-section">Team</a>
             </li>
             <li class="nav-item">
               <!-- Button trigger Announcement modal -->
@@ -91,37 +91,33 @@
 
 
   <footer>
-    <div class="container-fluid">
-      <div class="row">
+    <div class="row">
         <div class="col-lg-3 col-md-3 col-sm-12">
           <img class="img-fluid footer-logo" src="/landing-page/resources/img/logo.png" alt="logo">
         </div>
         <div class="col-lg-3 col-md-3 col-sm-12">
           <h2 class="footer-heading">Social</h2>
           <ul class="footer-list">
-            <li>Facebook</li>
-            <li>Twitter</li>
-            <li>Reddit</li>
-            <li>Medium</li>
-            <li>Bitcointal</li>
+            <li><a href="#">Twitter</a></li>
+            <li><a href="#">Reddit</a></li>
+            <li><a href="#">Medium</a></li>
+            <li><a href="#">Bitcointal</a></li>
           </ul>
         </div>
         <div class="col-lg-3 col-md-3 col-sm-12">
           <h2 class="footer-heading">Community</h2>
           <ul class="footer-list">
-            <li>Telegram Channel</li>
-            <li>Telegram China </li>
-            <li>Telegram Global</li>
-            <li>Telegram Korea</li>
+            <li><a href="#">Telegram Channel</a></li>
+            <li><a href="#">Telegram China</a></li>
+            <li><a href="#">Telegram Global</a></li>
+            <li><a href="#">Telegram Korea</a></li>
           </ul>
         </div>
         <div class="col-lg-3 col-md-3 col-sm-12">
           <h2 class="footer-heading">About us</h2>
           <ul class="footer-list">
-            <li>Contact</li>
-            <li>Annoucement</li>
-
-
+            <li><a href="#">Contact</a></li>
+            <li><a href="#">Annoucement</a></li>
           </ul>
         </div>
       </div>

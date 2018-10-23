@@ -90,7 +90,15 @@ body {
   text-rendering: optimizeLegibility;
   overflow-x: hidden;
 }
-
+a {
+  &:link,
+  &:visited {
+    color: #fff;
+  }
+  &:hover {
+    color: #e63b4a;
+  }
+}
 /*------------------------------------*/
 /* REUSABLE COMPONENTS */
 /*------------------------------------*/
@@ -163,8 +171,10 @@ section {
 }
 
 .icon {
+  // display: block;
   width: 36px;
   height: 36px;
+  margin-bottom: 10px;
 }
 
 /* ---- BUTTONS ---- */
