@@ -372,7 +372,7 @@ class AdminController extends Controller
     	if($request->hasFile('avatar'))
     	{
     		$oldfile= $advisor->first()->avatar;
-			Storage::delete($destinationPath.'/'.$oldfile);
+			unlink($destinationPath.'/'.$oldfile);
     		$file= $request->file('avatar');
     		$filename = time().'_'.$file->getClientOriginalName('avatar');
     		$file->move($destinationPath, $filename);
@@ -444,7 +444,7 @@ class AdminController extends Controller
     	if($request->hasFile('image'))
     	{
     		$oldfile= $partner->first()->image;
-			Storage::delete($destinationPath.'/'.$oldfile);
+			unlink($destinationPath.'/'.$oldfile);
     		$file= $request->file('image');
     		$filename = time().'_'.$file->getClientOriginalName('image');
     		$file->move($destinationPath, $filename);
@@ -466,12 +466,11 @@ class AdminController extends Controller
         $input = $request->except('brandImg', '_token');
         $brand = Index::where('section', 'brand')->where('name', 'like', 'brandImg')->first();
         $destinationPath = public_path('/page/images/brand');
-
         if($request->hasFile('brandImg'))
         {
             if($brand){
-                $oldfile= $brand->brandImg;
-                Storage::delete($destinationPath.'/'.$oldfile);
+                $oldfile= $brand->content;
+                unlink($destinationPath.'/'.$oldfile);
             }
             $file= $request->file('brandImg');
             $filename = time().'_'.$file->getClientOriginalName('brandImg');
