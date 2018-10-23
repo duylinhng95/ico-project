@@ -97,6 +97,12 @@ class AdminController extends Controller
     }
 
     public function page1(Request $request){
+        $this->validate($request, [
+         'background' => 'image|mimes: jpeg, bmp, png|dimensions: min_width=800, min_height= 600',
+        ],[
+            'background.dimensions' => "Background must be at least: 800x600"
+        ]);
+
         $input = $request->except('_token', 'background');
         $destinationPath = public_path('/page/images/page1');
         if($request->hasFile('background'))
@@ -120,23 +126,23 @@ class AdminController extends Controller
     	return redirect('/admin');
     }
     public function page2(Request $request){
-    	// $this->validate($request, [
-    	// 	'image1' => 'required|image|mimes:jpeg,bmp,png|dimensions:max_width=300,max_height=200',
-    	// 	'image2' => 'image|mimes:jpeg,bmp,png|dimensions:max_width=300,max_height=200',
-    	// 	'image3' => 'image|mimes:jpeg,bmp,png|dimensions:max_width=300,max_height=200',
-    	// 	'image4' => 'image|mimes:jpeg,bmp,png|dimensions:max_width=300,max_height=200',
-    	// ],
-    	// [
-    	// 	'image1.required' => 'First Image is required',
-    	// 	'image1.image' => "File is not an Image",
-    	// 	'image1.dimensions' => "Image size is wrong: 300x200",
-    	// 	'image2.dimensions' => "Image size is wrong: 300x200",
-    	// 	'image3.dimensions' => "Image size is wrong: 300x200",
-    	// 	'image4.dimensions' => "Image size is wrong: 300x200",
-    	// 	'image2.image' => "File is not an Image",
-    	// 	'image3.image' => "File is not an Image",
-    	// 	'image4.image' => "File is not an Image",
-    	// ]);
+    	$this->validate($request, [
+    		'image1' => 'required|image|mimes:jpeg,bmp,png|dimensions:max_width=300,max_height=200',
+    		'image2' => 'image|mimes:jpeg,bmp,png|dimensions:min_width=800,min_height=600',
+    		'image3' => 'image|mimes:jpeg,bmp,png|dimensions:min_width=800,min_height=600',
+    		'image4' => 'image|mimes:jpeg,bmp,png|dimensions:min_width=800,min_height=600',
+    	],
+    	[
+    		'image1.required' => 'First Image is required',
+    		'image1.image' => "File is not an Image",
+    		'image1.dimensions' => "Image size is wrong: 800x600",
+    		'image2.dimensions' => "Image size is wrong: 800x600",
+    		'image3.dimensions' => "Image size is wrong: 800x600",
+    		'image4.dimensions' => "Image size is wrong: 800x600",
+    		'image2.image' => "File is not an Image",
+    		'image3.image' => "File is not an Image",
+    		'image4.image' => "File is not an Image",
+    	]);
     	$input = $request->except('image1','image2','image3','image4','_token','section');
     	foreach ($input as $k => $rq)
     	{
@@ -276,6 +282,11 @@ class AdminController extends Controller
 
     public function page4(Request $request){
     	$input = $request->except('timeline','_token','section');
+        $this->validate($request, [
+         'timeline' => 'image|mimes: jpeg, bmp, png|dimensions: min_width=1000, min_height= 350',
+        ],[
+            'timeline.dimensions' => "Background must be at least: 1000x350"
+        ]);
     	foreach ($input as $k => $rq)
     	{
     		Index::updateOrCreate(
@@ -314,6 +325,11 @@ class AdminController extends Controller
 
     public function page5_advisor(Request $request){
     	$input = $request->except('avatar');
+        $this->validate($request, [
+         'avatar' => 'image|mimes: jpeg, bmp, png|dimensions: min_width=840, min_height= 620',
+        ],[
+            'avatar.dimensions' => "Background must be at least: 840x620"
+        ]);
     	$destinationPath = public_path('/page/images/page5');
     	if($request->hasFile('avatar'))
     	{
@@ -365,6 +381,11 @@ class AdminController extends Controller
     }
     public function page6(Request $request){
     	$input = $request->except('_token');
+        $this->validate($request, [
+         'avatar' => 'image|mimes: jpeg, bmp, png|dimensions: min_width=840, min_height= 620',
+        ],[
+            'avatar.dimensions' => "Background must be at least: 840x620"
+        ]);
     	foreach ($input as $k=>$rq)
     	{
     		Index::updateOrCreate(
@@ -377,6 +398,11 @@ class AdminController extends Controller
     public function page6_partner(Request $request){
     	$input = $request->except('imageP');
     	$destinationPath = public_path('/page/images/page6');
+        $this->validate($request, [
+         'imageP' => 'image|mimes: jpeg, bmp, png|dimensions: min_width=245, min_height= 90',
+        ],[
+            'imageP.dimensions' => "Background must be at least: 245x90"
+        ]);
     	if($request->hasFile('imageP'))
     	{
     		$file= $request->file('imageP');
