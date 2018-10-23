@@ -15,6 +15,13 @@ class AdminController extends Controller
     	$example = new Index;
     	$advisors = Advisor::all();
     	$partners = Partner::all();
+        $brand = [
+            'brandName' => $example,
+            'brandImg' => $example,
+            'telegramChina' => $example,
+            'telegramGlobal' => $example,
+            'telegramKorea' => $example,
+        ];
     	$page1= [
     		'title1'=> $example,
     		'title2'=>$example,
@@ -22,6 +29,7 @@ class AdminController extends Controller
     		'linkvideo'=>$example,
     	];
     	$social= [
+            'facebook' => $example,
     		'reddit'=> $example,
     		'telegram'=>$example,
     		'twitter'=>$example,
@@ -68,6 +76,9 @@ class AdminController extends Controller
     	];
     	foreach($data as $d){
     		switch ($d->section) {
+                case 'brand':
+                    $brand[$d->name] = $d;
+                    break;
     			case 'page1':
     				$page1[$d->name] = $d ;
     				break;
@@ -93,7 +104,7 @@ class AdminController extends Controller
     	}
     	$page5['advisor'] = $advisors;
     	$page6['partner'] = $partners;
-    	return view('admin.index', compact('page1', 'social', 'page2', 'page3', 'page4', 'page5', 'page6'));
+    	return view('admin.index', compact('page1', 'social', 'page2', 'page3', 'page4', 'page5', 'page6', 'brand'));
     }
 
     public function page1(Request $request){
@@ -424,6 +435,30 @@ class AdminController extends Controller
     	return response()->json([
     		'status' => 'success'
     	]);
+    }
+    public function brand(Request $request){
+        $input = $request->except('brandImg', '_token');
+        $brand = Index::where('section', 'brand')->where('name', 'like', 'brandImg')->first();
+        $destinationPath = public_path('/page/images/brand');
+
+        if($request->hasFile('brandImg'))
+        {
+            if($brand){
+                $oldfile= $brand->brandImg;
+                Storage::delete($destinationPath.'/'.$oldfile);
+            }
+            $file= $request->file('brandImg');
+            $filename = time().'_'.$file->getClientOriginalName('brandImg');
+            $file->move($destinationPath, $filename);
+            $input['brandImg'] = $filename;
+        }
+        foreach ($input as $k => $rq)
+        {
+            Index::updateOrCreate(
+            ['section' => 'brand', 'name' => $k], ['content' => $rq]
+            );
+        }
+        return redirect('/admin');
     }
 
 }

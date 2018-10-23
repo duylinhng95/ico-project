@@ -12,6 +12,80 @@
   <div class="col-lg-12">
     <div class="card card-info collapsed-card">
       <div class="card-header no-border">
+        <h3 class="card-title">Brand Config</h3>
+        <div class="card-tools">
+          <button type="button" class="btn btn-tool" data-widget="collapse"><i class="fa fa-plus"></i>
+          </button>
+        </div>
+      </div>
+      <div class="card-body">
+        <form class="form-horizontal" action="{{url('admin/homepage/brand')}}" method="post" enctype="multipart/form-data">
+          {!!csrf_field()!!}
+            <div class="form-group">
+              <label class="col-sm-2 control-label">Brand Name</label>
+
+              <div class="col-sm-12">
+                <input type="text" class="form-control" name="brandName" value="{{$brand['brandName']->content}}">
+              </div>
+            </div>
+            <div class="form-group">
+              <label>Brand Image:</label>
+              <div class="input-group col-sm-6">
+                <input type="file" name="brandImg" class="form-control" accept='image/*'>
+              </div>
+               @if ($errors->has('brandImg'))
+                    <span class="help-block" style="color:red;">
+                        <strong>{{ $errors->first('brandImg') }}</strong>
+                    </span>
+               @endif
+            </div>
+            <div class="form-group">
+              <label>Preview Brand Image:</label>
+              <div class="col-sm-2">
+                 <img class="img-thumbnail img-fluid" src="{{asset('page/images/brand').'/'.$brand['brandImg']->content}}" alt="brandImg">
+               </div>
+            </div>
+            <div class="form-group">
+              <label>Telegram China Link:</label>
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text"><i class="fa fa-telegram"></i>&nbsp China</span>
+                </div>
+                <input type="text" name="telegramChina" class="form-control" value="{{$brand['telegramChina']->content}}">
+              </div>
+            </div>
+            <div class="form-group">
+              <label>Telegram Global Link:</label>
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text"><i class="fa fa-telegram"></i>&nbsp Global</span>
+                </div>
+                <input type="text" name="telegramGlobal" class="form-control" value="{{$brand['telegramGlobal']->content}}">
+              </div>
+            </div>
+            <div class="form-group">
+              <label>Telegram Korea Link:</label>
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text"><i class="fa fa-telegram"></i>&nbsp Korea</span>
+                </div>
+                <input type="text" name="telegramKorea" class="form-control" value="{{$brand['telegramKorea']->content}}">
+              </div>
+            </div>
+          <!-- /.card-body -->
+          <div class="card-footer">
+            <button type="submit" class="btn btn-info">Save</button>
+          </div>
+          <!-- /.card-footer -->
+        </form>
+      </div>
+    </div>
+  </div>
+</div><!-- Page 1 HTML -->
+<div class="row">
+  <div class="col-lg-12">
+    <div class="card card-info collapsed-card">
+      <div class="card-header no-border">
         <h3 class="card-title">Page 1</h3>
         <div class="card-tools">
           <button type="button" class="btn btn-tool" data-widget="collapse"><i class="fa fa-plus"></i>
@@ -92,6 +166,15 @@
         <form class="form-horizontal" action="{{url('admin/homepage/page1')}}" method="post">
           {!!csrf_field()!!}
           <input type="hidden" name="section" value="social">
+            <div class="form-group">
+              <label>Facebook:</label>
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text"><i class="fa fa-facebook-official"></i></span>
+                </div>
+                <input type="text" name="facebook" class="form-control" value="{{$social['facebook']->content}}">
+              </div>
+            </div>
             <div class="form-group">
               <label>Reddit:</label>
               <div class="input-group">
