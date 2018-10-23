@@ -6,6 +6,7 @@ use Illuminate\Bus\Queueable;
 use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Contracts\Queue\ShouldQueue;
+use App\Index;
 
 class Verify extends Mailable
 {
@@ -18,9 +19,15 @@ class Verify extends Mailable
      */
     public function __construct($data)
     {
+        $brands = Index::where('section', 'brand')->get();
+        foreach ($brands as $rq)
+        {
+            $brand[$rq->name] = $rq;
+        }
         $this->verify_token = $data['verify_token'];
         $this->name = $data['name'];
         $this->email = $data['email'];
+        $this->brand = $brand;
     }
 
     /**
@@ -30,12 +37,13 @@ class Verify extends Mailable
      */
     public function build()
     {
-        return $this->from('devilking195@gmail.com', 'Testing')
+        return $this->from('devilking195@gmail.com', 'Verify your email address')
                     ->view('verify')
                     ->with([
                         'verify_token'=> $this->verify_token,
                         'name' => $this->name,
                         'email' => $this->email,
+                        'brand' => $this->brand,
                     ]);
     }
 }

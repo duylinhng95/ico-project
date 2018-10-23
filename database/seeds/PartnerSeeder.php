@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use App\Partner;
 
 class PartnerSeeder extends Seeder
 {
@@ -96,7 +97,5 @@ class PartnerSeeder extends Seeder
 		'created_at'=>'2018-10-17 03:10:31',
 		'updated_at'=>'2018-10-17 03:10:31'
 		] );
-
-
     }
 }

@@ -157,7 +157,7 @@
 
                                 <tr>
                                     <td align="center" height="70" style="height:70px;">
-                                        <a href="" style="display: block; border-style: none !important; border: 0 !important;"><img width="100" border="0" style="display: block; width: 100px;"src="{{$message->embed(public_path('landing-page/resources/img/logo.png'))}}" alt="abc"></a>
+                                        <a href="" style="display: block; border-style: none !important; border: 0 !important;"><img width="100" border="0" style="display: block; width: 100px;"src="{{$message->embed(public_path('page/images/brand/'.$brand['brandImg']->content))}}" alt="{{$brand['brandName']->content}}"></a>
                                     </td>
                                 </tr>
                             </table>
@@ -222,7 +222,7 @@
 
                                         <div style="line-height: 24px">
 
-                                            Thank you for registering as our ICO Project. Please click the button below to confirm your verification.
+                                            Thank you for registering as our {{$brand['brandName']->content}}. Please click the button below to confirm your verification.
                                         </div>
                                     </td>
                                 </tr>
