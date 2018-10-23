@@ -341,5 +341,55 @@ class IndexTableSeeder extends Seeder
 		'created_at'=>'2018-10-17 03:29:13',
 		'updated_at'=>'2018-10-17 03:29:13'
 		] );
+					
+		Index::create( [
+		'id'=>38,
+		'section'=>'brand',
+		'name'=>'brandName',
+		'content'=>'ICO Project',
+		'url'=>NULL,
+		'created_at'=>'2018-10-22 20:28:37',
+		'updated_at'=>'2018-10-22 20:28:37'
+		] );
+					
+		Index::create( [
+		'id'=>39,
+		'section'=>'brand',
+		'name'=>'telegramChina',
+		'content'=>'#',
+		'url'=>NULL,
+		'created_at'=>'2018-10-22 20:28:37',
+		'updated_at'=>'2018-10-22 20:28:37'
+		] );
+					
+		Index::create( [
+		'id'=>40,
+		'section'=>'brand',
+		'name'=>'telegramGlobal',
+		'content'=>'#',
+		'url'=>NULL,
+		'created_at'=>'2018-10-22 20:28:37',
+		'updated_at'=>'2018-10-22 20:28:37'
+		] );
+					
+		Index::create( [
+		'id'=>41,
+		'section'=>'brand',
+		'name'=>'telegramKorea',
+		'content'=>'#',
+		'url'=>NULL,
+		'created_at'=>'2018-10-22 20:28:37',
+		'updated_at'=>'2018-10-22 20:28:37'
+		] );
+					
+		Index::create( [
+		'id'=>42,
+		'section'=>'brand',
+		'name'=>'brandImg',
+		'content'=>'1540265334_logo.png',
+		'url'=>NULL,
+		'created_at'=>'2018-10-22 20:28:37',
+		'updated_at'=>'2018-10-22 20:28:54'
+		] );
     }
 }
