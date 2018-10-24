@@ -1,4 +1,4 @@
-@extends('admin.layout')
+@extends('admin.layout', ['brandName' => $brand['brandName']->content, 'brandImg' => $brand['brandImg']->content])
 @section('content-header')
 <div class="row mb-2">
   <div class="col-sm-6">
