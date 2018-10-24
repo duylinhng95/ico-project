@@ -186,6 +186,11 @@ section {
   padding: 0.1em 1.5em;
   border-radius: 5px;
   box-shadow: 1px 3px 3px 2px #0303035d;
+  &:hover {
+    color: #fff;
+    box-shadow: 1px 1px 1px 1px #0303038f;
+    transform: translateY(-2px);
+  }
 }
 /* ---- HELPERS ---- */
 .clear-padding {
