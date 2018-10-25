@@ -16,12 +16,19 @@ trait RegistersUsers
      *
      * @return \Illuminate\Http\Response
      */
-    public function showRegistrationForm()
+    public function showRegistrationForm(Request $request)
     {
         $brands = Index::where('section', 'brand')->get();
+        $referral_id = 0;
         foreach ($brands as $rq)
+        {
             $brand[$rq->name] = $rq;
-        return view('auth.register', compact('brand'));
+        }
+        if($request->session()->has('referral_id'))
+        {
+            $referral_id = $request->session()->pull('referral_id');
+        }
+        return view('auth.register', compact('brand', 'referral_id'));
     }
 
     /**

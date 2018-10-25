@@ -50,5 +50,5 @@ Route::group(['prefix'=>'admin','middleware'=> 'auth.admin'],function (){
 });
 // User Control
 Route::get('/verify/{token}', 'UserController@verify');
-Route::get('/user', 'UserController@index');
+Route::get('/user', 'UserController@index')->middleware('auth.user');
 Route::get('/referral', 'UserController@referral');
