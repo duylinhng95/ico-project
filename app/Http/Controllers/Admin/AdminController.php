@@ -1,7 +1,8 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Index;
 use App\Advisor;
@@ -450,6 +451,7 @@ class AdminController extends Controller
     		$file->move($destinationPath, $filename);
     		$input['image'] = $filename;
     	}
+        dd($input);
     	$partner->update($input);
     	return response()->json([
     		'status' => 'success',

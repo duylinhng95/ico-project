@@ -5,7 +5,6 @@ namespace Illuminate\Foundation\Auth;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Auth\Events\Registered;
-use App\Index;
 
 trait RegistersUsers
 {
@@ -16,19 +15,9 @@ trait RegistersUsers
      *
      * @return \Illuminate\Http\Response
      */
-    public function showRegistrationForm(Request $request)
+    public function showRegistrationForm()
     {
-        $brands = Index::where('section', 'brand')->get();
-        $referral_id = 0;
-        foreach ($brands as $rq)
-        {
-            $brand[$rq->name] = $rq;
-        }
-        if($request->session()->has('referral_id'))
-        {
-            $referral_id = $request->session()->pull('referral_id');
-        }
-        return view('auth.register', compact('brand', 'referral_id'));
+        return view('auth.register');
     }
 
     /**
