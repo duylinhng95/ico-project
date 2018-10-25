@@ -1,79 +1,36 @@
-$(document).ready(function() {
-  // /* Auto switch dark,light navigation */
-  // $(".js--whois-section").waypoint(
-  //   function(direction) {
-  //     if (direction == "down") {
-  //       $("nav").addClass("nav-bg-dark");
-  //     } else {
-  //       $("nav").removeClass("nav-bg-dark");
-  //     }
-  //   },
-  //   {
-  //     offset: "80px"
-  //   }
-  // );
-  // $(".js--features-section").waypoint(
-  //   function(direction) {
-  //     if (direction == "down") {
-  //       $("nav").addClass("nav-bg-white");
-  //       $(".nav-item > a").removeClass("nav-link");
-  //       $(".nav-item > a").addClass("nav-link-dark");
-  //     } else {
-  //       $("nav").removeClass("nav-bg-white");
-  //       $(".nav-item > a").addClass("nav-link");
-  //       $(".nav-item > a").removeClass("nav-link-dark");
-  //     }
-  //   },
-  //   {
-  //     offset: "80px"
-  //   }
-  // );
-  // $(".js--timeline-section").waypoint(
-  //   function(direction) {
-  //     if (direction == "down") {
-  //       $("nav").removeClass("nav-bg-white");
-  //       $(".nav-item > a").addClass("nav-link");
-  //       $(".nav-item > a").removeClass("nav-link-dark");
-  //     } else {
-  //       $("nav").addClass("nav-bg-white");
-  //       $(".nav-item > a").removeClass("nav-link");
-  //       $(".nav-item > a").addClass("nav-link-dark");
-  //     }
-  //   },
-  //   {
-  //     offset: "80px"
-  //   }
-  // );
-  // $(".js--advisor-section").waypoint(
-  //   function(direction) {
-  //     if (direction == "down") {
-  //       $("nav").addClass("nav-bg-white");
-  //       $(".nav-item > a").removeClass("nav-link");
-  //       $(".nav-item > a").addClass("nav-link-dark");
-  //     } else {
-  //       $("nav").removeClass("nav-bg-white");
-  //       $(".nav-item > a").addClass("nav-link");
-  //       $(".nav-item > a").removeClass("nav-link-dark");
-  //     }
-  //   },
-  //   {
-  //     offset: "80px"
-  //   }
-  // );
-  // $(".js--partners-section").waypoint(
-  //   function(direction) {
-  //     if (direction == "down") {
-  //       $("nav").removeClass("nav-bg-white");
-  //       $(".nav-item > a").addClass("nav-link");
-  //       $(".nav-item > a").removeClass("nav-link-dark");
-  //     } else {
-  //       $("nav").addClass("nav-bg-white");
-  //       $(".nav-item > a").removeClass("nav-link");
-  //       $(".nav-item > a").addClass("nav-link-dark");
-  //     }
-  //   },
-  //   {
-  //     offset: "80px"
-  //   }
-  // );
-});
+(function($) {
+  "use strict";
+
+  // Control buttons
+  $("#myCarousel .carousel-control-next").click(function() {
+    $("#myCarousel").carousel("next");
+    return false;
+  });
+  $("#myCarousel .carousel-control-prev").click(function() {
+    $(" #myCarousel").carousel("prev");
+    return false;
+  });
+
+  // On carousel scroll
+  $("#myCarousel").on("slide.bs.carousel", function(e) {
+    var $e = $(e.relatedTarget);
+    var idx = $e.index();
+    var itemsPerSlide = 3;
+    var totalItems = $("#myCarousel .carousel-item").length;
+    if (idx >= totalItems - (itemsPerSlide - 1)) {
+      var it = itemsPerSlide - (totalItems - idx);
+      for (var i = 0; i < it; i++) {
+        // append slides to end
+        if (e.direction == "left") {
+          $(" #myCarousel .carousel-item")
+            .eq(i)
+            .appendTo(" #myCarousel .carousel-inner");
+        } else {
+          $("#myCarousel .carousel-item")
+            .eq(0)
+            .appendTo("#myCarousel .carousel-inner");
+        }
+      }
+    }
+  });
+})(jQuery);

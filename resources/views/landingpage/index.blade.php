@@ -235,8 +235,8 @@
       </p>
 
     </div>
-    <div id="myCarousel" class="carousel slide" data-interval="false">
-      <div class="carousel-inner row w-100 mx-auto fluid-slide">
+    <div id="myCarousel" class="carousel slide" data-interval="false" data-ride="carousel">
+      <div class="carousel-inner row w-100 mx-auto">
         @foreach ($page5['advisor'] as $k => $advisor)
           @if ($k == 0) 
             <div class="carousel-item col-md-4 active">
@@ -280,21 +280,23 @@
           </div>
           @endif
         @endforeach
-        <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
-          <div class="control-prev-icon">
-            <img src="{{ asset('landing-page/resources/img/carousel-icon-prev.png') }}" class="control-icon" alt="prev">
-          </div>
-          <span class="sr-only">Previous</span>
-        </a>
-        <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
-          <div class="control-next-icon">
-            <img src="{{ asset('landing-page/resources/img/carousel-icon-next.png') }}" class="control-icon" alt="prev">
-          </div>
-          <span class="sr-only">Next</span>
-        </a>
+       
       </div>
-
-    </div>
+      <div class="container-fluid">
+        <a class="carousel-control-prev">
+            <div class="control-prev-icon">
+              <img src="{{ asset('landing-page/resources/img/carousel-icon-prev.png') }}" class="control-icon" alt="prev">
+            </div>
+            <span class="sr-only">Previous</span>
+          </a>
+          <a class="carousel-control-next">
+            <div class="control-next-icon">
+              <img src="{{ asset('landing-page/resources/img/carousel-icon-next.png') }}" class="control-icon" alt="prev">
+            </div>
+            <span class="sr-only">Next</span>
+          </a>
+      </div>
+    </div>  
   </section>
   <!-- End Page 5 -->
   <!-- Page 6 -->
@@ -367,7 +369,7 @@
   <!-- <script src="vendors/js/bootstrap.bundle.min.js"></script> -->
 
 
-  <script src="resources/js/scripts.js"></script>
+  <script src="{{ asset('landing-page/resources/js/scripts.js') }}"></script>
 </body>
 
 </html>
