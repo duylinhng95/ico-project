@@ -5,7 +5,6 @@ namespace Illuminate\Foundation\Auth;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Validation\ValidationException;
-use App\Index;
 
 trait AuthenticatesUsers
 {
@@ -18,10 +17,7 @@ trait AuthenticatesUsers
      */
     public function showLoginForm()
     {
-        $brands = Index::where('section', 'brand')->get();
-        foreach ($brands as $rq)
-            $brand[$rq->name] = $rq;
-        return view('auth.login', compact('brand'));
+        return view('auth.login');
     }
 
     /**

@@ -892,7 +892,7 @@
             <label class="col-sm-2 control-label">Link</label>
 
             <div class="col-sm-12">
-              <input type="text" class="form-control" name="position" id="partnerLink">
+              <input type="text" class="form-control" name="link" id="partnerLink">
             </div>
           </div>
           <div class="form-group">

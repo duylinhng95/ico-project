@@ -1,15 +1,28 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
 use App\Announcement;
+use App\Http\Controllers\Controller;
+use App\Index;
 
 class AnnouncementController extends Controller
 {
     public function index(){
     	$announcements = Announcement::all();
-    	return view('admin.announcement', compact('announcements'));	
+        $example = '';
+        $brand = [
+            'brandName' => $example,
+            'brandImg' => $example,
+            'telegramChina' => $example,
+            'telegramGlobal' => $example,
+            'telegramKorea' => $example,
+        ];
+        $brands = Index::where('section', 'brand')->get();
+        foreach ($brands as $rq)
+            $brand[$rq->name] = $rq;
+    	return view('admin.announcement', compact('announcements', 'brand'));	
     }
     public function create(Request $request){
     	$input = $request->except('_token');
