@@ -22,7 +22,11 @@ class UserController extends Controller
     	}
     }
     public function index(){
-        $user = Auth::user();        
-        return view('user.user', compact('user'));
+        $user = Auth::user();
+        $referral = User::where('referral_id', $user->id);
+        return view('user.user', compact('user', 'referral'));
+    }
+    public function referral(Request $request){
+        dd($request->all());
     }
 }

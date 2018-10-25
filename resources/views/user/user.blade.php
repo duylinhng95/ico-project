@@ -12,7 +12,7 @@
                         <p>Use this link to invite your friend and earn 6% on the amount they invest</p>
                         <div class="row">
                             <div class="col-md-4">
-                                <input class="form-control" id="referralLink" type="text" readonly value="{{url('/referral').'/'.$user->referal_token}}">
+                                <input class="form-control" id="referralLink" type="text" readonly value="{{url('/referral').'/?referral='.$user->referal_token}}">
                             </div>
                             <div class="col-md-2">
                                 <button class="btn btn-default" onclick="copyLink()" id="btnCopy">Copy</button>
