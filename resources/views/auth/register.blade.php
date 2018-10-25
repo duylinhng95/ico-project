@@ -34,6 +34,7 @@
               </h2>
               <form class="login-form" method="POST" action="{{ route('register') }}">
                  {{ csrf_field() }}
+                  <input type="hidden" name="referral_id" value={{$referral_id}}>
                   <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
 
                       <input  class="form-control"

@@ -23,6 +23,11 @@
 </head>
 
 <body>
+  @if (session('status'))
+      <div class="alert alert-success">
+          {{ session('status') }}
+      </div>
+  @endif
   <div class="fluid-container w-100">
     <div class="row login-wrapper">
       <div class="col-lg-6 col-md-12 col-sm-12 left-side  ">

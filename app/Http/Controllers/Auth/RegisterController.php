@@ -75,6 +75,11 @@ class RegisterController extends Controller
             'is_kyc' => 0,
             'role' => 0
         ]);
+        if($data['referral_id'])
+        {
+            $user->referral_id = $data['referral_id'];
+            $user->save();
+        }
         Mail::to($data['email'])
         ->send(new Verify([
             'verify_token' => $user->vertification_token,
