@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\User;
-
+use Auth;
 class UserController extends Controller
 {
     public function verify($token){
@@ -20,5 +20,9 @@ class UserController extends Controller
     	{
     		return  abort(404);
     	}
+    }
+    public function index(){
+        $user = Auth::user();        
+        return view('user.user', compact('user'));
     }
 }
