@@ -38,13 +38,13 @@
               <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#timeline_section">Roadmap</a>
+              <a class="nav-link" href="#timeline-section">Roadmap</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#advisor_section">Team</a>
+              <a class="nav-link" href="#advisor-section">Team</a>
             </li>
             <li class="nav-item">
-            <a class="nav-link" href="#" data-toggle="modal" data-target="#annoucementModal">Annoucement</a>            </li>
+            <a class="nav-link" href="/announcement" >Annoucement</a>            </li>
             <li class="nav-item">
               <a class="nav-link" href="#">Whitepaper</a>
             </li>
@@ -83,6 +83,7 @@
                   <div class="icon-link">
                     <a href="{{$social['telegram']->content}}"><img src="{{ asset('landing-page/resources/img/IconLink02.png') }}" class="icon-circle-button" alt="Icon link description" /></a>
                   </div>
+                  
                   <div class="icon-link">
                     <a href="{{$social['twitter']->content}}"><img src="{{ asset('landing-page/resources/img/IconLink03.png') }}" class="icon-circle-button" alt="Icon link description" /></a>
                   </div>
@@ -91,6 +92,9 @@
                   </div>
                   <div class="icon-link">
                     <a href="{{$social['medium']->content}}"><img src="{{ asset('landing-page/resources/img/IconLink05.png') }}" class="icon-circle-button" alt="Icon link description" /></a>
+                  </div>
+                  <div class="icon-link">
+                    <a href="{{$social['medium']->content}}"><img src="{{ asset('landing-page/resources/img/IconLink06.png') }}" class="icon-circle-button"  alt="Icon link description" /></a>
                   </div>
                 </div>
               </div>
@@ -176,9 +180,9 @@
     <div class="row">
       <div class="col-lg-6 col-md-6 col-sm-12">
         <div class="feature-box">
-          <div class="icon-circle-box">
+         
             <a href="#"><img src="{{asset('page/images/page3').'/'.$page3['logo1']->content}}" alt="Icon link description" class="icon" /></a>
-          </div>
+       
           <h3>{{$page3['title1']->content}}</h3>
           <p>{{$page3['description1']->content}}</p>
         </div>
@@ -187,9 +191,7 @@
 
       <div class="col-lg-6 col-md-6 col-sm-12">
         <div class="feature-box">
-          <div class="icon-circle-box">
             <a href="#"><img src="{{asset('page/images/page3').'/'.$page3['logo2']->content}}" alt="Icon link description" class="icon" /></a>
-          </div>
           <h3>{{$page3['title2']->content}}</h3>
           <p>{{$page3['description2']->content}}</p>
         </div>
@@ -198,18 +200,14 @@
     <div class="row">
       <div class="col-lg-6 col-md-6 col-sm-12">
         <div class="feature-box">
-          <div class="icon-circle-box circle-box-white">
             <a href="#"><img src="{{asset('page/images/page3').'/'.$page3['logo3']->content}}" alt="Icon link description" class="icon" /></a>
-          </div>
           <h3>{{$page3['title3']->content}}</h3>
           <p>{{$page3['description3']->content}}</p>
         </div>
       </div>
       <div class="col-lg-6 col-md-6 col-sm-12">
         <div class="feature-box">
-          <div class="icon-circle-box">
             <a href="#"><img src="{{asset('page/images/page3').'/'.$page3['logo4']->content}}" alt="Icon link description" class="icon" /></a>
-          </div>
           <h3>{{$page3['title4']->content}}</h3>
           <p>{{$page3['description4']->content}}</p>
         </div>
@@ -237,8 +235,8 @@
       </p>
 
     </div>
-    <div id="myCarousel" class="carousel slide" data-interval="false">
-      <div class="carousel-inner row w-100 mx-auto fluid-slide">
+    <div id="myCarousel" class="carousel slide" data-interval="false" data-ride="carousel">
+      <div class="carousel-inner row w-100 mx-auto">
         @foreach ($page5['advisor'] as $k => $advisor)
           @if ($k == 0) 
             <div class="carousel-item col-md-4 active">
@@ -250,7 +248,13 @@
                 <p class="card-text">
                   {{$advisor->description}}
                 </p>
-
+                <div class="social-icons">
+                  <ul>
+                    <li>
+                      <a href="#" alt="linkedin"> <i class="fab fa-linkedin"></i></a>
+                    </li>
+                  </ul>
+                </div>
               </div>
             </div>
           </div>
@@ -264,27 +268,35 @@
                 <p class="card-text">
                   {{$advisor->description}}
                 </p>
-
+                <div class="social-icons">
+                  <ul>
+                    <li>
+                      <a href="#" alt="linkedin"> <i class="fab fa-linkedin"></i></a>
+                    </li>
+                  </ul>
+                </div>
               </div>
             </div>
           </div>
           @endif
         @endforeach
-        <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
-          <div class="control-prev-icon">
-            <img src="{{ asset('landing-page/resources/img/carousel-icon-prev.png') }}" class="control-icon" alt="prev">
-          </div>
-          <span class="sr-only">Previous</span>
-        </a>
-        <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
-          <div class="control-next-icon">
-            <img src="{{ asset('landing-page/resources/img/carousel-icon-next.png') }}" class="control-icon" alt="prev">
-          </div>
-          <span class="sr-only">Next</span>
-        </a>
+       
       </div>
-
-    </div>
+      <div class="container-fluid">
+        <a class="carousel-control-prev">
+            <div class="control-prev-icon">
+              <img src="{{ asset('landing-page/resources/img/carousel-icon-prev.png') }}" class="control-icon" alt="prev">
+            </div>
+            <span class="sr-only">Previous</span>
+          </a>
+          <a class="carousel-control-next">
+            <div class="control-next-icon">
+              <img src="{{ asset('landing-page/resources/img/carousel-icon-next.png') }}" class="control-icon" alt="prev">
+            </div>
+            <span class="sr-only">Next</span>
+          </a>
+      </div>
+    </div>  
   </section>
   <!-- End Page 5 -->
   <!-- Page 6 -->
@@ -317,11 +329,13 @@
   <footer>
   <div class="row">
         <div class="col-lg-3 col-md-3 col-sm-12">
-          <img class="img-fluid footer-logo" src="{{asset('page/images/brand').'/'.$brand['brandImg']->content}} " alt="logo">
+       <img class="img-fluid footer-logo" src="{{asset('page/images/brand').'/'.$brand['brandImg']->content}} " alt="logo">
+
         </div>
         <div class="col-lg-3 col-md-3 col-sm-12">
           <h2 class="footer-heading">Social</h2>
           <ul class="footer-list">
+            <li><a href="{{$social['facebook']->content}}">Facebook</a></li>
             <li><a href="{{$social['twitter']->content}}">Twitter</a></li>
             <li><a href="{{$social['reddit']->content}}">Reddit</a></li>
             <li><a href="{{$social['medium']->content}}">Medium</a></li>
@@ -331,17 +345,17 @@
         <div class="col-lg-3 col-md-3 col-sm-12">
           <h2 class="footer-heading">Community</h2>
           <ul class="footer-list">
-            <li>Telegram Channel</li>
-            <li>Telegram China </li>
-            <li>Telegram Global</li>
-            <li>Telegram Korea</li>
+          <li><a href="#">Telegram Channel</a></li>
+            <li><a href="#">Telegram China</a></li>
+            <li><a href="#">Telegram Global</a></li>
+            <li><a href="#">Telegram Korea</a></li>
           </ul>
         </div>
         <div class="col-lg-3 col-md-3 col-sm-12">
           <h2 class="footer-heading">About us</h2>
           <ul class="footer-list">
-            <li>Contact</li>
-            <li>Annoucement</li>
+          <li><a href="#">Contact</a></li>
+            <li><a href="#">Annoucement</a></li>
 
 
           </ul>
@@ -355,7 +369,7 @@
   <!-- <script src="vendors/js/bootstrap.bundle.min.js"></script> -->
 
 
-  <script src="resources/js/scripts.js"></script>
+  <script src="{{ asset('landing-page/resources/js/scripts.js') }}"></script>
 </body>
 
 </html>
