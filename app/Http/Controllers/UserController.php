@@ -27,6 +27,8 @@ class UserController extends Controller
         return view('user.user', compact('user', 'referral'));
     }
     public function referral(Request $request){
-        dd($request->all());
+        $referral_token = $request->referral;
+        $referralID = User::where('referal_token', $referral_token)->first()->id;
+        return redirect('/register')->with('referralID');
     }
 }
