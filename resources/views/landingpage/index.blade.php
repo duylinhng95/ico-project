@@ -10,8 +10,11 @@
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz"
     crossorigin="anonymous">
   <!-- <link rel="stylesheet" type="text/css" href="vendors/css/bootstrap-reboot.min.css"> -->
+  <link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"/>
   <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap.min.css">
- 
+  
+
+
   <link href="{{ asset('landing-page/resources/css/styles.min.css') }}" rel="stylesheet">
   <link href="{{ asset('landing-page/resources/css/queries.min.css') }}" rel="stylesheet">
   <link href="{{ asset('landing-page/resources/css/homepage.min.css') }}" rel="stylesheet">
@@ -233,70 +236,74 @@
       <p class="heading-brief text-white">
         {{$page5['description']->content}}
       </p>
+      <div id="carousel-example-multi" class="carousel carousel-multi slide" data-interval="false">
 
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner" role="listbox">
+          <div class="item active">
+            <div class="media media-card">
+            <div class="card">
+            
+              <img class="card-img-top img-fluid" src="{{ asset('landing-page/resources/img/advisor-avatar-03.png') }}" alt="Card image cap">
+              <div class="card-body">
+                <h4 class="card-title">Card 1</h4>
+                <p class="card-subtitle"> Customer Services Manager</p>
+                <p class="card-text">This is a longer card with supporting text below as a natural lead-in to
+                  additional content. This content is a little bit longer.</p>
+
+            </div>
+          </div>
+            </div>
+          </div>
+
+          <div class="item ">
+            <div class="media media-card">
+            <div class="card">
+            <img class="card-img-top img-fluid" src="{{ asset('landing-page/resources/img/advisor-avatar-03.png') }}" alt="Card image cap">
+            <div class="card-body">
+              <h4 class="card-title">Card 2</h4>
+              <p class="card-subtitle"> Customer Services Manager</p>
+              <p class="card-text">This is a longer card with supporting text below as a natural lead-in to
+                additional content. This content is a little bit longer.</p>
+
+            </div>
+          </div>
+            </div>
+          </div>
+
+          <div class="item ">
+            <div class="media media-card">
+            <div class="card">
+            <img class="card-img-top img-fluid" src="{{ asset('landing-page/resources/img/advisor-avatar-03.png') }}" alt="Card image cap">
+            <div class="card-body">
+              <h4 class="card-title">Card 3</h4>
+              <p class="card-subtitle"> Customer Services Manager</p>
+              <p class="card-text">This is a longer card with supporting text below as a natural lead-in to
+                additional content. This content is a little bit longer.</p>
+
+            </div>
+          </div>
+            </div>
+          </div>
+
+
+
+           </div>
+
+        <!-- Controls -->
+        <a class="left carousel-control" href="#carousel-example-multi" role="button" data-slide="prev">
+        <img src="{{ asset('landing-page/resources/img/carousel-icon-prev.png') }}" class="control-icon" alt="prev">
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="right carousel-control" href="#carousel-example-multi" role="button" data-slide="next">
+        <img src="{{ asset('landing-page/resources/img/carousel-icon-next.png') }}" class="control-icon" alt="prev">
+          <span class="sr-only">Next</span>
+        </a>
+      </div>
+
+      
     </div>
-    <div id="myCarousel" class="carousel slide" data-interval="false" data-ride="carousel">
-      <div class="carousel-inner row w-100 mx-auto">
-        @foreach ($page5['advisor'] as $k => $advisor)
-          @if ($k == 0) 
-            <div class="carousel-item col-md-4 active">
-            <div class="card">
-              <img class="card-img-top img-fluid" src='{{asset("page/images/page5")."/".$advisor->avatar }}' alt="Card image cap">
-              <div class="card-body">
-                <h4 class="card-title">{{$advisor->name}}</h4>
-                <p class="card-subtitle">{{$advisor->position}}</p>
-                <p class="card-text">
-                  {{$advisor->description}}
-                </p>
-                <div class="social-icons">
-                  <ul>
-                    <li>
-                      <a href="#" alt="linkedin"> <i class="fab fa-linkedin"></i></a>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-          @else
-          <div class="carousel-item col-md-4 ">
-            <div class="card">
-              <img class="card-img-top img-fluid" src='{{asset("page/images/page5")."/".$advisor->avatar }}' alt="Card image cap">
-              <div class="card-body">
-                <h4 class="card-title">{{$advisor->name}}</h4>
-                <p class="card-subtitle">{{$advisor->position}}</p>
-                <p class="card-text">
-                  {{$advisor->description}}
-                </p>
-                <div class="social-icons">
-                  <ul>
-                    <li>
-                      <a href="#" alt="linkedin"> <i class="fab fa-linkedin"></i></a>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-          @endif
-        @endforeach
-       
-      </div>
-      <div class="container-fluid">
-        <a class="carousel-control-prev">
-            <div class="control-prev-icon">
-              <img src="{{ asset('landing-page/resources/img/carousel-icon-prev.png') }}" class="control-icon" alt="prev">
-            </div>
-            <span class="sr-only">Previous</span>
-          </a>
-          <a class="carousel-control-next">
-            <div class="control-next-icon">
-              <img src="{{ asset('landing-page/resources/img/carousel-icon-next.png') }}" class="control-icon" alt="prev">
-            </div>
-            <span class="sr-only">Next</span>
-          </a>
-      </div>
-    </div>  
+   
   </section>
   <!-- End Page 5 -->
   <!-- Page 6 -->
@@ -362,12 +369,14 @@
         </div>
       </div>
   </footer>
-  <script src="{{ asset('landing-page/vendors/js/jquery.min.js') }}"></script>
-  <script src="{{ asset('landing-page/vendors/js/jquery.waypoints.min.js') }}"></script>
- 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/js/bootstrap.min.js"></script>
-  <!-- <script src="vendors/js/bootstrap.bundle.min.js"></script> -->
+  <!-- <script src="{{ asset('landing-page/vendors/js/jquery.min.js') }}"></script> -->
 
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/js/bootstrap.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+  <script src="vendors/js/bootstrap.bundle.min.js"></script> -->
+  
 
   <script src="{{ asset('landing-page/resources/js/scripts.js') }}"></script>
 </body>

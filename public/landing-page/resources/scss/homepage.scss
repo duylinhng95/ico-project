@@ -159,7 +159,7 @@ header {
 /*------------------------------------*/
 /* ADIVISOR Section */
 /*------------------------------------*/
-@import "../../vendors/scss/partials/_carousel_card_slider";
+// @import "../../vendors/scss/partials/_carousel_card_slider";
 
 .advisor-section {
   background-color: #333333;
@@ -172,8 +172,102 @@ header {
     margin-right: 4px;
   }
 }
-#myCarousel {
-  padding: 1em 0;
+// .control-prev-icon,
+//   .control-next-icon {
+//     position: absolute;
+//     height: 80px;
+//     width: 100px;
+//     background-color: #e63b4a;
+//   }
+//   .control-icon {
+//     max-width: 45%;
+//     position: relative;
+//     top: 10%;
+//   }
+.carousel-control {
+  position: absolute;
+  top: 40%;
+  height: 80px;
+  width: 100px;
+  background-color: #e63b4a;
+}
+.control-icon {
+  max-width: 45%;
+  position: relative;
+  top: 10%;
+}
+.card {
+  background-color: #e63b4a;
+  text-align: center;
+  padding: 5px 1em;
+  width: 70%;
+  margin: 0 auto;
+  border-radius: 15px;
+}
+
+.card-title {
+  color: #333333;
+  font-size: 2em;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+.card-subtitle {
+  color: #fff;
+  font-weight: bold;
+}
+.card-text {
+  color: rgb(201, 201, 201);
+  font-size: 0.8em;
+  font-style: italic;
+}
+.card-img-top {
+  height: 80%;
+}
+.carousel-inner .active.left {
+  left: -33%;
+}
+.carousel-inner .next {
+  left: 33%;
+}
+.carousel-inner .prev {
+  left: -33%;
+}
+.carousel-control.left,
+.carousel-control.right {
+  background-image: none;
+}
+.carousel-multi .carousel-inner > .item {
+  transition: 500ms ease-in-out left;
+}
+.carousel-multi .carousel-inner > .item > .media-card {
+  background: #333;
+  display: table-cell;
+  width: 1%;
+}
+.carousel-multi .carousel-inner > .item > .media-card:last-of-type {
+  border-right: none;
+}
+.carousel-multi .carousel-inner .active {
+  display: table;
+}
+.carousel-multi .carousel-inner .active.left {
+  left: -33%;
+}
+.carousel-multi .carousel-inner .active.right {
+  left: 33%;
+}
+.carousel-multi .carousel-inner .next {
+  left: 33%;
+}
+.carousel-multi .carousel-inner .prev {
+  left: -33%;
+}
+@media all and (transform-3d), (-webkit-transform-3d) {
+  .carousel-multi .carousel-inner > .item {
+    transition: 500ms ease-in-out all;
+    backface-visibility: visible;
+    transform: none !important;
+  }
 }
 
 /*------------------------------------*/
