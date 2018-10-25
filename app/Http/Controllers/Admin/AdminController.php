@@ -451,7 +451,6 @@ class AdminController extends Controller
     		$file->move($destinationPath, $filename);
     		$input['image'] = $filename;
     	}
-        dd($input);
     	$partner->update($input);
     	return response()->json([
     		'status' => 'success',
