@@ -10,7 +10,7 @@
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz"
     crossorigin="anonymous">
   <!-- <link rel="stylesheet" type="text/css" href="vendors/css/bootstrap-reboot.min.css"> -->
-  <link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"/>
+  <!-- <link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"/> -->
   <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap.min.css">
   
 
@@ -236,6 +236,7 @@
       <p class="heading-brief text-white">
         {{$page5['description']->content}}
       </p>
+      
       <div id="carousel-example-multi" class="carousel carousel-multi slide" data-interval="false">
 
         <!-- Wrapper for slides -->
@@ -291,11 +292,11 @@
            </div>
 
         <!-- Controls -->
-        <a class="left carousel-control" href="#carousel-example-multi" role="button" data-slide="prev">
+        <a class="left carousel-control " href="#carousel-example-multi" role="button" data-slide="prev">
         <img src="{{ asset('landing-page/resources/img/carousel-icon-prev.png') }}" class="control-icon" alt="prev">
           <span class="sr-only">Previous</span>
         </a>
-        <a class="right carousel-control" href="#carousel-example-multi" role="button" data-slide="next">
+        <a class="right carousel-control " href="#carousel-example-multi" role="button" data-slide="next">
         <img src="{{ asset('landing-page/resources/img/carousel-icon-next.png') }}" class="control-icon" alt="prev">
           <span class="sr-only">Next</span>
         </a>
@@ -369,14 +370,15 @@
         </div>
       </div>
   </footer>
-  <!-- <script src="{{ asset('landing-page/vendors/js/jquery.min.js') }}"></script> -->
 
+  <script src="{{ asset('landing-page/vendors/js/jquery.min.js') }}"></script>
+ 
   <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/js/bootstrap.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-  <script src="vendors/js/bootstrap.bundle.min.js"></script> -->
-  
+  <script src="{{ asset('landing-page/vendors/js/bootstrap3/bootstrap-3.3.6.js') }}"></script>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+  <!-- <script src="vendors/js/bootstrap.bundle.min.js"></script> 
+   -->
 
   <script src="{{ asset('landing-page/resources/js/scripts.js') }}"></script>
 </body>
