@@ -251,7 +251,7 @@
                 <div class="social-icons">
                   <ul>
                     <li>
-                      <a href="#" alt="linkedin"> <i class="fab fa-linkedin"></i></a>
+                      <a href="{{$advisor->link}}" target="_blank" alt="linkedin"> <i class="fab fa-linkedin"></i></a>
                     </li>
                   </ul>
                 </div>
