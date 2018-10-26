@@ -54,5 +54,12 @@ Route::group(['prefix'=>'admin','middleware'=> 'auth.admin'],function (){
 });
 // User Control
 Route::get('/verify/{token}', 'UserController@verify');
-Route::get('/user', 'UserController@index')->middleware('auth.user');
+Route::group(['prefix' => 'user', 'middleware' => 'auth.user'], function(){
+	Route::get('/', 'UserController@index');
+	Route::get('/kyc', 'UserController@kyc');
+	Route::get('/kyc/1', 'UserController@kyc_form');
+	Route::post('/kyc/1', 'UserController@kyc_step1');
+	Route::get('/kyc/2', 'UserController@kyc_image');
+	Route::post('/kyc/2', 'UserController@kyc_step2');
+});
 Route::get('/referral', 'UserController@referral');

@@ -1,4 +1,4 @@
-@extends('user.layout')
+@extends('user.layout', ['user' , $user])
 @section('content')
     <div class="container-fluid">
         <div class="row">
@@ -6,7 +6,7 @@
                 <h1 class="page-header">Referral</h1>
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        You referral link
+                        Your referral link
                     </div>
                     <div class="panel-body">
                         <p>Use this link to invite your friend and earn 6% on the amount they invest</p>
@@ -26,7 +26,7 @@
         <dvi class="row">
             <div class="panel panel-default">
                     <div class="panel-heading">
-                        You referral link
+                        Your referred users list
                     </div>
                     <div class="panel-body">
                         @if(count($referral) > 0)
