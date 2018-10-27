@@ -17,24 +17,26 @@
 						</thead>
 						<tbody>
 							@foreach($users as $u)
-							<tr>
-								<td> {{$u->name}} </td>
-								<td> {{$u->email}} </td>
-								@switch($u->is_kyc)
-									@case(0)
-									<td> NO KYC</td>
-									<td><button class="btn btn-default" onclick="popitup('mod/{{$u->id}}')" disabled="disabled">Verify KYC</button></td>
-									@break
-									@case(1)
-									<td> KYC INFORMATION</td>
-									<td><button class="btn btn-default" onclick="popitup('mod/{{$u->id}}')" disabled="disabled">Verify KYC</button></td>
-									@break
-									@case(2)
-									<td>DONE KYC</td>
-									<td><button class="btn btn-default" onclick="popitup('mod/{{$u->id}}')" >Verify KYC</button></td>
-									@break
-								@endswitch
-							</tr>
+								@if($u->is_kyc != 3)
+									<tr>
+										<td> {{$u->name}} </td>
+										<td> {{$u->email}} </td>
+										@switch($u->is_kyc)
+											@case(0)
+											<td> NO KYC</td>
+											<td><button class="btn btn-default" onclick="popitup('mod/{{$u->id}}')" disabled="disabled">Verify KYC</button></td>
+											@break
+											@case(1)
+											<td> KYC INFORMATION</td>
+											<td><button class="btn btn-default" onclick="popitup('mod/{{$u->id}}')" disabled="disabled">Verify KYC</button></td>
+											@break
+											@case(2)
+											<td>DONE KYC</td>
+											<td><button class="btn btn-default" onclick="popitup('mod/{{$u->id}}')" >Verify KYC</button></td>
+											@break
+										@endswitch
+									</tr>
+								@endif
 							@endforeach
 						</tbody>
 					</table>

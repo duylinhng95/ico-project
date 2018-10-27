@@ -137,7 +137,7 @@
                 url: "{{url('mod/kyc')}}/"+id,
                 type: "get",
                 success: function(response){
-                    console.log(response);
+                    window.close();
                 }
             })
         }
