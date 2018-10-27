@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title></title>
+    <title>{{$user->name}} User Panel</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="{{asset('/plugins/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
@@ -55,12 +55,12 @@
                             </li>
                         </div>
                         <li>
-                            <a href="#"><i class="fa fa-user fa-fw"></i> Account</a>
-                        </li>
-                        <li>
-                            <a href="#"><i class="fa fa-list-ul fa-fw"></i> Referral</span></a>
+                            <a href="/user"><i class="fa fa-list-ul fa-fw"></i> Referral</span></a>
                             <!-- /.nav-second-level -->
                         </li> 
+                        <li>
+                            <a href="#"><i class="fa fa-user fa-fw"></i> KYC</a>
+                        </li>
                         <li>
                             <a class="nav-link" href="{{ route('logout') }}"
                                                                 onclick="event.preventDefault();

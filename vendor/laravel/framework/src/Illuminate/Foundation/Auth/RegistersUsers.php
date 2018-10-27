@@ -18,15 +18,12 @@ trait RegistersUsers
      */
     public function showRegistrationForm(Request $request)
     {
-        $brands = Index::where('section', 'brand')->get();
         $referral_id = 0;
+        $brands = Index::where('section', 'brand')->get();
         foreach ($brands as $rq)
-        {
             $brand[$rq->name] = $rq;
-        }
-        if($request->session()->has('referral_id'))
-        {
-            $referral_id = $request->session()->pull('referral_id');
+        if ($request->session()->has('referral_id')) {
+            $referral_id = $request->session()->get('referral_id');
         }
         return view('auth.register', compact('brand', 'referral_id'));
     }
@@ -42,8 +39,6 @@ trait RegistersUsers
         $this->validator($request->all())->validate();
 
         event(new Registered($user = $this->create($request->all())));
-
-        $this->guard()->login($user);
 
         return $this->registered($request, $user)
                         ?: redirect($this->redirectPath());

@@ -613,6 +613,7 @@
                   <th>Position</th>
                   <th>Description</th>
                   <th style="width: 20%;">Image</th>
+                  <th>Link Social</th>
                   <th>Action</th>
                 </tr>
                 @foreach ($page5['advisor'] as $advisor)
@@ -621,6 +622,7 @@
                   <td>{{$advisor->position}}</td>
                   <td>{{$advisor->description}}</td>
                   <td><img class="img-thumbnail img-fluid"  alt="Avatar" src='{{asset("page/images/page5")."/".$advisor->avatar }}'></td>
+                  <td>{{$advisor->link}}</td>
                   <td style="vertical-align: middle;">
                     <div style="margin: auto; text-align: center;">
                       <button type="button" class="btn btn-success" onclick="editAdvisor({{$advisor->id}})">Edit</button>
@@ -745,6 +747,14 @@
           </div>
 
           <div class="form-group">
+            <label class="col-sm-4 control-label">Link Social</label>
+
+            <div class="col-sm-12">
+              <input type="text" class="form-control" name="link">
+            </div>
+          </div>
+
+          <div class="form-group">
               <label class="col-sm-2 control-label">Avatar:</label>
               <div class="input-group col-sm-12">
                 <input type="file" name="avatar" class="form-control" accept='image/*'>
@@ -795,6 +805,13 @@
 
             <div class="col-sm-12">
               <input type="text" class="form-control" name="description" id="advisorDescription">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-sm-4 control-label">Link Social</label>
+
+            <div class="col-sm-12">
+              <input type="text" class="form-control" name="link">
             </div>
           </div>
           <div class="form-group">
@@ -892,7 +909,7 @@
             <label class="col-sm-2 control-label">Link</label>
 
             <div class="col-sm-12">
-              <input type="text" class="form-control" name="position" id="partnerLink">
+              <input type="text" class="form-control" name="link" id="partnerLink">
             </div>
           </div>
           <div class="form-group">
@@ -936,7 +953,7 @@ $(document).ready(function(){
       success:function(response){
         console.log(response.data);
         res = response.data;
-        $("#table_advisor").find('tbody').append("<tr id='advisor"+res.id+"'><td>"+res.name+"</td><td>"+res.position+"</td>"+"<td>"+res.description+"</td>"+'<td><img class="img-thumbnail img-fluid"  alt="Timeline" src="{{asset("page/images/page5")}}'+'/'+res.avatar+'"></td>'+"<td style='vertical-align: middle;'> <div style='margin: auto; text-align: center;'><button type='button' class='btn btn-success' onclick='editAdvisor("+res.id+")'>Edit</button> <button type='button' class='btn btn-danger' onclick='deleteAdvisor("+res.id+")'>Delete</button></div></td><tr>");
+        $("#table_advisor").find('tbody').append("<tr id='advisor"+res.id+"'><td>"+res.name+"</td><td>"+res.position+"</td>"+"<td>"+res.description+"</td>"+'<td><img class="img-thumbnail img-fluid"  alt="Timeline" src="{{asset("page/images/page5")}}'+'/'+res.avatar+'"></td>'+"<td>"+res.link+"</td>"+"<td style='vertical-align: middle;'> <div style='margin: auto; text-align: center;'><button type='button' class='btn btn-success' onclick='editAdvisor("+res.id+")'>Edit</button> <button type='button' class='btn btn-danger' onclick='deleteAdvisor("+res.id+")'>Delete</button></div></td><tr>");
       },
     });
   });
@@ -971,7 +988,7 @@ function updateAdvisor(id){
       contentType: false,
       success:function(response){
         res = response.data;
-        $("#table_advisor").find('#advisor'+id).html("<td>"+res.name+"</td><td>"+res.position+"</td>"+"<td>"+res.description+"</td>"+'<td><img class="img-thumbnail img-fluid"  alt="Timeline" src="{{asset("page/images/page5")}}'+'/'+res.avatar+'"></td>'+"</td>"+"<td style='vertical-align: middle;'> <div style='margin: auto; text-align: center;'><button type='button' class='btn btn-success' onclick='editAdvisor("+id+")'>Edit</button> <button type='button' class='btn btn-danger' onclick='deleteAdvisor("+id+")'>Delete</button></div></td>");
+        $("#table_advisor").find('#advisor'+id).html("<td>"+res.name+"</td><td>"+res.position+"</td>"+"<td>"+res.description+"</td>"+'<td><img class="img-thumbnail img-fluid"  alt="Timeline" src="{{asset("page/images/page5")}}'+'/'+res.avatar+'"></td>'+"<td>"+res.link+"</td>"+"<td style='vertical-align: middle;'> <div style='margin: auto; text-align: center;'><button type='button' class='btn btn-success' onclick='editAdvisor("+id+")'>Edit</button> <button type='button' class='btn btn-danger' onclick='deleteAdvisor("+id+")'>Delete</button></div></td>");
       },
   });
 };

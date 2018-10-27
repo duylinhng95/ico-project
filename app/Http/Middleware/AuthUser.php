@@ -18,7 +18,7 @@ class AuthUser
     {
         $role = Auth::user()->role;
         $verify = Auth::user()->vertification_token;
-        if($role == 0 && $verify == null)
+        if($role == 0 && $verify == null || $role == null && $verify == null)
         {
             return $next($request);
         }
