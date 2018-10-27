@@ -338,7 +338,7 @@ class AdminController extends Controller
     public function page5_advisor(Request $request){
     	$input = $request->except('avatar');
         $this->validate($request, [
-         'avatar' => 'image|mimes: jpeg, bmp, png|dimensions: min_width=840, min_height= 620',
+         'avatar' => 'image|dimensions: min_width=840, min_height= 620',
         ],[
             'avatar.dimensions' => "Background must be at least: 840x620"
         ]);

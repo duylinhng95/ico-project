@@ -59,5 +59,9 @@ class Kernel extends HttpKernel
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
         'auth.admin' => \App\Http\Middleware\AuthAdmin::class,
         'auth.user' => \App\Http\Middleware\AuthUser::class,
+        'auth.mod' => \App\Http\Middleware\AuthMod::class,
+        'kyc' => \App\Http\Middleware\kycMiddleware::class,
+        'kyc1' => \App\Http\Middleware\kycStep1Middleware::class,
+        'kyc2' => \App\Http\Middleware\kycStep2Middleware::class,
     ];
 }
