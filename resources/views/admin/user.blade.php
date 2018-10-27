@@ -25,6 +25,7 @@
 		                <th>Email</th>
 		                <th>Verify Status</th>
 		                <th>KYC Status</th>
+                    <th>Number of Refs</th>
 	             	</tr>
             	</thead>
               	<tbody>
@@ -33,7 +34,8 @@
 	             		<td>{{$user->name}}</td>
 	             		<td>{{$user->email}}</td>
 	             		<td>{{$user->verify_token ? 'Not Verified' : 'Verified'}}</td>
-	             		<td>{{$user->is_kyc ? 'Yes' : 'No'}}</td>
+                  <td>{{$user->is_kyc ? 'Yes' : 'No'}}</td>
+	             		<td>{{$user->countRef}}</td>
 	             	</tr>
 	             	@endforeach
             	</tbody>

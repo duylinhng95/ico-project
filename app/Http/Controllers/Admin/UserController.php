@@ -23,7 +23,13 @@ class UserController extends Controller
         ];
         $brands = Index::where('section', 'brand')->get();
         foreach ($brands as $rq)
-        	$brand[$rq->name] = $rq;
+        	{
+                $brand[$rq->name] = $rq;
+            }
+        foreach ($users as $user)
+        {
+            $user->countRef = User::where('referral_id', $user->id)->count();
+        }
     	return view('/admin/user', compact('users', 'brand'));
     }
     public function export(){
