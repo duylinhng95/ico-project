@@ -26,6 +26,7 @@
 		                <th>Verify Status</th>
 		                <th>KYC Status</th>
                     <th>Number of Refs</th>
+                    <th>User role</th>
 	             	</tr>
             	</thead>
               	<tbody>
@@ -36,6 +37,13 @@
 	             		<td>{{$user->verify_token ? 'Not Verified' : 'Verified'}}</td>
                   <td>{{$user->is_kyc ? 'Yes' : 'No'}}</td>
 	             		<td>{{$user->countRef}}</td>
+                  <td>
+                    <select class="form-control" id="selectRole" onchange="changeRole({{$user->id}})">
+                      <option disabled="disabled" selected>{{$user->role ? 'Mod' : 'User'}}</option>
+                      <option value ="1">Mod</option>
+                      <option value = "0">User</option>
+                    </select>
+                  </td>
 	             	</tr>
 	             	@endforeach
             	</tbody>
@@ -43,18 +51,62 @@
           </div>
           <!-- /.card-body -->
         </div>
+        <div class="card">
+          <div class="card-header">
+            <h3 class="card-title">Mods List</h3>
+          </div>
+          <!-- /.card-header -->
+          <div class="card-body p-0">
+            <table class="table table-striped" id="table_user">
+              <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Verify Status</th>
+                    <th>KYC Status</th>
+                    <th>User role</th>
+                </tr>
+              </thead>
+                <tbody>
+                @foreach($mods as $mod)
+                <tr>
+                  <td>{{$mod->name}}</td>
+                  <td>{{$mod->email}}</td>
+                  <td>{{$mod->verify_token ? 'Not Verified' : 'Verified'}}</td>
+                  <td>{{$mod->is_kyc ? 'Yes' : 'No'}}</td>
+                  <td>
+                    <select class="form-control" id="selectRole" onchange="changeRole({{$mod->id}})">
+                      <option disabled="disabled" selected>{{$mod->role ? 'Mod' : 'User'}}</option>
+                      <option value ="1">Mod</option>
+                      <option value = "0">User</option>
+                    </select>
+                  </td>
+                </tr>
+                @endforeach
+              </tbody>
+          </table>
+          </div>
+          <!-- /.card-body -->
+        </div>
         <!-- /.card -->
       </div>
 </div>
 <script type="text/javascript">
-	function exportExcel(){
-		$.ajax({
-			type:"GET",
-			url: "{{url('admin/user/export')}}",
-			success: function (response){
-				console.log(response);
-			},
-		});
-	}
+  function changeRole(id){
+    var user_id = id;
+    var role_id = $('#selectRole option:selected').attr('value');
+    var _token = "{{ csrf_token() }}";
+    $.ajax({
+        url:"{{url('admin/user/role')}}/"+user_id+"/",
+        data: {
+          role: role_id,
+          _token: _token,
+        },
+        type:'post',
+        success:function(response){
+          console.log(response);
+        },
+    });
+  }
 </script>
 @endsection

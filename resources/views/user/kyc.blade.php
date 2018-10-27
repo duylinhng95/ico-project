@@ -1,9 +1,11 @@
-@extends('user.layout', ['user' , $user])
+@extends('user.layout', ['user' => $user, 'brand' => $brand])
 @section('content')
 <div class="container-fluid">
 	<div class="row">
 		<div class="col-lg-12">
+			
             <h1 class="page-header">KYC Panel</h1>
+            @if($user->is_kyc != 3)
             <p style="font-weight: bold;">Thank you for filling your information. This information will be saved and can't be changed. If you want to change please contact to Moderator</p>
             <div class="panel panel-default">
 	            <div class="panel-heading">
@@ -88,6 +90,16 @@
 					</div>
 	        	</div>
 	        </div>
+	        @else
+	        <div class="panel panel-green text-center">
+	        	<div class="panel-heading">
+	        		<h2>CONGRATULATIONS!!! Your KYC have been verified</h2>
+	        	</div>
+	        	<div class="panel-body">
+	        		<h3>Thank you for your time and effor on our KYC Process</h3>
+	        	</div>
+	        </div>
+	        @endif
         </div>
 	</div>
 </div>

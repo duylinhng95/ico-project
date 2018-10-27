@@ -50,16 +50,24 @@ Route::group(['prefix'=>'admin','middleware'=> 'auth.admin'],function (){
 	Route::group(['prefix'=>'user'], function(){
 		Route::get('/', 'Admin\UserController@index');
 		Route::get('/export', 'Admin\UserController@export');
+		Route::post('/role/{id}', 'Admin\UserController@role');
 	});
 });
 // User Control
-Route::get('/verify/{token}', 'UserController@verify');
 Route::group(['prefix' => 'user', 'middleware' => 'auth.user'], function(){
 	Route::get('/', 'UserController@index');
-	Route::get('/kyc', 'UserController@kyc');
-	Route::get('/kyc/1', 'UserController@kyc_form');
+	Route::get('/kyc', 'UserController@kyc')->middleware('kyc');
+	Route::get('/kyc/1', 'UserController@kyc_form')->middleware('kyc1');
 	Route::post('/kyc/1', 'UserController@kyc_step1');
 	Route::get('/kyc/2', 'UserController@kyc_image');
 	Route::post('/kyc/2', 'UserController@kyc_step2');
 });
+// Moderator Panel
+Route::group(['prefix' => 'mod', 'middleware' => 'auth.mod'], function(){
+	Route::get('/', 'ModController@index');
+	Route::get('/{id}', 'ModController@show');
+	Route::get('kyc/{id}', 'ModController@verify_kyc');
+});
 Route::get('/referral', 'UserController@referral');
+Route::get('/verify/{token}', 'UserController@verify');
+

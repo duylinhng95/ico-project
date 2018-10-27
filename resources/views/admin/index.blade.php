@@ -994,7 +994,7 @@ function updateAdvisor(id){
 };
 function deleteAdvisor(id){
   $.ajax({
-    url:"{{url('admin/homepage/page5/advisor')}}/"+id+"/delete",
+      url:"{{url('admin/homepage/page5/advisor')}}/"+id+"/delete",
       dataType:'json',
       async:false,
       type:'get',

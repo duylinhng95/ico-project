@@ -9,13 +9,10 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>{{$user->name}} User Panel</title>
+    <title>{{$user->name}} Moderator Panel</title>
 
     <!-- Bootstrap Core CSS -->
-    <link href="{{asset('/plugins/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
-
-    <!-- MetisMenu CSS -->
-    <link href="{{asset('/plugins/metisMenu/metisMenu.min.css')}}" rel="stylesheet">
+    <link href="{{asset('page//mod/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
 
     <!-- Custom CSS -->
     <link href="{{asset('css/user/sb-admin-2.css')}}" rel="stylesheet">
@@ -30,6 +27,11 @@
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
+        <!-- jQuery -->
+    <script rel="javascript" type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="{{asset('plugins/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
 
 </head>
 
@@ -55,12 +57,9 @@
                             </li>
                         </div>
                         <li>
-                            <a href="/user"><i class="fa fa-list-ul fa-fw"></i> Referral</span></a>
+                            <a href="#"><i class="fa fa-list-ul fa-fw"></i> User List</span></a>
                             <!-- /.nav-second-level -->
                         </li> 
-                        <li>
-                            <a href="/user/kyc"><i class="fa fa-user fa-fw"></i> KYC</a>
-                        </li>
                         <li>
                             <a class="nav-link" href="{{ route('logout') }}"
                                                                 onclick="event.preventDefault();
@@ -86,15 +85,6 @@
 
     </div>
     <!-- /#wrapper -->
-
-    <!-- jQuery -->
-    <script rel="javascript" type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-
-    <!-- Bootstrap Core JavaScript -->
-    <script src="{{asset('plugins/bootstrap/js/bootstrap.min.js')}}"></script>
-
-    <!-- Metis Menu Plugin JavaScript -->
-    <script src="{{asset('plugins/metisMenu/metisMenu.min.js')}}"></script>
 
     <!-- Custom Theme JavaScript -->
     <script src="{{asset('js/user/sb-admin-2.js')}}"></script>

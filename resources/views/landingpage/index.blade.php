@@ -282,6 +282,7 @@
         @endforeach
        
       </div>
+      @if(count($page5['advisor']) >3)
       <div class="container-fluid">
         <a class="carousel-control-prev">
             <div class="control-prev-icon">
@@ -296,6 +297,7 @@
             <span class="sr-only">Next</span>
           </a>
       </div>
+      @endif
     </div>  
   </section>
   <!-- End Page 5 -->

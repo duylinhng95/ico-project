@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\User;
 use App\KYC;
+use App\Index;
 use Auth;
 class UserController extends Controller
 {
@@ -25,7 +26,8 @@ class UserController extends Controller
     public function index(){
         $user = Auth::user();
         $referral = User::where('referral_id', $user->id)->get();
-        return view('user.user', compact('user', 'referral'));
+        $brand = Index::where('section', 'brand')->where('name', 'brandImg')->first();
+        return view('user.user', compact('user', 'referral', 'brand'));
     }
     public function referral(Request $request){
         $referral_token = $request->referral;
@@ -36,6 +38,7 @@ class UserController extends Controller
     public function kyc(){
         $kyc = Auth::user()->is_kyc;
         $user = Auth::user();
+        $brand = Index::where('section', 'brand')->where('name', 'brandImg')->first();
         $profile = [
             'address' => $user->address,
             'phone' => $user->phone,
@@ -43,7 +46,6 @@ class UserController extends Controller
             'country' => $user->country,
             'identify' => $user->identify,
         ];
-        $kyc_image = KYC::where('user_id', $user->id)->first();
         $path = asset('/page/images/user').'/'.$user->id.'_'.$user->email;
         if($kyc == 0)
         {
@@ -55,13 +57,16 @@ class UserController extends Controller
         }
         else
         {
-            return view('user.kyc', compact('user', 'profile', 'kyc_image', 'path'));
+            $kyc_image = KYC::where('user_id', $user->id)->first();
+
+            return view('user.kyc', compact('user', 'profile', 'kyc_image', 'path', 'brand'));
         }
     }
 
     public function kyc_form(){
         $user = Auth::user();
-        return view('user.kyc1', compact('user'));
+        $brand = Index::where('section', 'brand')->where('name', 'brandImg')->first();
+        return view('user.kyc1', compact('user', 'brand'));
     }
 
     public function kyc_step1(Request $request){
@@ -75,7 +80,8 @@ class UserController extends Controller
 
     public function kyc_image(){
         $user = Auth::user();
-        return view('user.kyc2', compact('user'));
+        $brand = Index::where('section', 'brand')->where('name', 'brandImg')->first();
+        return view('user.kyc2', compact('user', 'brand'));
     }
 
     public function kyc_step2(Request $request){
