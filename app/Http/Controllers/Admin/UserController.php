@@ -13,7 +13,7 @@ class UserController extends Controller
 {
     public function index(){
     	$users = User::where('role', null)->orWhere('role', '0')->get();
-        $mods = User::where('role', 1)->get();
+        $mods = User::where('role', '1')->get();
     	$example = '';
     	$brand = [
             'brandName' => $example,

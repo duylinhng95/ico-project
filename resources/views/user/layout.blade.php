@@ -55,11 +55,13 @@
                             </li>
                         </div>
                         <li>
-                            <a href="/user"><i class="fa fa-list-ul fa-fw"></i> Referral</span></a>
-                            <!-- /.nav-second-level -->
+                            <a href="/user"><i class="fa fa-user fa-fw"></i> Profile</span></a>
                         </li> 
                         <li>
-                            <a href="/user/kyc"><i class="fa fa-user fa-fw"></i> KYC</a>
+                            <a href="/user/referral"><i class="fa fa-list-ul fa-fw"></i> Referral</span></a>
+                        </li> 
+                        <li>
+                            <a @if($user->is_profile == 1) href='/user/kyc' @else class="disabled"  @endif><i class="fa fa-user-shield fa-fw"></i> KYC</a>
                         </li>
                         <li>
                             <a class="nav-link" href="{{ route('logout') }}"

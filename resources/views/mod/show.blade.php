@@ -12,7 +12,7 @@
     <title>{{$user->name}}</title>
 
     <!-- Bootstrap Core CSS -->
-    <link href="{{asset('page//mod/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
+    <link href="{{asset('/plugins/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
 
     <!-- Custom CSS -->
     <link href="{{asset('css/user/sb-admin-2.css')}}" rel="stylesheet">

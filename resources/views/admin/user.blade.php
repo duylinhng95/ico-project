@@ -38,10 +38,9 @@
                   <td>{{$user->is_kyc ? 'Yes' : 'No'}}</td>
 	             		<td>{{$user->countRef}}</td>
                   <td>
-                    <select class="form-control" id="selectRole" onchange="changeRole({{$user->id}})">
-                      <option disabled="disabled" selected>{{$user->role ? 'Mod' : 'User'}}</option>
-                      <option value ="1">Mod</option>
+                    <select class="form-control" id="selectRole{{$user->id}}" onchange="changeRole({{$user->id}})">
                       <option value = "0">User</option>
+                      <option value ="1">Mod</option>
                     </select>
                   </td>
 	             	</tr>
@@ -75,10 +74,9 @@
                   <td>{{$mod->verify_token ? 'Not Verified' : 'Verified'}}</td>
                   <td>{{$mod->is_kyc ? 'Yes' : 'No'}}</td>
                   <td>
-                    <select class="form-control" id="selectRole" onchange="changeRole({{$mod->id}})">
-                      <option disabled="disabled" selected>{{$mod->role ? 'Mod' : 'User'}}</option>
+                    <select class="form-control" id="selectRole{{$mod->id}}" onchange="changeRole({{$mod->id}})">
                       <option value ="1">Mod</option>
-                      <option value = "0">User</option>
+                      <option value ="0">User</option>
                     </select>
                   </td>
                 </tr>
@@ -94,7 +92,7 @@
 <script type="text/javascript">
   function changeRole(id){
     var user_id = id;
-    var role_id = $('#selectRole option:selected').attr('value');
+    var role_id = $('#selectRole'+id).val();
     var _token = "{{ csrf_token() }}";
     $.ajax({
         url:"{{url('admin/user/role')}}/"+user_id+"/",

@@ -23,11 +23,11 @@ class UserController extends Controller
     		return  abort(404);
     	}
     }
-    public function index(){
+    public function referral_index(){
         $user = Auth::user();
         $referral = User::where('referral_id', $user->id)->get();
         $brand = Index::where('section', 'brand')->where('name', 'brandImg')->first();
-        return view('user.user', compact('user', 'referral', 'brand'));
+        return view('user.referral', compact('user', 'referral', 'brand'));
     }
     public function referral(Request $request){
         $referral_token = $request->referral;
@@ -47,35 +47,21 @@ class UserController extends Controller
             'identify' => $user->identify,
         ];
         $path = asset('/page/images/user').'/'.$user->id.'_'.$user->email;
-        if($kyc == 0)
-        {
-           return redirect('/user/kyc/1'); 
-        }
-        elseif($kyc == 1)
-        {
-            return redirect('/user/kyc/2');
-        }
-        else
-        {
-            $kyc_image = KYC::where('user_id', $user->id)->first();
-
-            return view('user.kyc', compact('user', 'profile', 'kyc_image', 'path', 'brand'));
-        }
+        $kyc_image = KYC::where('user_id', $user->id)->first();
+        return view('user.kyc', compact('user', 'profile', 'kyc_image', 'path', 'brand'));
     }
 
-    public function kyc_form(){
+    public function profile(){
         $user = Auth::user();
         $brand = Index::where('section', 'brand')->where('name', 'brandImg')->first();
-        return view('user.kyc1', compact('user', 'brand'));
+        return view('user.profile', compact('user', 'brand'));
     }
 
-    public function kyc_step1(Request $request){
+    public function save_profile(Request $request){
         $input = $request->except('_token');    
         $user = User::where('id', $input['id']);
-        $input['is_kyc'] = 1;
+        $input['is_profile'] = 1;
         $user->update($input);
-        return redirect('/user/kyc');
-
     }
 
     public function kyc_image(){
@@ -84,7 +70,7 @@ class UserController extends Controller
         return view('user.kyc2', compact('user', 'brand'));
     }
 
-    public function kyc_step2(Request $request){
+    public function kyc_step1(Request $request){
         $user = User::where('id', $request->id);
         $user_kyc = $user->first();
         $input['user_id'] = $user_kyc->id;
@@ -100,9 +86,14 @@ class UserController extends Controller
             $filename = 'back_'.$file->getClientOriginalName('back');
             $file->move($destinationPath, $filename);
             $input['back'] = $filename;
+        // Selfie Image
+            $file = $request->file('selfie');
+            $filename = 'selfie_'.$file->getClientOriginalName('selfie');
+            $file->move($destinationPath, $filename);
+            $input['selfie'] = $filename;
         // KYC Update
             $kyc = KYC::create($input);
-            $user->update(['is_kyc' => '2']);
+            $user->update(['is_kyc' => '1']);
         return redirect('/user/kyc');        
     }
 }

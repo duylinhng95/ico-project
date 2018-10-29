@@ -73,7 +73,8 @@ class RegisterController extends Controller
             'vertification_token' => $verify_token,
             'referal_token' => $ref_token,
             'is_kyc' => 0,
-            'role' => 0
+            'role' => 0,
+            'is_profile' => 0
         ]);
         if($data['referral_id'])
         {

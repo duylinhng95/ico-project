@@ -5,7 +5,7 @@
 		<div class="col-lg-12">
 			
             <h1 class="page-header">KYC Panel</h1>
-            @if($user->is_kyc != 3)
+            @if($user->is_kyc == 1)
             <p style="font-weight: bold;">Thank you for filling your information. This information will be saved and can't be changed. If you want to change please contact to Moderator</p>
             <div class="panel panel-default">
 	            <div class="panel-heading">
@@ -88,9 +88,16 @@
 							<img src="{{$path.'/'.$kyc_image->back}}" class="img-thumbnail">
 						</div>
 					</div>
+					<div class="form-group">
+						<label class="col-sm-12">Selfie Image</label>
+
+						<div class="col-sm-12">
+							<img src="{{$path.'/'.$kyc_image->selfie}}" class="img-thumbnail">
+						</div>
+					</div>
 	        	</div>
 	        </div>
-	        @else
+	        @elseif ($user->is_kyc == 2)
 	        <div class="panel panel-green text-center">
 	        	<div class="panel-heading">
 	        		<h2>CONGRATULATIONS!!! Your KYC have been verified</h2>

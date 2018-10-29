@@ -33,8 +33,9 @@ class ModController extends Controller
 
     public function verify_kyc($id){
     	$user = User::where('id', $id)->first();
-    	$user->is_kyc = 3;
+    	$user->is_kyc = 2;
     	$user->save();
+        KYC::where('user_id', $id)->delete();
     	return response()->json([
     		'status' => 'success'
     	]);
