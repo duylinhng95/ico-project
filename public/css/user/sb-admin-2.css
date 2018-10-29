@@ -445,3 +445,8 @@ input[type=number]::-webkit-outer-spin-button {
     -webkit-appearance: none;
     margin: 0;
 }
+a.disabled {
+   pointer-events: none;
+   cursor: default;
+   background-color: #3333;
+}

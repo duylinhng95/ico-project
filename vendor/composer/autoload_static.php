@@ -402,8 +402,6 @@ class ComposerStaticInite1091848f977271c0a1adab583aaaac2
         'App\\Http\\Middleware\\TrustProxies' => __DIR__ . '/../..' . '/app/Http/Middleware/TrustProxies.php',
         'App\\Http\\Middleware\\VerifyCsrfToken' => __DIR__ . '/../..' . '/app/Http/Middleware/VerifyCsrfToken.php',
         'App\\Http\\Middleware\\kycMiddleware' => __DIR__ . '/../..' . '/app/Http/Middleware/kycMiddleware.php',
-        'App\\Http\\Middleware\\kycStep1Middleware' => __DIR__ . '/../..' . '/app/Http/Middleware/kycStep1Middleware.php',
-        'App\\Http\\Middleware\\kycStep2Middleware' => __DIR__ . '/../..' . '/app/Http/Middleware/kycStep2Middleware.php',
         'App\\Index' => __DIR__ . '/../..' . '/app/Index.php',
         'App\\KYC' => __DIR__ . '/../..' . '/app/KYC.php',
         'App\\Mail\\Verify' => __DIR__ . '/../..' . '/app/Mail/Verify.php',

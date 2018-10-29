@@ -5,51 +5,88 @@
 		<div class="col-lg-12">
             <h1 class="page-header">KYC Panel</h1>
             <div class="panel panel-default">
-	            <div class="panel-heading">
-	                Step 2: Provide your ID card Image
-	            </div>
 	            <div class="panel-body">
-	            	<p style="font-weight: bold;">Please provide your ID card Image.</p>
+	            	<form class="form-horizontal" action="{{url('user/kyc/1')}}" method="post" enctype="multipart/form-data">
 	            	<div class="panel panel-default">
+	            		<div class="panel-heading text-center">
+			                <h1>Proof of identity</h1>
+			            </div>
+
 	            		<div class="panel-body">
-	            			<form class="form-horizontal" action="{{url('user/kyc/2')}}" method="post" enctype="multipart/form-data">
-								{!!csrf_field()!!}
-								<input type="hidden" name="id" value="{{$user->id}}">
-								<div class="form-group">
+	            			<h3 style="font-weight: bold;" class="text-center">Please upload your ID card in both side. The photo should be bright and clear, and all corners of your document must be visible.</h3>
+							{!!csrf_field()!!}
+							<input type="hidden" name="id" value="{{$user->id}}">
+							<div class="row">
+								<div class="form-group col-sm-6">
 									<label class="col-sm-12">Front Image</label>
 
 									<div class="col-sm-12">
 										<input type="file" class="form-control" name="front" id="frontInput">
 									</div>
 								</div>
-								<div class="form-group">
+								<div class="form-group col-sm-6">
 									<label class="col-sm-12">Preview Front Image</label>
 
 									<div class="col-sm-12">
-										<img src="#" id="frontPrev" class="img-thumbnail">
+										<img src="{{asset('/images/kyc/id_front.png')}}" id="frontPrev" class="img-thumbnail">
 									</div>
 								</div>
-								<div class="form-group">
+							</div>
+							<div class="row">
+								<div class="form-group col-sm-6">
 									<label class="col-sm-12">Back Image</label>
 
 									<div class="col-sm-12">
 										<input type="file" class="form-control" name="back" id="backInput">
 									</div>
 								</div>
-								<div class="form-group">
+								<div class="form-group col-sm-6">
 									<label class="col-sm-12">Preview Back Image</label>
 
 									<div class="col-sm-12">
-										<img src="#" id="backPrev" class="img-thumbnail">
+										<img src="{{asset('/images/kyc/id_back.png')}}" id="backPrev" class="img-thumbnail">
 									</div>
 								</div>
-								<div class="card-footer">
-									<button type="submit" class="btn btn-info pull-right">Save</button>
+							</div>
+							<div class="row">
+								<div class="form-group">
+									<label class="col-sm-12"></label>
+									<div class="col-sm-12">
+										
+									</div>
 								</div>
-					        </form>
+							</div>								
 	            		</div>
 	            	</div>
+	            	<div class="panel panel-default">
+	            		<div class="panel-heading text-center">
+			                <h1>Selfie with the proof</h1>
+			            </div>
+			            <div class="panel-body">
+			            	<h3 style="font-weight: bold" class="text-center">Please take a selfie with your document so that it’s clearly visible and does not cover your face.</h3>
+			            	<div class="form-group">
+								<label class="col-sm-12">Back Image</label>
+
+								<div class="col-sm-12">
+									<input type="file" class="form-control" name="selfie" id="selfieInput">
+								</div>
+							</div>
+							<div class="form-group">
+								<label class="col-sm-12">Preview Back Image</label>
+
+								<div class="col-sm-offset-3 col-sm-6">
+									<img src="{{asset('/images/kyc/selfie.png')}}" id="selfie" class="img-thumbnail">
+								</div>
+							</div>
+			            </div>
+	            	</div>
 	            </div>
+	            <div class="panel-footer">
+	            	<div class="card-footer text-center">
+						<button type="submit" class="btn btn-info">Save</button>
+					</div>
+	            </div>
+	            </form>
 	        </div>
         </div>
 	</div>
@@ -82,11 +119,27 @@
 	  };
 	};
 
+	function readURL2(input) {
+
+	  if (input.files && input.files[0]) {
+	    var reader = new FileReader();
+
+	    reader.onload = function(e) {
+	      $('#selfie').attr('src', e.target.result);
+	    }
+
+	    reader.readAsDataURL(input.files[0]);
+	  };
+	};
+
 	$("#frontInput").change(function() {
 	  readURL(this);
 	});
 	$("#backInput").change(function() {
 	  readURL1(this);
+	});
+	$("#selfieInput").change(function() {
+	  readURL2(this);
 	});
 </script>
 @endsection

@@ -24,15 +24,15 @@
 										@switch($u->is_kyc)
 											@case(0)
 											<td> NO KYC</td>
-											<td><button class="btn btn-default" onclick="popitup('mod/{{$u->id}}')" disabled="disabled">Verify KYC</button></td>
+											<td><button class="btn btn-default" disabled="disabled">Verify KYC</button></td>
 											@break
 											@case(1)
 											<td> KYC INFORMATION</td>
-											<td><button class="btn btn-default" onclick="popitup('mod/{{$u->id}}')" disabled="disabled">Verify KYC</button></td>
+											<td><button class="btn btn-default" onclick="popitup('mod/{{$u->id}}')">Verify KYC</button></td>
 											@break
 											@case(2)
 											<td>DONE KYC</td>
-											<td><button class="btn btn-default" onclick="popitup('mod/{{$u->id}}')" >Verify KYC</button></td>
+											<td><button class="btn btn-default" onclick="popitup('mod/{{$u->id}}')" disabled>Verify KYC</button></td>
 											@break
 										@endswitch
 									</tr>

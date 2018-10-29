@@ -34,8 +34,6 @@ return array(
     'App\\Http\\Middleware\\TrustProxies' => $baseDir . '/app/Http/Middleware/TrustProxies.php',
     'App\\Http\\Middleware\\VerifyCsrfToken' => $baseDir . '/app/Http/Middleware/VerifyCsrfToken.php',
     'App\\Http\\Middleware\\kycMiddleware' => $baseDir . '/app/Http/Middleware/kycMiddleware.php',
-    'App\\Http\\Middleware\\kycStep1Middleware' => $baseDir . '/app/Http/Middleware/kycStep1Middleware.php',
-    'App\\Http\\Middleware\\kycStep2Middleware' => $baseDir . '/app/Http/Middleware/kycStep2Middleware.php',
     'App\\Index' => $baseDir . '/app/Index.php',
     'App\\KYC' => $baseDir . '/app/KYC.php',
     'App\\Mail\\Verify' => $baseDir . '/app/Mail/Verify.php',
