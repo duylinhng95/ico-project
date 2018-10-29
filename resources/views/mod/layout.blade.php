@@ -12,10 +12,11 @@
     <title>{{$user->name}} Moderator Panel</title>
 
     <!-- Bootstrap Core CSS -->
-    <link href="{{asset('page//mod/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
+    <link href="{{asset('/plugins/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
 
     <!-- Custom CSS -->
     <link href="{{asset('css/user/sb-admin-2.css')}}" rel="stylesheet">
+    <link href="{{asset('/plugins/metisMenu/metisMenu.min.css')}}" rel="stylesheet">
 
     <!-- Custom Fonts -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz"
@@ -29,9 +30,6 @@
     <![endif]-->
         <!-- jQuery -->
     <script rel="javascript" type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-
-    <!-- Bootstrap Core JavaScript -->
-    <script src="{{asset('plugins/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
 
 </head>
 

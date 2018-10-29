@@ -17,11 +17,11 @@ class kycMiddleware
     public function handle($request, Closure $next)
     {
         $kyc = Auth::user()->is_kyc;
-        if($kyc == 2 || $kyc == 3)
+        if($kyc == 1 ||$kyc == 2)
         {
            return $next($request); 
         }
         else
-            return redirect('/user');
+            return redirect('/user/kyc/1');
     }
 }

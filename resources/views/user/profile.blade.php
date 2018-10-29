@@ -3,16 +3,16 @@
 <div class="container-fluid">
 	<div class="row">
 		<div class="col-lg-12">
-            <h1 class="page-header">KYC Panel</h1>
+            <h1 class="page-header">Detail Profile</h1>
             <div class="panel panel-default">
 	            <div class="panel-heading">
-	                Step 1: Provide your information
+	                <strong>Please make sure all your information is correct before begin Verify KYC. This information will be saved and can't be changed. If you want to change please contact the owner</strong>
 	            </div>
 	            <div class="panel-body">
-	                <p style="font-weight: bold;">Please provide your information. This information will be saved and can't be changed. If you want to change please contact to Moderator</p>
 	                <div class="panel panel-default">
 	                	<div class="panel-body">
-	                		<form class="form-horizontal" action="{{url('user/kyc/1')}}" method="post" enctype="multipart/form-data">
+	                		@if($user->is_profile == 0)
+	                		<form class="form-horizontal" action="{{url('user/profile')}}" method="post" enctype="multipart/form-data">
 								{!!csrf_field()!!}
 								<input type="hidden" name="id" value="{{$user->id}}">
 								<div class="form-group">
@@ -26,7 +26,7 @@
 								  <label class="col-sm-2">Address</label>
 
 								  <div class="col-sm-12">
-								    <input type="text" class="form-control" name="address" placeholder="Your Address" >
+								    <input type="text" class="form-control" name="address" placeholder="Your Address" value="{{$user->address}}">
 								  </div>
 								</div>
 
@@ -313,6 +313,54 @@
 								<!-- /.card-body -->
 								<!-- /.card-footer -->
 					        </form>
+					        @else
+					        <div class="form-group">
+								<label class="col-sm-2">Email</label>
+
+								<div class="col-sm-12">
+									<input value="{{$user->email}}" class="form-control" disabled="disabled">
+								</div>
+							</div>
+							<div class="form-group">
+							  <label class="col-sm-2">Address</label>
+
+							  <div class="col-sm-12">
+							    <input value="{{$user->address}}" class="form-control" disabled>
+							  </div>
+							</div>
+
+							<div class="form-group">
+							  <label class="col-sm-2">Country</label>
+
+							  <div class="col-sm-12">
+							    <input value="{{$user->country}}" class="form-control" disabled>
+							  </div>
+							</div>
+
+							<div class="form-group">
+							  <label class="col-sm-2">City</label>
+
+							  <div class="col-sm-12">
+							    <input value="{{$user->city}}" class="form-control" disabled>
+							  </div>
+							</div>
+
+							<div class="form-group">
+							  <label class="col-sm-6">Your Identify Card</label>
+
+							  <div class="col-sm-12">
+							    <input value="{{$user->identify}}" class="form-control" disabled>
+							  </div>
+							</div>
+
+							<div class="form-group">
+							  <label class="col-sm-2">Phone</label>
+
+							  <div class="col-sm-12">
+							    <input value="{{$user->phone}}" class="form-control" disabled>
+							  </div>
+							</div>
+					        @endif
 	                	</div>
 	                </div>
 	            </div>
