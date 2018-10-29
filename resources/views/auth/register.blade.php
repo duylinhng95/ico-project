@@ -24,31 +24,33 @@
 
 <body>
   <div class="fluid-container w-100">
-    <div class="row login-wrapper">
-      <div class="col-lg-6 col-md-12 col-sm-12 left-side  ">
-
-                 
-          <div  id="register-box" class="login-box register ">
-              <h2 class="welcome-title">
-                  Let join us!
-              </h2>
-              <form class="login-form" method="POST" action="{{ route('register') }}">
+    <div class=" login-wrapper">
+                
+    <div  id="register-box" class="login-box register " style="max-width: 750px;">
+        <a href="/">
+            <img src="{{asset('page/images/brand').'/'.$brand['brandImg']->content}}" alt="logo" class="img-fluid logo">
+         </a>
+         <form class="login-form" method="POST" action="{{ route('register') }}">
                  {{ csrf_field() }}
                   <input type="hidden" name="referral_id" value={{$referral_id}}>
                   <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
-
-                      <input  class="form-control"
-                             id="usr"  placeholder="Your Full Name" value="{{ old('name') }}" required autofocus name="name">
-                             @if ($errors->has('name'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('name') }}</strong>
-                                    </span>
-                                @endif
+                      <div class="input-wrap">
+                      <i class="fas fa-user pre-icon"></i>
+                        <input class="form-control"
+                                id="usr"  placeholder="Your Full Name" value="{{ old('name') }}" required autofocus name="name">
+                                @if ($errors->has('name'))
+                                        <span class="help-block">
+                                            <strong>{{ $errors->first('name') }}</strong>
+                                        </span>
+                                    @endif
+                      </div>
+                      
 
                   </div>
                   <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
-
-                      <input  class="form-control"
+                      <div class="input-wrap">
+                      <i class="fas fa-envelope pre-icon"></i>
+                         <input  class="form-control"
                              id="usr"  placeholder="Email" value="{{ old('email') }}" required autofocus name="email">
                              @if ($errors->has('email'))
                                     <span class="help-block">
@@ -56,8 +58,12 @@
                                     </span>
                                 @endif
 
+                      </div>
+                     
                   </div>
                   <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
+                      <div class="input-wrap">
+                      <i class="fas fa-lock pre-icon"></i>
                       <input type="password" name="password" class="form-control"  id="password_user"
                              placeholder="Password" required>
                              @if ($errors->has('password'))
@@ -65,33 +71,33 @@
                                         <strong>{{ $errors->first('password') }}</strong>
                                     </span>
                                 @endif
+                      </div>
+                    
                   </div>
                   <div class="form-group">
-                      <input type="password" placeholder="Confirm Password" class="form-control" id="confirm_password" name="password_confirmation"  required>
+                      <div class="input-wrap">
+                      <i class="fas fa-key pre-icon"></i>
+                         <input type="password" placeholder="Confirm Password" class="form-control" id="confirm_password" name="password_confirmation"  required>
+                      </div>
+                    
                   </div>
                   <p class="agree-text">
                       I accept the <span class="term-text">
                 Terms and Conditions & Privacy Policy
                 </span>
                   </p>
-                  <a href="/login"  class="btn red-button login-button">Back</a>
                   <button type="submit" class="red-button sign-up-button">
-                                    Register
-                                </button>
+                            Register
+                        </button>
+            <a href="/login" class="option-links">Not now, sorry...</a>
 
 
             </form>
+      
 
           </div>
 
-
-
-
-
-      </div>
-      <div class="col-lg-6 col-md-12 col-sm-12 right-side">
-        <img src="{{asset('page/images/brand').'/'.$brand['brandImg']->content}}" alt="logo" class="img-fluid logo">
-      </div>
+      
     </div>
   </div>
 
