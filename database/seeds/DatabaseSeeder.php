@@ -12,8 +12,8 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         // $this->call(admin::class);
-        // $this->call(IndexTableSeeder::class);
-        $this->call(AdvisorSeeder::class);
-        $this->call(PartnerSeeder::class);
+        $this->call(IndexTableSeeder::class);
+        // $this->call(AdvisorSeeder::class);
+        // $this->call(PartnerSeeder::class);
     }
 }

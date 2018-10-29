@@ -1,50 +1,61 @@
 body {
-  background-color: #333333;
+  background-color: #fff;
 }
-
-
-
-.right-side {
-  justify-content: center;
-  align-items: center;
-  display: flex;
+a {
+  &:link,
+  &:visited {
+    color: #666;
+  }
+  &:hover {
+    color: #e63b4a;
+  }
 }
 .login-box,
 .register-box {
-  .welcome-title {
-    padding-top: 2em;
-    text-align: left;
-    padding-left: 2em;
-    padding-right: 1em;
-    font-weight: bold;
-    color: #333333;
-    font-size: 1.8em;
-  }
-  background-color: #fff;
-  border-radius: 10px;
-  .login-form {
-    padding: 3em 1em;
-    margin: 1em 1em;
+  max-width: 450px;
+  margin: 0 auto;
 
-    .forgot-psw {
+  .login-form {
+    padding: 3em 2em;
+    margin: 1em 1em;
+    border-top: 1px solid #ccc;
+    .option-links {
+      margin-top: 10px;
       display: block;
       width: 100%;
-      color: #ccc;
-      font-style: italic;
-      text-align: right;
-      font-size: 1em;
     }
     .form-group {
+      border-bottom: 1px solid #ccc;
+
+      text-align: left;
+      .input-wrap {
+        position: relative;
+      }
       label {
-        font-size: 1.5em;
+        font-size: 1em;
       }
       input {
         color: #e63b4a;
-        font-weight: bold;
-        font-size: 1.3em;
         border-radius: 0;
-        padding: 1em;
-        background-color: #333333;
+      }
+      .pre-icon {
+        color: #e63b4a;
+        position: absolute;
+        bottom: 14px;
+        font-size: 24px;
+        left: -38px;
+      }
+      .form-check {
+        margin-top: 10px;
+        &:last-child {
+          margin-bottom: 50px;
+        }
+        .form-check-label {
+          a {
+            color: #e63b4a;
+            font-weight: bold;
+          }
+        }
       }
     }
     .agree-text,
@@ -61,7 +72,6 @@ body {
   .sign-up-button {
     margin-right: 10px;
     font-size: 1.5em;
-    width: 40%;
     padding: 0.4 0;
     margin-bottom: 10px;
   }
@@ -72,11 +82,11 @@ body {
   justify-content: center;
   text-align: center;
   align-items: center;
-  max-width: 100%;
+  padding: 100px;
+  max-width: 1600px;
   .logo {
-    width: 70%;
-    height: auto;
-    padding: 5em;
+    float: none;
     margin: 0 auto;
+    max-width: 350px;
   }
 }

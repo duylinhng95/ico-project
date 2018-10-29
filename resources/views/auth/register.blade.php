@@ -24,74 +24,69 @@
 
 <body>
   <div class="fluid-container w-100">
-    <div class="row login-wrapper">
-      <div class="col-lg-6 col-md-12 col-sm-12 left-side  ">
+    <div class=" login-wrapper">
+                
+    <div  id="register-box" class="login-box register " style="max-width: 750px;">
+        <a href="/">
+            <img src="{{asset('page/images/brand').'/'.$brand['brandImg']->content}}" alt="logo" class="img-fluid logo">
+         </a>
+        <form class="login-form" method="POST" action="{{ route('register') }}">
+            {{ csrf_field() }}
+            <input type="hidden" name="referral_id" value={{$referral_id}}>
+       
+            <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
+                <div class="input-wrap">
+                <label for="email">E-mail address</label>
 
-                 
-          <div  id="register-box" class="login-box register ">
-              <h2 class="welcome-title">
-                  Let join us!
-              </h2>
-              <form class="login-form" method="POST" action="{{ route('register') }}">
-                 {{ csrf_field() }}
-                  <input type="hidden" name="referral_id" value={{$referral_id}}>
-                  <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
+                <input  class="form-control"
+                        id="email"  value="{{ old('email') }}" required autofocus name="email">
+                        @if ($errors->has('email'))
+                            <span class="help-block">
+                                <strong>{{ $errors->first('email') }}</strong>
+                            </span>
+                        @endif
+                        <i class="far fa-envelope pre-icon"></i>
+                </div>
+                <p class="margin-top-40">
+                    Read and Agree to the eCoinomic general terms and conditions for users acquiring eCoinomic tokens. Tick all the four columns if you fulfil all four of them and press 'Register'.
+                </p>
+                <p class="margin-top-40">
+                    If you do not fulfil either one of them, please do not support the token sale.
+                </p>
+                <div class="checkbox-wrapper">
+                    <div class="form-check">
+                        <input type="checkbox" class="form-check-input" id="agree-1">
+                        <label class="form-check-label" for="agree-1">I have read and agree to <a href="#" class="red-link">the terms & conditions</a>.</label>
+                    </div>
+                    <div class="form-check">
+                        <input type="checkbox" class="form-check-input" id="agree-2">
+                        <label class="form-check-label" for="agree-2">I am not a US or Singaporean person as defined in <a href="#">the terms & conditions</a>.</label>
+                    </div>
+                    <div class="form-check">
+                        <input type="checkbox" class="form-check-input" id="agree-3">
+                        <label class="form-check-label" for="agree-3">I am not a politically exposed person (PEP) or conflicted from entering this token subscription for any reason.</label>
+                    </div>
+                    <div class="form-check">
+                        <input type="checkbox" class="form-check-input" id="agree-4">
+                        <label class="form-check-label" for="agree-4">I am not a person under the age of 18 years. We do not permit individuals under the age of 18 to purchase and use CNC token. If we become aware that a child under the age of 18 has provided us with personal information, we will delete such information from our files immediately and block its access to our Website and products.</label>
+                    </div>
+                    <div class="form-check">
+                        <input type="checkbox" class="form-check-input" id="agree-5">
+                        <label class="form-check-label" for="agree-5">I agree to the collection, recording, systematization, analysis, use, cross-border transfer, receipt, processing, storage, transformation (updating/clarification), deletion (after expiry of the storage period) of personal data which I have provided.</label>
+                    </div>
+                </div>
+            </div>
 
-                      <input  class="form-control"
-                             id="usr"  placeholder="Your Full Name" value="{{ old('name') }}" required autofocus name="name">
-                             @if ($errors->has('name'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('name') }}</strong>
-                                    </span>
-                                @endif
+            <button type="submit" class="red-button sign-up-button">
+                            Register
+                        </button>
+            <a href="/login" class="option-links">Not now, sorry...</a>
 
-                  </div>
-                  <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
-
-                      <input  class="form-control"
-                             id="usr"  placeholder="Email" value="{{ old('email') }}" required autofocus name="email">
-                             @if ($errors->has('email'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('email') }}</strong>
-                                    </span>
-                                @endif
-
-                  </div>
-                  <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
-                      <input type="password" name="password" class="form-control"  id="password_user"
-                             placeholder="Password" required>
-                             @if ($errors->has('password'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('password') }}</strong>
-                                    </span>
-                                @endif
-                  </div>
-                  <div class="form-group">
-                      <input type="password" placeholder="Confirm Password" class="form-control" id="confirm_password" name="password_confirmation"  required>
-                  </div>
-                  <p class="agree-text">
-                      I accept the <span class="term-text">
-                Terms and Conditions & Privacy Policy
-                </span>
-                  </p>
-                  <a href="/login"  class="btn red-button login-button">Back</a>
-                  <button type="submit" class="red-button sign-up-button">
-                                    Register
-                                </button>
-
-
-            </form>
+    </form>
 
           </div>
 
-
-
-
-
-      </div>
-      <div class="col-lg-6 col-md-12 col-sm-12 right-side">
-        <img src="{{asset('page/images/brand').'/'.$brand['brandImg']->content}}" alt="logo" class="img-fluid logo">
-      </div>
+      
     </div>
   </div>
 
