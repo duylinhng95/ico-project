@@ -4,6 +4,7 @@ namespace Illuminate\Foundation\Auth;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Password;
+use App\Index;
 
 trait SendsPasswordResetEmails
 {
@@ -14,7 +15,10 @@ trait SendsPasswordResetEmails
      */
     public function showLinkRequestForm()
     {
-        return view('auth.passwords.email');
+        $brands = Index::where('section', 'brand')->get();
+        foreach ($brands as $rq)
+            $brand[$rq->name] = $rq;
+        return view('auth.passwords.email', compact('brand'));
     }
 
     /**

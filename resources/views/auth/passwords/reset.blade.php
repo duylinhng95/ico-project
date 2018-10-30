@@ -28,7 +28,7 @@
                 
     <div  id="register-box" class="login-box register " style="max-width: 550px;">
         <a href="/">
-            <img src="" alt="logo" class="img-fluid logo">
+            <img src="{{asset('page/images/brand').'/'.$brand['brandImg']->content}}" alt="logo" class="img-fluid logo">
          </a>
          @if (session('status'))
             <div class="alert alert-success">

@@ -37,7 +37,8 @@ class Verify extends Mailable
      */
     public function build()
     {
-        return $this->from('devilking195@gmail.com', 'Verify your email address')
+        return $this->from(env('MAIL_USERNAME'), env('MAIL_NAME'))
+                    ->subject('Verify your email')
                     ->view('verify')
                     ->with([
                         'verify_token'=> $this->verify_token,

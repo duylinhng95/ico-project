@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Password;
 use Illuminate\Auth\Events\PasswordReset;
+use App\Index;
 
 trait ResetsPasswords
 {
@@ -24,8 +25,11 @@ trait ResetsPasswords
      */
     public function showResetForm(Request $request, $token = null)
     {
+        $brands = Index::where('section', 'brand')->get();
+        foreach ($brands as $rq)
+            $brand[$rq->name] = $rq;
         return view('auth.passwords.reset')->with(
-            ['token' => $token, 'email' => $request->email]
+            ['token' => $token, 'email' => $request->email , 'brand' => $brand]
         );
     }
 
