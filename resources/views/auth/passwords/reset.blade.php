@@ -10,7 +10,7 @@
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz"
     crossorigin="anonymous">
   <!-- <link rel="stylesheet" type="text/css" href="vendors/css/bootstrap-reboot.min.css"> -->
-
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap.min.css">
   <!-- <link href="{{ asset('css/app.css') }}" rel="stylesheet"> -->
 
   <link href="{{ asset('landing-page/resources/css/styles.min.css') }}" rel="stylesheet">
@@ -38,8 +38,6 @@
         <form class="login-form" method="POST" action="{{ route('password.request') }}">
             {{ csrf_field() }}
             <input type="hidden" name="token" value="{{ $token }}">
-
-    
             <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
                 <div class="input-wrap">
                 <label for="email">E-mail address</label>
@@ -71,7 +69,7 @@
                 <label for="password-confirm" >Confirm Password</label>
                 <div class="input-wrap">
                     <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required>
-
+                    <i class="fas fa-key pre-icon"></i>
                     @if ($errors->has('password_confirmation'))
                         <span class="help-block">
                             <strong>{{ $errors->first('password_confirmation') }}</strong>

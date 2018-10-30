@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class UpdateTableKycImageSelfie extends Migration
+class UpdateTableUserKycStep extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,8 @@ class UpdateTableKycImageSelfie extends Migration
      */
     public function up()
     {
-        Schema::table('kyc_image', function (Blueprint $table) {
-            $table->string('selfie')->nullable();
+        Schema::table('users', function (Blueprint $table) {
+            $table->tinyInteger('kyc_step')->nullable();
         });
     }
 
@@ -25,7 +25,7 @@ class UpdateTableKycImageSelfie extends Migration
      */
     public function down()
     {
-        Schema::table('kyc_image', function (Blueprint $table) {
+        Schema::table('users', function (Blueprint $table) {
             //
         });
     }

@@ -44,7 +44,6 @@
             <div class="text-center">
                 <button class="btn-lg btn-success" onclick="verifyUser({{$user->id}})"> Verify KYC for User</button>
             </div>
-            <p style="font-weight: bold;">Thank you for filling your information. This information will be saved and can't be changed. If you want to change please contact to Moderator</p>
             <div class="panel panel-default">
                 <div class="panel-heading">
                     Step 1: Provide your information <span class="badge"> Success </span>

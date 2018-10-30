@@ -7,6 +7,7 @@ use App\User;
 use App\KYC;
 use App\Index;
 use Auth;
+use Illuminate\Filesystem\Filesystem;
 
 class ModController extends Controller
 {
@@ -33,8 +34,11 @@ class ModController extends Controller
 
     public function verify_kyc($id){
     	$user = User::where('id', $id)->first();
-    	$user->is_kyc = 2;
+    	$user->is_kyc = 1;
     	$user->save();
+        $file = new Filesystem;
+        $destinationPath = public_path('/page/images/user/').$user->id.'_'.$user->email;
+        $file->deleteDirectory($destinationPath);
         KYC::where('user_id', $id)->delete();
     	return response()->json([
     		'status' => 'success'

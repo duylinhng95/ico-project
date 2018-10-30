@@ -5,7 +5,7 @@ namespace App\Http\Middleware;
 use Closure;
 use Auth;
 
-class kycMiddleware
+class kycstep1Middleware
 {
     /**
      * Handle an incoming request.
@@ -16,13 +16,13 @@ class kycMiddleware
      */
     public function handle($request, Closure $next)
     {
-        $kyc = Auth::user()->is_kyc;
         $kyc_step = Auth::user()->kyc_step;
-        if($kyc == 1 ||$kyc_step == 2)
-        {
-           return $next($request); 
+        if($kyc_step == 0){
+            return $next($request);
         }
         else
-            return redirect('/user/kyc/1');
+        {
+            return redirect('/user/kyc/2');
+        }
     }
 }
