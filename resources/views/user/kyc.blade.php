@@ -5,11 +5,11 @@
 		<div class="col-lg-12">
 			
             <h1 class="page-header">KYC Panel</h1>
-            @if($user->is_kyc == 1)
+            @if($user->is_kyc == 0)
             <p style="font-weight: bold;">Thank you for filling your information. This information will be saved and can't be changed. If you want to change please contact to Moderator</p>
             <div class="panel panel-default">
 	            <div class="panel-heading">
-	                Step 1: Provide your information <span class="badge"> Success </span>
+	                Your information <span class="badge"> Success </span>
 	            </div>
 	            <div class="panel-body">
 	                <div class="panel panel-default">
@@ -71,7 +71,7 @@
 	        </div>
 	        <div class="panel panel-default">
 	        	<div class="panel-heading">
-	        		Step 2: Provide Your ID Image <span class="badge"> Success </span>
+	        		Your KYC process <span class="badge badge-warning"> Pending </span>
 	        	</div>
 	        	<div class="panel-body">
 	        		<div class="form-group">
@@ -97,7 +97,7 @@
 					</div>
 	        	</div>
 	        </div>
-	        @elseif ($user->is_kyc == 2)
+	        @elseif ($user->is_kyc == 1)
 	        <div class="panel panel-green text-center">
 	        	<div class="panel-heading">
 	        		<h2>CONGRATULATIONS!!! Your KYC have been verified</h2>

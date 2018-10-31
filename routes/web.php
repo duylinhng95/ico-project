@@ -55,12 +55,15 @@ Route::group(['prefix'=>'admin','middleware'=> 'auth.admin'],function (){
 });
 // User Control
 Route::group(['prefix' => 'user', 'middleware' => 'auth.user'], function(){
+	Route::get('/', 'UserController@index');
 	Route::get('/referral', 'UserController@referral_index');
 	Route::get('/kyc', 'UserController@kyc')->middleware('kyc');
-	Route::get('/', 'UserController@profile');
+	Route::get('/profile', 'UserController@profile');
 	Route::post('/profile', 'UserController@save_profile');
-	Route::get('/kyc/1', 'UserController@kyc_image');
+	Route::get('/kyc/1', 'UserController@kyc_image')->middleware('kyc1');
 	Route::post('/kyc/1', 'UserController@kyc_step1');
+	Route::get('/kyc/2', 'UserController@kyc_selfie')->middleware('kyc2');
+	Route::post('/kyc/2', 'UserController@kyc_step2');
 });
 // Moderator Panel
 Route::group(['prefix' => 'mod', 'middleware' => 'auth.mod'], function(){

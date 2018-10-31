@@ -9,6 +9,13 @@ use App\Index;
 use Auth;
 class UserController extends Controller
 {
+
+    public function index(){
+        $user = Auth::user();
+        $brand = Index::where('section', 'brand')->where('name', 'brandImg')->first();
+        return view('user.index', compact('user', 'brand'));
+    }
+
     public function verify($token){
     	$email = base64_decode($token);
     	$user = User::where('email', $email)->where('vertification_token', $token)->first();
@@ -62,6 +69,7 @@ class UserController extends Controller
         $user = User::where('id', $input['id']);
         $input['is_profile'] = 1;
         $user->update($input);
+        return redirect('/user');
     }
 
     public function kyc_image(){
@@ -86,14 +94,29 @@ class UserController extends Controller
             $filename = 'back_'.$file->getClientOriginalName('back');
             $file->move($destinationPath, $filename);
             $input['back'] = $filename;
-        // Selfie Image
-            $file = $request->file('selfie');
-            $filename = 'selfie_'.$file->getClientOriginalName('selfie');
-            $file->move($destinationPath, $filename);
-            $input['selfie'] = $filename;
         // KYC Update
             $kyc = KYC::create($input);
-            $user->update(['is_kyc' => '1']);
-        return redirect('/user/kyc');        
+            $input['selfie'] = '';
+            $user->update(['kyc_step' => '1']);
+        return redirect('/user/kyc/2');        
+    }
+
+    public function kyc_selfie(){
+        $user = Auth::user();
+        $brand = Index::where('section', 'brand')->where('name', 'brandImg')->first();
+        return view('user.kyc3', compact('user', 'brand'));
+    }
+    public function kyc_step2(Request $request){
+        $user = User::where('id', $request->id);
+        $user_kyc = $user->first();
+        $destinationPath = public_path('/page/images/user/').$user_kyc->id.'_'.$user_kyc->email;
+        // Selfie Image
+            $file = $request->file('selfie');
+            $filename = 'back_'.$file->getClientOriginalName('selfie');
+            $file->move($destinationPath, $filename);
+            $input['selfie'] = $filename;
+        $kyc = KYC::where('user_id', $request->id)->update($input);
+        $user->update(['kyc_step' => '2']);
+        return redirect('/user/kyc');
     }
 }

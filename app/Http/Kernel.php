@@ -61,7 +61,7 @@ class Kernel extends HttpKernel
         'auth.user' => \App\Http\Middleware\AuthUser::class,
         'auth.mod' => \App\Http\Middleware\AuthMod::class,
         'kyc' => \App\Http\Middleware\kycMiddleware::class,
-        'kyc1' => \App\Http\Middleware\kycStep1Middleware::class,
-        'kyc2' => \App\Http\Middleware\kycStep2Middleware::class,
+        'kyc1' => \App\Http\Middleware\kycstep1Middleware::class,
+        'kyc2' => \App\Http\Middleware\kycstep2Middleware::class,
     ];
 }

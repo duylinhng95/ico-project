@@ -17,26 +17,18 @@
 						</thead>
 						<tbody>
 							@foreach($users as $u)
-								@if($u->is_kyc != 3)
+								
 									<tr>
 										<td> {{$u->name}} </td>
 										<td> {{$u->email}} </td>
-										@switch($u->is_kyc)
-											@case(0)
+										@if($u->is_kyc !=  1)
 											<td> NO KYC</td>
-											<td><button class="btn btn-default" disabled="disabled">Verify KYC</button></td>
-											@break
-											@case(1)
-											<td> KYC INFORMATION</td>
 											<td><button class="btn btn-default" onclick="popitup('mod/{{$u->id}}')">Verify KYC</button></td>
-											@break
-											@case(2)
+										@else
 											<td>DONE KYC</td>
 											<td><button class="btn btn-default" onclick="popitup('mod/{{$u->id}}')" disabled>Verify KYC</button></td>
-											@break
-										@endswitch
+										@endif	
 									</tr>
-								@endif
 							@endforeach
 						</tbody>
 					</table>

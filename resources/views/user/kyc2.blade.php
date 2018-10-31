@@ -47,43 +47,13 @@
 										<img src="{{asset('/images/kyc/id_back.png')}}" id="backPrev" class="img-thumbnail">
 									</div>
 								</div>
-							</div>
-							<div class="row">
-								<div class="form-group">
-									<label class="col-sm-12"></label>
-									<div class="col-sm-12">
-										
-									</div>
-								</div>
-							</div>								
+							</div>							
 	            		</div>
-	            	</div>
-	            	<div class="panel panel-default">
-	            		<div class="panel-heading text-center">
-			                <h1>Selfie with the proof</h1>
-			            </div>
-			            <div class="panel-body">
-			            	<h3 style="font-weight: bold" class="text-center">Please take a selfie with your document so that it’s clearly visible and does not cover your face.</h3>
-			            	<div class="form-group">
-								<label class="col-sm-12">Back Image</label>
-
-								<div class="col-sm-12">
-									<input type="file" class="form-control" name="selfie" id="selfieInput">
-								</div>
-							</div>
-							<div class="form-group">
-								<label class="col-sm-12">Preview Back Image</label>
-
-								<div class="col-sm-offset-3 col-sm-6">
-									<img src="{{asset('/images/kyc/selfie.png')}}" id="selfie" class="img-thumbnail">
-								</div>
-							</div>
-			            </div>
 	            	</div>
 	            </div>
 	            <div class="panel-footer">
 	            	<div class="card-footer text-center">
-						<button type="submit" class="btn btn-info">Save</button>
+						<button type="submit" class="btn-lg btn-info">Next</button>
 					</div>
 	            </div>
 	            </form>

@@ -23,6 +23,7 @@
     <!-- Custom Fonts -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz"
     crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -55,7 +56,10 @@
                             </li>
                         </div>
                         <li>
-                            <a href="/user"><i class="fa fa-user fa-fw"></i> Profile</span></a>
+                            <a href="/user/"><i class="fa fa-tachometer-alt fa-fw"></i> Dashboard</span></a>
+                        </li>
+                        <li>
+                            <a href="/user/profile"><i class="fa fa-user fa-fw"></i> Profile</span></a>
                         </li> 
                         <li>
                             <a href="/user/referral"><i class="fa fa-list-ul fa-fw"></i> Referral</span></a>

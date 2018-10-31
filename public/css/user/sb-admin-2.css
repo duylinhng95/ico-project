@@ -5,6 +5,7 @@
  */
 body {
       background-color: #F2DEDE;
+      font-family: Roboto, "Helvetica Neue", Arial, sans-serif;
 }
 #wrapper {
   width: 100%;
@@ -449,4 +450,8 @@ a.disabled {
    pointer-events: none;
    cursor: default;
    background-color: #3333;
+}
+.badge-warning {
+  background-color: #ff920d !important;
+  color: #333 !important;
 }
