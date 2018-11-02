@@ -7,7 +7,9 @@
 
 .feature-box {
   text-align: center;
-
+  padding: 1em 6em;
+  width: 90%;
+  margin: 0 auto;
   h3 {
     color: #e63b4a;
     font-weight: bold;
@@ -23,12 +25,15 @@
 /* HEADER */
 /*------------------------------------*/
 header {
-  // position: relative;
+  position: relative;
   width: 100%;
   background-color: #333333;
-  height: 100vh;
+  height: 95vh;
 }
-
+.row {
+  max-width: 100%;
+  margin: 0;
+}
 .intro-text-box {
   position: absolute;
   width: 100%;
@@ -37,10 +42,6 @@ header {
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
-  .row {
-    max-width: 100%;
-    margin: 0;
-  }
 }
 .intro {
   margin-top: 30%;
@@ -105,7 +106,7 @@ header {
 .list-button {
   display: flex;
 
-  padding-top: 3em;
+  padding-top: 2em;
   justify-content: flex-start;
   width: 100%;
 }
@@ -121,7 +122,7 @@ header {
   box-shadow: 1px 3px 3px 2px #0303035d;
   animation-duration: 1s;
   &:not(:last-child) {
-    margin-right: 1em;
+    margin-right: 1.5em;
   }
   &:hover {
     box-shadow: 1px 1px 1px 1px #0303038f;
@@ -139,6 +140,7 @@ header {
   text-align: center;
   font-weight: bold;
   font-style: italic;
+  margin-bottom: 4em;
 }
 
 .slider-box {
