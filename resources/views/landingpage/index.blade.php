@@ -48,6 +48,20 @@
             <li class="nav-item">
               <a class="nav-link" href="#">Whitepaper</a>
             </li>
+            <li class="nav-item">
+              <a class="nav-link " href="#" >Sign up</a>
+            </li>
+            <li class="center-middle">
+              <div class="icon-lang center-middle">
+               
+                  <img src="{{ asset('landing-page/resources/img/NavIcon-Language.png') }}" class="icon-lang">
+                    <div class="lang-switch">
+                    <a href="#">&nbsp;EN </a>
+                    </div>
+              </div>
+             
+            </li>
+           
 
           </ul>
         </div>
@@ -131,6 +145,7 @@
               <p>{{$page2['description2']->content}}</p>
               <a href="{{$page2['whitepaper']->content}}" class="btn red-button">Whitepaper</a>
               <a href="#" class="btn red-button">Annoucement</a>
+             
             </div>
 
           </div>

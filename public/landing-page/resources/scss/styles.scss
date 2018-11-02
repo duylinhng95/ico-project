@@ -203,7 +203,13 @@ section {
 .clear-padding {
   padding: 0;
 }
+.center-middle {
+  display: flex;
 
+  align-content: center;
+
+  align-items: center;
+}
 .fluid-width {
   max-width: 100%;
 }
@@ -236,7 +242,27 @@ nav {
     padding: 10px 0;
   }
 }
-
+.icon-lang {
+  width: 40%;
+  float: left;
+  padding-left: 2px;
+  height: 60%;
+  border: 3px solid #fff;
+  background-image: linear-gradient(
+    90deg,
+    rgba(#fff, 1) 0%,
+    rgba(#fff, 1) 50%,
+    transparent 50%
+  );
+}
+.lang-switch {
+  color: #fff;
+  font-size: 1.2em;
+  margin: 0 auto;
+  text-align: center;
+  font-weight: bold;
+  background-color: transparent;
+}
 .navbar-toggler-icon {
   background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255, 255, 255, 0.5)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
 }
@@ -267,6 +293,7 @@ nav {
 .relative-postion {
   position: relative;
 }
+
 /*------------------------------------*/
 /* FOOTER  */
 /*------------------------------------*/
@@ -274,6 +301,7 @@ nav {
 footer {
   background-color: #333333;
   padding: 2em;
+  padding-bottom: 0;
 }
 .footer-logo {
   padding: 4em;
