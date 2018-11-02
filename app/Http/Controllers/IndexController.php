@@ -8,10 +8,44 @@ use App\Advisor;
 use App\Partner;
 use Mail;
 use App\Mail\Verify;
+use Stichoza\GoogleTranslate\TranslateClient;
+use App;
 
 class IndexController extends Controller
 {
-    public function index(){
+    public function lang($lang){
+        $data = $this->data_index();
+        $tr = new TranslateClient;
+        $arr['name'] = ['brandImg','telegramChina','telegramGlobal','telegramKorea', 'linkvideo', 'whitepaper', 'image1', 'image2', 'image3', 'image4', 'logo1', 'logo2', 'logo3', 'logo4', 'timeline'];
+        $arr['section'] = ['advisor', 'partner'];
+        foreach($data as $i)
+        {
+            foreach ($i as $k => $j)
+            {
+                if(isset($j->name))
+                {
+                    if(!in_array($j->name, $arr['name']))
+                    {
+                        try {
+                            $j->content = $tr->setSource('en')->setTarget($lang)->translate($j->content);
+                        } catch (GuzzleRequestException $e) {
+                            throw new $e->getMessage();
+                        }
+                    }
+                }
+            }
+        }
+        $page1 = $data['page1'];
+        $page2 = $data['page2'];
+        $page3 = $data['page3'];
+        $page4 = $data['page4'];
+        $page5 = $data['page5'];
+        $page6 = $data['page6'];
+        $social = $data['social'];
+        $brand = $data['brand'];
+        return view('landingpage.index', compact('page1', 'social', 'page2', 'page3', 'page4', 'page5', 'page6', 'brand'));
+    }
+    public function data_index(){
         $data = Index::all();
         $example = new Index;
         $advisors = Advisor::all();
@@ -105,6 +139,27 @@ class IndexController extends Controller
         }
         $page5['advisor'] = $advisors;
         $page6['partner'] = $partners->toArray();
+        return [
+            'page1' => $page1,
+            'page2' => $page2,
+            'page3' => $page3,
+            'page4' => $page4,
+            'page5' => $page5,
+            'page6' => $page6,
+            'social' => $social,
+            'brand' => $brand,
+            ];
+    }
+    public function index(){
+        $data = $this->data_index();
+        $page1 = $data['page1'];
+        $page2 = $data['page2'];
+        $page3 = $data['page3'];
+        $page4 = $data['page4'];
+        $page5 = $data['page5'];
+        $page6 = $data['page6'];
+        $social = $data['social'];
+        $brand = $data['brand'];
         return view('landingpage.index', compact('page1', 'social', 'page2', 'page3', 'page4', 'page5', 'page6', 'brand'));
     }
 }
