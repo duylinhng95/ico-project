@@ -2,7 +2,7 @@
 @section('content')
 <div class="container-fluid">
 	<div class="row">
-		<div class="col-lg-12">
+		<div class="col-lg-6 col-lg-offset-3">
 			<div class="page-header text-center">
 				<h1>Dashboard</h1>
 			</div>

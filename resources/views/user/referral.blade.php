@@ -23,13 +23,13 @@
             </div>
             <!-- /.col-lg-12 -->
         </div>
-        <dvi class="row">
+        @if(count($referral) > 0)
+        <div class="row">
             <div class="panel panel-default">
                     <div class="panel-heading">
                         Your referred users list
                     </div>
-                    <div class="panel-body">
-                        @if(count($referral) > 0)
+                    <div class="panel-body">                        
                         <p>Congratulations!!! You have introduced {{count($referral)}} users</p>
                         <table class="table table-responsive table-bordered">
                             <thead>
@@ -53,28 +53,10 @@
                             </tbody>
                             @endforeach
                         </table>
-                        @else
-                        <p>You haven't introduced to any user. Let get your bonus by copy referral link above to your friends</p>
-                        <table class="table table-responsive table-bordered">
-                            <thead>
-                                <tr>
-                                    <th> </th>
-                                    <th>Email</th>
-                                    <th>Registered</th>
-                                </tr>
-                            </thead>                        
-                            <tbody>
-                                <tr>
-                                    <td colspan="3">
-                                        <p class="text-center">No user referral yet!!!</p>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                        @endif
                     </div>
                 </div>
-        </dvi>
+        </div>
+        @endif
         <!-- /.row -->
     </div>
     <script type="text/javascript">

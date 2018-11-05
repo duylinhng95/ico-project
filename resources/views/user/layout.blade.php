@@ -39,7 +39,7 @@
     <div id="wrapper">
 
         <!-- Navigation -->
-        <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
+        <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0; border: 0;">
             <div class="navbar-header">
                 <a class="navbar-brand" href="/user/"><img class="img-responsive" src="{{asset('/page/images/brand')}}/{{$brand->content}}" style="max-width: 30px; display:inline-block; margin-right: 15px;">{{$brandName->content}}</a>
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -52,13 +52,11 @@
             <div class="sidebar" role="navigation">
                 <div class="sidebar-nav navbar-collapse">
                     <ul class="nav" id="side-menu">
-                        <div class="text-center">
+                        <div class="text-center head-menu">
                             <li>
-                                <h4>{{$user->name}}</h4>
-                                @if($user->is_profile == 1)
-                                <p>KYC is not verified <a href="/user/kyc">Verify KYC</a></p>
-                                @else
-                                <p>Please include your <a style="color: blue;" href="/user/profile">information</a>
+                                <h3>{{$user->name}}</h3>
+                                @if($user->is_kyc == 0)
+                                <p>KYC is not verified <a href="/user/kyc" style="color:#0363c9; text-decoration: none;">Verify KYC</a></p>
                                 @endif
                                 <h2>0 <span>YT<span></h2>
                             </li>                            
@@ -96,6 +94,7 @@
 
         <!-- Page Content -->
         <div id="page-wrapper">
+            <div class="block-label">Hello and welcome to Ytrade.co!</div>
             @yield('content')
             <!-- /.container-fluid -->
         </div>
