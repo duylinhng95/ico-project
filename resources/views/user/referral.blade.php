@@ -1,4 +1,4 @@
-@extends('user.layout', ['user' => $user, 'brand' => $brand])
+@extends('user.layout', ['user' => $user, 'brand' => $brand, 'brandName' => $brandName])
 @section('content')
     <div class="container-fluid">
         <div class="row">

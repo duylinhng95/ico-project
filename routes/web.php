@@ -15,6 +15,7 @@ Route::get('/announcement', function () {
     return view('landingpage/announcement');
 });
 Route::get('/', 'IndexController@index');
+Route::get('/loc/{lang}', 'IndexController@lang');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
@@ -51,6 +52,7 @@ Route::group(['prefix'=>'admin','middleware'=> 'auth.admin'],function (){
 		Route::get('/', 'Admin\UserController@index');
 		Route::get('/export', 'Admin\UserController@export');
 		Route::post('/role/{id}', 'Admin\UserController@role');
+		Route::get('/dashboard', 'Admin\Usercontroller@dashboard');
 	});
 });
 // User Control

@@ -455,3 +455,13 @@ a.disabled {
   background-color: #ff920d !important;
   color: #333 !important;
 }
+.fa {
+  font-size: 25px;
+}
+.navbar-brand{
+  padding: 10px 0px 15px 15px;
+}
+.navbar-default {
+    background-color: #a3a3a3;
+    border-color: #fff;
+}

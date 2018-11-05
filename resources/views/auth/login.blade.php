@@ -27,7 +27,8 @@
       </div>
   @endif
   <div class="fluid-container w-100">
-    <div class=" login-wrapper">
+    <div class="col-md-6 offset-md-3">
+      <div class=" login-wrapper">
         <div id="login-box" class="login-box">
             <a href="/">
                 <img src="{{asset('page/images/brand').'/'.$brand['brandImg']->content}}" alt="logo" class="img-fluid logo">
@@ -74,6 +75,7 @@
             </form>
 
         </div>
+    </div>
     </div>
   </div>
 

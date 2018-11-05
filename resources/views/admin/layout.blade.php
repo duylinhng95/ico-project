@@ -86,12 +86,26 @@ to get the desired effect
               </a>
             </li>
             <li class="nav-item">
-              <a href="/admin/user" class="nav-link">
+              <a href="#" class="nav-link">
                 <i class="nav-icon fa fa-users"></i>
                 <p>
                   Users
                 </p>
-              </a>
+              </a>                
+              <ul class="nav">
+                <li class="nav-item">
+                  <a href="/admin/user" class="nav-link" style="color: #c2c7d0;">
+                    <i class="fa fa-circle-o nav-icon"></i>
+                    <p>User List</p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="/admin/user/dashboard" class="nav-link" style="color: #c2c7d0;">
+                    <i class="fa fa-circle-o nav-icon"></i>
+                    <p>Dashboard Config</p>
+                  </a>
+                </li>
+              </ul>
             </li>
           </ul>
         </nav>

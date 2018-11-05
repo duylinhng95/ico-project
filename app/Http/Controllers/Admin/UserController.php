@@ -45,4 +45,21 @@ class UserController extends Controller
             'status' => 'success'
         ]);
     }
+
+    public function dashboard(){
+        $example = '';
+        $brand = [
+            'brandName' => $example,
+            'brandImg' => $example,
+            'telegramChina' => $example,
+            'telegramGlobal' => $example,
+            'telegramKorea' => $example,
+        ];
+        $brands = Index::where('section', 'brand')->get();
+        foreach ($brands as $rq)
+            {
+                $brand[$rq->name] = $rq;
+            }
+        return view('/admin/dashboard', compact('brand'));
+    }
 }
