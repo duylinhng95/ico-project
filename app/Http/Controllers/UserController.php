@@ -13,7 +13,8 @@ class UserController extends Controller
     public function index(){
         $user = Auth::user();
         $brand = Index::where('section', 'brand')->where('name', 'brandImg')->first();
-        return view('user.index', compact('user', 'brand'));
+        $brandName = Index::where('section', 'brand')->where('name', 'brandName')->first();
+        return view('user.index', compact('user', 'brand', 'brandName'));
     }
 
     public function verify($token){
@@ -34,7 +35,8 @@ class UserController extends Controller
         $user = Auth::user();
         $referral = User::where('referral_id', $user->id)->get();
         $brand = Index::where('section', 'brand')->where('name', 'brandImg')->first();
-        return view('user.referral', compact('user', 'referral', 'brand'));
+        $brandName = Index::where('section', 'brand')->where('name', 'brandName')->first();
+        return view('user.referral', compact('user', 'referral', 'brand', 'brandName'));
     }
     public function referral(Request $request){
         $referral_token = $request->referral;
@@ -46,6 +48,7 @@ class UserController extends Controller
         $kyc = Auth::user()->is_kyc;
         $user = Auth::user();
         $brand = Index::where('section', 'brand')->where('name', 'brandImg')->first();
+        $brandName = Index::where('section', 'brand')->where('name', 'brandName')->first();
         $profile = [
             'address' => $user->address,
             'phone' => $user->phone,
@@ -55,13 +58,14 @@ class UserController extends Controller
         ];
         $path = asset('/page/images/user').'/'.$user->id.'_'.$user->email;
         $kyc_image = KYC::where('user_id', $user->id)->first();
-        return view('user.kyc', compact('user', 'profile', 'kyc_image', 'path', 'brand'));
+        return view('user.kyc', compact('user', 'profile', 'kyc_image', 'path', 'brand', 'brandName'));
     }
 
     public function profile(){
         $user = Auth::user();
         $brand = Index::where('section', 'brand')->where('name', 'brandImg')->first();
-        return view('user.profile', compact('user', 'brand'));
+        $brandName = Index::where('section', 'brand')->where('name', 'brandName')->first();
+        return view('user.profile', compact('user', 'brand', "brandName"));
     }
 
     public function save_profile(Request $request){
@@ -75,7 +79,8 @@ class UserController extends Controller
     public function kyc_image(){
         $user = Auth::user();
         $brand = Index::where('section', 'brand')->where('name', 'brandImg')->first();
-        return view('user.kyc2', compact('user', 'brand'));
+        $brandName = Index::where('section', 'brand')->where('name', 'brandName')->first();
+        return view('user.kyc2', compact('user', 'brand', 'brandName'));
     }
 
     public function kyc_step1(Request $request){
@@ -104,7 +109,8 @@ class UserController extends Controller
     public function kyc_selfie(){
         $user = Auth::user();
         $brand = Index::where('section', 'brand')->where('name', 'brandImg')->first();
-        return view('user.kyc3', compact('user', 'brand'));
+        $brandName = Index::where('section', 'brand')->where('name', 'brandName')->first();
+        return view('user.kyc3', compact('user', 'brand', 'brandName'));
     }
     public function kyc_step2(Request $request){
         $user = User::where('id', $request->id);

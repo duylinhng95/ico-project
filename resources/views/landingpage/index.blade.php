@@ -11,8 +11,9 @@
     crossorigin="anonymous">
   <!-- <link rel="stylesheet" type="text/css" href="vendors/css/bootstrap-reboot.min.css"> -->
   <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap.min.css">
- 
+  
   <link href="{{ asset('landing-page/resources/css/styles.min.css') }}" rel="stylesheet">
+  <link href="{{ asset('landing-page/resources/css/custom.css') }}" rel="stylesheet">
   <link href="{{ asset('landing-page/resources/css/queries.min.css') }}" rel="stylesheet">
   <link href="{{ asset('landing-page/resources/css/homepage.min.css') }}" rel="stylesheet">
   <link href="{{ asset('landing-page/resources/css/homepage-queries.min.css') }}" rel="stylesheet">
@@ -49,15 +50,18 @@
               <a class="nav-link" href="#">Whitepaper</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link " href="#" >Sign up</a>
+              <a class="nav-link " href="/register" >Sign up</a>
             </li>
             <li class="center-middle">
-              <div class="icon-lang center-middle">
-               
-                  <img src="{{ asset('landing-page/resources/img/NavIcon-Language.png') }}" class="icon-lang">
-                    <div class="lang-switch">
-                    <a href="#">&nbsp;EN </a>
-                    </div>
+              <div class="dropdown show">
+                <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Language
+                </a>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                  <a class="dropdown-item" href="/"><img src="{{ asset('landing-page/resources/img/american.png') }}" class="icon-lang" align="middle">English</a>
+                  <a class="dropdown-item" href="/loc/ko"><img src="{{ asset('landing-page/resources/img/korean.png') }}" class="icon-lang" align="middle">Korean</a>
+                  <a class="dropdown-item" href="/loc/zh-CN"><img src="{{ asset('landing-page/resources/img/china.png') }}" class="icon-lang" align="middle">Chinese</a>
+                </div>
               </div>
              
             </li>
@@ -193,7 +197,7 @@
   <!-- Page 3 -->
   <section class="features-section js--features-section">
     <div class="row">
-      <div class="col-lg-6 col-md-6 col-sm-12">
+      <div class="offset-lg-1 col-lg-5 col-md-6 col-sm-12">
         <div class="feature-box">
          
             <a href="#"><img src="{{asset('page/images/page3').'/'.$page3['logo1']->content}}" alt="Icon link description" class="icon" /></a>
@@ -204,7 +208,7 @@
 
       </div>
 
-      <div class="col-lg-6 col-md-6 col-sm-12">
+      <div class=" col-lg-5 col-md-6 col-sm-12">
         <div class="feature-box">
             <a href="#"><img src="{{asset('page/images/page3').'/'.$page3['logo2']->content}}" alt="Icon link description" class="icon" /></a>
           <h3>{{$page3['title2']->content}}</h3>
@@ -213,14 +217,14 @@
       </div>
     </div>
     <div class="row">
-      <div class="col-lg-6 col-md-6 col-sm-12">
+      <div class="offset-lg-1 col-lg-5 col-md-6 col-sm-12">
         <div class="feature-box">
             <a href="#"><img src="{{asset('page/images/page3').'/'.$page3['logo3']->content}}" alt="Icon link description" class="icon" /></a>
           <h3>{{$page3['title3']->content}}</h3>
           <p>{{$page3['description3']->content}}</p>
         </div>
       </div>
-      <div class="col-lg-6 col-md-6 col-sm-12">
+      <div class="col-lg-5 col-md-6 col-sm-12">
         <div class="feature-box">
             <a href="#"><img src="{{asset('page/images/page3').'/'.$page3['logo4']->content}}" alt="Icon link description" class="icon" /></a>
           <h3>{{$page3['title4']->content}}</h3>
@@ -379,10 +383,12 @@
         </div>
       </div>
   </footer>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/popper.min.js"></script>
   <script src="{{ asset('landing-page/vendors/js/jquery.min.js') }}"></script>
   <script src="{{ asset('landing-page/vendors/js/jquery.waypoints.min.js') }}"></script>
  
   <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/js/bootstrap.min.js"></script>
+  
   <!-- <script src="vendors/js/bootstrap.bundle.min.js"></script> -->
 
 
