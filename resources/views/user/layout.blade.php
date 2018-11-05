@@ -39,21 +39,29 @@
     <div id="wrapper">
 
         <!-- Navigation -->
-        <nav class="navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+        <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="/user/"><img class="img-responsive" src="{{asset('/page/images/brand')}}/{{$brand->content}}" style="max-width: 30px; display:inline-block; margin-right: 15px;">{{$brandName->content}}</a>
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                     <span class="sr-only">Toggle navigation</span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-            <div class="sidebar" role="navigation" style="margin-top: 0px !important;">
+            </div>
+            <div class="sidebar" role="navigation">
                 <div class="sidebar-nav navbar-collapse">
                     <ul class="nav" id="side-menu">
-                        <div class="text-center" style="background-color: #333333;">
+                        <div class="text-center">
                             <li>
-                                <a><img src="{{asset('/page/images/brand')}}/{{$brand->content}}" style="display: inline-block; width: 10vh; height: 10vh; margin: 2vh 0;"></a>
-                                <!-- /input-group -->
-                            </li>
+                                <h4>{{$user->name}}</h4>
+                                @if($user->is_profile == 1)
+                                <p>KYC is not verified <a href="/user/kyc">Verify KYC</a></p>
+                                @else
+                                <p>Please include your <a style="color: blue;" href="/user/profile">information</a>
+                                @endif
+                                <h2>0 <span>YT<span></h2>
+                            </li>                            
                         </div>
                         <li>
                             <a href="/user/"><i class="fa fa-tachometer-alt fa-fw"></i> Dashboard</span></a>
@@ -68,9 +76,12 @@
                             <a @if($user->is_profile == 1) href='/user/kyc' @else class="disabled"  @endif><i class="fa fa-user-shield fa-fw"></i> KYC</a>
                         </li>
                         <li>
+                            <a href='#' class="disabled"><i class="fa fa-coins fa-fw"></i>Token Sale</a>
+                        </li>
+                        <li>
                             <a class="nav-link" href="{{ route('logout') }}"
                                                                 onclick="event.preventDefault();
-                                                                document.getElementById('logout-form').submit();"><i class="fas fa-sign-out-alt fa-fw"></i> Logout</a>
+                                                                document.getElementById('logout-form').submit();"><i class="fa fa-sign-out-alt fa-fw"></i> Logout</a>
                               <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                                                 {{ csrf_field() }}
                                                             </form>

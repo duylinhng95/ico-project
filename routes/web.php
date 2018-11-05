@@ -15,6 +15,7 @@ Route::get('/announcement', function () {
     return view('landingpage/announcement');
 });
 Route::get('/', 'IndexController@index');
+Route::get('/loc/{lang}', 'IndexController@lang');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
