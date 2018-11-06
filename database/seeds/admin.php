@@ -12,7 +12,15 @@ class admin extends Seeder
     public function run()
     {
         DB::table('users')->insert([
-        	'name'=>'Admin', 'email' => 'admin@admin.com', 'password'=>bcrypt('admin123456'), 'referal_token' => '123', 'is_kyc' => 1, 'address'=>'admin', 'role' => 2
+        	'name'=>'Admin', 
+            'email' => 'admin@admin.com', 
+            'password'=>bcrypt('admin123456'), 
+            'referal_token' => '123', 
+            'is_kyc' => 1, 
+            'address'=>'admin', 
+            'role' => 2, 
+            'is_profile' => 1,
+            'kyc_step' => 2,
         ]);
     }
 }
