@@ -2,7 +2,7 @@ a.dropdown-item {
     color: #333;
 }
 .icon-lang {
-    width: 40%;
+    width: 100%;
     float: left;
     padding-left: 2px;
     height: 60%;
@@ -16,4 +16,7 @@ a.dropdown-item {
 }
 .dropdown-item{
     padding: .25rem 0.5rem;
+}
+span.small-text {
+    font-size: 1em !important;
 }

@@ -55,7 +55,7 @@
             </li>
             <li class="center-middle">
               <div class="dropdown show">
-                <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="{{ asset('landing-page/resources/img/loc.png') }}" class="icon-lang" align="middle">
+                <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-globe"></i>
                 </a>
                 <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
                   <a class="dropdown-item" href="/"><img src="{{ asset('landing-page/resources/img/american.png') }}" class="icon-lang" align="middle"></a>
@@ -90,7 +90,7 @@
             <div class="container">
               <div class="intro">
                 <h1>{{$page1['title1']->content}}
-                  <br><span>{{$page1['title2']->content}}</span> </h1>
+                  <br><span class="small-text">{{$page1['title2']->content}}</span> </h1>
                 <p>{{$page1['description']->content}}</p>
                 <a class="btn red-button" href="{{url('/login')}}"> <em>Login</em> </a>
                 <!-- Social -->
