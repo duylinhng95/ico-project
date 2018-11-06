@@ -2,14 +2,14 @@
 @section('content')
 <div class="container-fluid">
 	<div class="row">
-		<div class="col-lg-12">
-            <h1 class="page-header">KYC Panel</h1>
+		<div class="col-lg-8 col-lg-offset-2">
+            <h1 class="page-header">KYC VERIFICATION</h1>
             <div class="panel panel-default">
 	            <div class="panel-body">
 	            	<form class="form-horizontal" action="{{url('user/kyc/1')}}" method="post" enctype="multipart/form-data">
 	            	<div class="panel panel-default">
 	            		<div class="panel-heading text-center">
-			                <h1>Proof of identity</h1>
+			                <h1>Account Verification Process</h1>
 			            </div>
 
 	            		<div class="panel-body">
@@ -17,37 +17,56 @@
 							{!!csrf_field()!!}
 							<input type="hidden" name="id" value="{{$user->id}}">
 							<div class="row">
-								<div class="form-group col-sm-6">
+								<div class="form-group">
 									<label class="col-sm-12">Front Image</label>
 
 									<div class="col-sm-12">
 										<input type="file" class="form-control" name="front" id="frontInput">
-									</div>
-								</div>
-								<div class="form-group col-sm-6">
-									<label class="col-sm-12">Preview Front Image</label>
-
-									<div class="col-sm-12">
-										<img src="{{asset('/images/kyc/id_front.png')}}" id="frontPrev" class="img-thumbnail">
+										@if ($errors->has('front'))
+						                    <span class="help-block" style="color:red;">
+						                        <strong>{{ $errors->first('front') }}</strong>
+						                    </span>
+						               @endif
 									</div>
 								</div>
 							</div>
 							<div class="row">
-								<div class="form-group col-sm-6">
+								<div class="form-group">
+									<label class="col-sm-12">Preview Front Image</label>
+									<div class="col-sm-6">
+										<img id="frontPrev" class="img-fluid img-thumbnail" style="max-width: 100%; max-height: 290px;">
+									</div>
+									<div class="col-sm-6">
+										<img src="{{asset('/images/kyc/id_front.png')}}" class="img-thumbnail" style=" max-height: 290px;">
+									</div>
+								</div>
+							</div>	
+							
+							<div class="row">
+								<div class="form-group">
 									<label class="col-sm-12">Back Image</label>
 
 									<div class="col-sm-12">
 										<input type="file" class="form-control" name="back" id="backInput">
+										@if ($errors->has('back'))
+						                    <span class="help-block" style="color:red;">
+						                        <strong>{{ $errors->first('back') }}</strong>
+						                    </span>
+						               @endif
 									</div>
 								</div>
-								<div class="form-group col-sm-6">
+							</div>
+							<div class="row">
+								<div class="form-group">
 									<label class="col-sm-12">Preview Back Image</label>
-
-									<div class="col-sm-12">
-										<img src="{{asset('/images/kyc/id_back.png')}}" id="backPrev" class="img-thumbnail">
+									<div class="col-sm-6">
+										<img id="backPrev" class="img-fluid img-thumbnail" style="max-width: 100%; max-height: 290px;">
 									</div>
+									<div class="col-sm-6">
+										<img src="{{asset('/images/kyc/id_back.png')}}"  class="img-thumbnail" style=" max-height: 290px;">
+									</div> 
 								</div>
-							</div>							
+							</div>					
 	            		</div>
 	            	</div>
 	            </div>

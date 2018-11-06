@@ -85,6 +85,14 @@ class UserController extends Controller
 
     public function kyc_step1(Request $request){
         $user = User::where('id', $request->id);
+        $this->validate($request, [
+            'front' => 'required|image|mimes:jpeg,bmp,png',
+            'back' => 'required|image|mimes:jpeg,bmp,png|',
+        ],
+        [
+            'front.required' => 'Front Image of your doument is required',
+            'back.required' => "Back Image of your doument is required",
+        ]);
         $user_kyc = $user->first();
         $input['user_id'] = $user_kyc->id;
         $destinationPath = public_path('/page/images/user/').$user_kyc->id.'_'.$user_kyc->email;
@@ -114,6 +122,12 @@ class UserController extends Controller
     }
     public function kyc_step2(Request $request){
         $user = User::where('id', $request->id);
+        $this->validate($request, [
+            'selfie' => 'required|image|mimes:jpeg,bmp,png'
+        ],
+        [
+            'selfie.required' => 'Missing image'
+        ]);
         $user_kyc = $user->first();
         $destinationPath = public_path('/page/images/user/').$user_kyc->id.'_'.$user_kyc->email;
         // Selfie Image

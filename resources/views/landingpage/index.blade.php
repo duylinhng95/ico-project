@@ -45,22 +45,22 @@
               <a class="nav-link" href="#advisor-section">Team</a>
             </li>
             <li class="nav-item">
-            <a class="nav-link" href="/announcement" >Annoucement</a>            </li>
+            <a class="nav-link" href="/announcement" >Annoucement</a>            
+            </li>
             <li class="nav-item">
               <a class="nav-link" href="#">Whitepaper</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link " href="/register" >Sign up</a>
+              <a class="nav-link " href="/login" >Login </a>
             </li>
             <li class="center-middle">
               <div class="dropdown show">
-                <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  Language
+                <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="{{ asset('landing-page/resources/img/loc.png') }}" class="icon-lang" align="middle">
                 </a>
                 <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                  <a class="dropdown-item" href="/"><img src="{{ asset('landing-page/resources/img/american.png') }}" class="icon-lang" align="middle">English</a>
-                  <a class="dropdown-item" href="/loc/ko"><img src="{{ asset('landing-page/resources/img/korean.png') }}" class="icon-lang" align="middle">Korean</a>
-                  <a class="dropdown-item" href="/loc/zh-CN"><img src="{{ asset('landing-page/resources/img/china.png') }}" class="icon-lang" align="middle">Chinese</a>
+                  <a class="dropdown-item" href="/"><img src="{{ asset('landing-page/resources/img/american.png') }}" class="icon-lang" align="middle"></a>
+                  <a class="dropdown-item" href="/loc/ko"><img src="{{ asset('landing-page/resources/img/korean.png') }}" class="icon-lang" align="middle"></a>
+                  <a class="dropdown-item" href="/loc/zh-CN"><img src="{{ asset('landing-page/resources/img/china.png') }}" class="icon-lang" align="middle"></a>
                 </div>
               </div>
              
@@ -78,7 +78,7 @@
       <div class="row">
       <div class="clear-padding col-lg-6 col-md-6 col-sm-12 ml-auto height-full-view">
           <div class="play-icon-box">
-            <a href="{{$page1['linkvideo']->content}}">
+            <a onclick='window = window.open("{{$page1['linkvideo']->content}}", "abc", "height=600, width=600"); return false;'>
               <img class="img-fluid play-icon" src="{{ asset('landing-page/resources/img/play_icon.png') }}" alt="play">
             </a>
           </div>

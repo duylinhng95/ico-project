@@ -1,10 +1,11 @@
 @extends('user.layout', ['user' => $user, 'brand' => $brand, 'brandName' => $brandName])
+@section('header')
+Hello and welcome to ytrade.co!
+@endsection
 @section('content')
 <div class="container-fluid">
 	<div class="row">
-		<div class="col-lg-12">
-			
-            <h1 class="page-header">KYC Panel</h1>
+		<div class="col-lg-8 col-lg-offset-2">			
             @if($user->is_kyc == 0)
             <p style="font-weight: bold;">Thank you for filling your information. This information will be saved and can't be changed. If you want to change please contact to Moderator</p>
             <div class="panel panel-default">

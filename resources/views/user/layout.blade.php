@@ -19,6 +19,7 @@
 
     <!-- Custom CSS -->
     <link href="{{asset('css/user/sb-admin-2.css')}}" rel="stylesheet">
+    <link href="{{asset('css/dropzone/basic.css')}}" rel="stylesheet">
 
     <!-- Custom Fonts -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz"
@@ -41,7 +42,7 @@
         <!-- Navigation -->
         <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0; border: 0;">
             <div class="navbar-header">
-                <a class="navbar-brand" href="/user/"><img class="img-responsive" src="{{asset('/page/images/brand')}}/{{$brand->content}}" style="max-width: 30px; display:inline-block; margin-right: 15px;">{{$brandName->content}}</a>
+                <strong><a class="navbar-brand" href="/user/"><img class="img-responsive" src="{{asset('/page/images/brand')}}/{{$brand->content}}" style="max-width: 30px; display:inline-block; margin-right: 15px;">{{$brandName->content}}</a></strong>
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                     <span class="sr-only">Toggle navigation</span>
                     <span class="icon-bar"></span>
@@ -55,7 +56,7 @@
                         <div class="text-center head-menu">
                             <li>
                                 <h3>{{$user->name}}</h3>
-                                @if($user->is_kyc == 0)
+                                @if($user->is_kyc == 0 && $user->kyc_step !=2)
                                 <p>KYC is not verified <a href="/user/kyc" style="color:#0363c9; text-decoration: none;">Verify KYC</a></p>
                                 @endif
                                 <h2>0 <span>YT<span></h2>
@@ -94,7 +95,7 @@
 
         <!-- Page Content -->
         <div id="page-wrapper">
-            <div class="block-label">Hello and welcome to Ytrade.co!</div>
+            <div class="block-label">@yield('header')</div>
             @yield('content')
             <!-- /.container-fluid -->
         </div>

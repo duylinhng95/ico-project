@@ -14,7 +14,7 @@ class ModController extends Controller
     public function index(){
     	$user = Auth::user();
     	$users = User::where('role', null)->orWhere('role', '0')->get();
-    	$brand = Index::where('section', 'brand')->get()->toArray();
+    	$brand = Index::where('section', 'brand')->where('name', 'brandImg')->first();
     	return view('mod.index', compact('user', 'users', 'brand'));
     }
 

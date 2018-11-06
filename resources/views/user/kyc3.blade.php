@@ -2,8 +2,8 @@
 @section('content')
 <div class="container-fluid">
 	<div class="row">
-		<div class="col-lg-12">
-            <h1 class="page-header">KYC Panel</h1>
+		<div class="col-lg-8 col-lg-offset-2">
+            <h1 class="page-header">KYC VERIFICATION</h1>
             <div class="panel panel-default">
 	            <div class="panel-body">
 	            	<form class="form-horizontal" action="{{url('user/kyc/2')}}" method="post" enctype="multipart/form-data">
@@ -21,13 +21,20 @@
 
 								<div class="col-sm-12">
 									<input type="file" class="form-control" name="selfie" id="selfieInput">
+									@if ($errors->has('selfie'))
+						                    <span class="help-block" style="color:red;">
+						                        <strong>{{ $errors->first('selfie') }}</strong>
+						                    </span>
+						               @endif
 								</div>
 							</div>
 							<div class="form-group">
 								<label class="col-sm-12">Preview Selfie</label>
-
-								<div class="col-sm-offset-3 col-sm-6">
-									<img src="{{asset('/images/kyc/selfie.png')}}" id="selfie" class="img-thumbnail">
+								<div class="col-sm-6">
+									<img id="selfie" class="img-thumbnail" style="max-width: 100%; max-height:310px;">
+								</div>
+								<div class="col-sm-6">
+									<img src="{{asset('/images/kyc/selfie.png')}}" class="img-thumbnail" style="max-height:310px;">
 								</div>
 							</div>						
 	            		</div>

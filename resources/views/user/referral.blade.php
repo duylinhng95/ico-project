@@ -2,16 +2,25 @@
 @section('content')
     <div class="container-fluid">
         <div class="row">
-            <div class="col-lg-12">
+            <div class="col-lg-8 col-lg-offset-2">
                 <h1 class="page-header">Referral</h1>
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        Your referral link
+                        <h4>Get YT tokens as a bonus = 6% of the purchase amount!</h4>
                     </div>
-                    <div class="panel-body">
-                        <p>Use this link to invite your friend and earn 6% on the amount they invest</p>
+                    <div class="panel-body">                        
                         <div class="row">
-                            <div class="col-md-4">
+                             <p>The referral program rules are easy:<br>
+                                1. You now have your referral unique link below.<br>
+                                2. Invite new users to our ICO project using your unique referral link.<br>
+                                3. The account balances of all new users who register using your <br>referral link will be linked to your personal account. We will update your referrals’ balances once they make any investment.
+                                4. Moreover, you can also initially earn 500 YT tokens for every referrals.<br>
+                                5. For every purchase made by users you have invited - you will receive 6% of the purchase amount in YT tokens to your MEW wallet saved in Token Sales.<br>
+                                6. Referrals Bonus can only be withdrawn when ICO ends.
+                            </p>   
+                        </div>                        
+                        <div class="row">
+                            <div class="col-md-6 col-md-offset-1">
                                 <input class="form-control" id="referralLink" type="text" readonly value="{{url('/referral').'/?referral='.$user->referal_token}}">
                             </div>
                             <div class="col-md-2">
@@ -34,21 +43,21 @@
                         <table class="table table-responsive table-bordered">
                             <thead>
                                 <tr>
-                                    <th> </th>
+                                    <th>#</th>
                                     <th>Email</th>
-                                    <th>Registered</th>
+                                    <th>KYC Status</th>
+                                    <th>My Bonus</th>
+                                    <th>Join Date</th>
                                 </tr>
                             </thead>
                             @foreach ($referral as $k => $ref)
                             <tbody>
                                 <tr>
                                     <td>{{$k +1}}</td>
-                                    <td>{{$ref->email}}</td>
-                                    @if (date('m') - $ref->created_at->format('m') > 0)
-                                    <td>{{date('m') - $ref->created_at->format('m')}} months ago</td>
-                                    @else
-                                    <td>New User</td>
-                                    @endif                                    
+                                    <td>{{substr($ref->email,0,6)}}...</td>
+                                    <td>{{$ref->is_kyc ? "Verified": "Not Verified"}}</td>
+                                    <td>Updating</td>
+                                    <td>{{$ref->created_at->format('m/d/Y')}}</td>
                                 </tr>
                             </tbody>
                             @endforeach
