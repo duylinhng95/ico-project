@@ -10,6 +10,7 @@ use Mail;
 use App\Mail\Verify;
 use Stichoza\GoogleTranslate\TranslateClient;
 use App;
+use App\Announcement;
 
 class IndexController extends Controller
 {
@@ -161,5 +162,12 @@ class IndexController extends Controller
         $social = $data['social'];
         $brand = $data['brand'];
         return view('landingpage.index', compact('page1', 'social', 'page2', 'page3', 'page4', 'page5', 'page6', 'brand'));
+    }
+
+    public function announcement(){
+        $data = $this->data_index();
+        $announs = Announcement::all();
+        $brand = $data['brand'];
+        return view('landingpage.announcement', compact('announs', 'brand'));
     }
 }

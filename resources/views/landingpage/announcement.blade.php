@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>ICO Project</title>
+  <title>{{$brand['brandName']->content}}</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz"
@@ -23,7 +23,7 @@
     <nav class="navbar navbar-expand-lg fixed-top">
       <div class="container-fluid">
         <a class="navbar-brand" href="#">
-          <img src="landing-page/resources/img/logo.png" alt=" logo" class="logo">
+          <img src="{{asset('page/images/brand').'/'.$brand['brandImg']->content}}" alt=" logo" class="logo">
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
           aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -32,22 +32,36 @@
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item active">
-              <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+              <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="/#timeline-section">Roadmap</a>
+              <a class="nav-link" href="#timeline-section">Roadmap</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="/#advisor-section">Team</a>
+              <a class="nav-link" href="#advisor-section">Team</a>
             </li>
             <li class="nav-item">
-              <!-- Button trigger Announcement modal -->
-
-              <a class="nav-link" href="#" data-toggle="modal" data-target="#annoucementModal">Annoucement</a>
+            <a class="nav-link" href="/announcement" >Annoucement</a>            
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#">Whitepaper</a>
             </li>
+            <li class="nav-item">
+              <a class="nav-link " href="/login" >Login </a>
+            </li>
+            <li class="center-middle">
+              <div class="dropdown show">
+                <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="{{ asset('landing-page/resources/img/loc.png') }}" class="icon-lang" align="middle">
+                </a>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                  <a class="dropdown-item" href="/"><img src="{{ asset('landing-page/resources/img/american.png') }}" class="icon-lang" align="middle"></a>
+                  <a class="dropdown-item" href="/loc/ko"><img src="{{ asset('landing-page/resources/img/korean.png') }}" class="icon-lang" align="middle"></a>
+                  <a class="dropdown-item" href="/loc/zh-CN"><img src="{{ asset('landing-page/resources/img/china.png') }}" class="icon-lang" align="middle"></a>
+                </div>
+              </div>
+             
+            </li>
+           
 
           </ul>
         </div>

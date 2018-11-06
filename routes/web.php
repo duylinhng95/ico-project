@@ -11,9 +11,7 @@
 |
 */
 
-Route::get('/announcement', function () {
-    return view('landingpage/announcement');
-});
+Route::get('/announcement', 'IndexController@announcement');
 Route::get('/', 'IndexController@index');
 Route::get('/loc/{lang}', 'IndexController@lang');
 Auth::routes();
