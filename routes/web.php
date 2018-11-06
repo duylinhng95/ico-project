@@ -13,9 +13,6 @@
 
 Route::get('/announcement', 'IndexController@announcement');
 Route::get('/', 'IndexController@index');
-Route::get('/test', function(){
-	phpinfo();
-})
 Route::get('/loc/{lang}', 'IndexController@lang');
 Auth::routes();
 
