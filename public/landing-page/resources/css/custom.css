@@ -1,0 +1,19 @@
+a.dropdown-item {
+    color: #333;
+}
+.icon-lang {
+    width: 40%;
+    float: left;
+    padding-left: 2px;
+    height: 60%;
+    display: block;
+    border: 3px solid #fff;
+    background-image: -webkit-gradient(linear, left top, right top, from(#fff), color-stop(50%, #fff), color-stop(50%, transparent));
+    background-image: linear-gradient(90deg, #fff 0%, #fff 50%, transparent 50%);
+}
+.dropdown-menu {
+    min-width: 1rem;
+}
+.dropdown-item{
+    padding: .25rem 0.5rem;
+}
