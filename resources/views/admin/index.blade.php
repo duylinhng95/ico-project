@@ -30,6 +30,7 @@
             </div>
             <div class="form-group">
               <label>Brand Image:</label>
+              <p>Logo must be 300x370</p>
               <div class="input-group col-sm-6">
                 <input type="file" name="brandImg" class="form-control" accept='image/*'>
               </div>
@@ -126,6 +127,7 @@
             </div>
             <div class="form-group">
               <label>Background Image:</label>
+              <p>Background Image must be 800x600</p>
               <div class="input-group col-sm-6">
                 <input type="file" name="background" class="form-control" accept='image/*'>
               </div>
@@ -276,6 +278,7 @@
             </div>
             <div class="form-group">
               <label>Image1:</label>
+              <p>Image 1 must be 800x600</p>
               <div class="input-group col-sm-6">
                 <input type="file" name="image1" class="form-control" accept='image/*'>
               </div>
@@ -294,6 +297,7 @@
             <!-- Image 2 -->
             <div class="form-group">
               <label>Image2:</label>
+              <p>Image 2 must be 800x600</p>
               <div class="input-group col-sm-6">
                 <input type="file" name="image2" class="form-control" accept='image/*'>
               </div>
@@ -312,6 +316,7 @@
             <!-- Image 3 -->
             <div class="form-group">
               <label>Image3:</label>
+              <p>Image 3 must be 800x600</p>
               <div class="input-group col-sm-6">
                 <input type="file" name="image3" class="form-control" accept='image/*'>
               </div>
@@ -330,6 +335,7 @@
             <!-- Image 4 -->
             <div class="form-group">
               <label>Image4:</label>
+              <p>Image 4 must be 800x600</p>
               <div class="input-group col-sm-6">
                 <input type="file" name="image4" class="form-control" accept='image/*'>
               </div>
@@ -372,6 +378,7 @@
           <!-- Part 1 -->
             <div class="form-group">
               <label class="col-sm-2 control-label">Logo 1:</label>
+              <p>Logo 1 must be 420x350</p>
               <div class="input-group col-sm-12">
                 <input type="file" name="logo1" class="form-control" accept='image/*'>
               </div>
@@ -404,6 +411,7 @@
             <!-- Part 2 -->
             <div class="form-group">
               <label class="col-sm-2 control-label">Logo 2:</label>
+              <p>Logo 2 must be 420x350</p>
               <div class="input-group col-sm-12">
                 <input type="file" name="logo2" class="form-control" accept='image/*'>
               </div>
@@ -447,6 +455,7 @@
             </div>
             <div class="form-group">
               <label>Preview Logo 3:</label>
+              <p>Logo 3 must be 420x350</p>
               <div class="col-sm-2">
                  <img class="img-thumbnail img-fluid" src="{{asset('page/images/page3').'/'.$page3['logo3']->content}}" alt="Logo 3">
                </div>
@@ -468,6 +477,7 @@
             <!-- Part 4 -->
             <div class="form-group">
               <label class="col-sm-2 control-label">Logo 4:</label>
+              <p>Logo 4 must be 420x350</p>
               <div class="input-group col-sm-12" >
                 <input type="file" name="logo4" class="form-control" accept='image/*'>
               </div>
@@ -524,6 +534,7 @@
           {!!csrf_field()!!}
             <div class="form-group">
               <label class="col-sm-2 control-label">Timeline Image:</label>
+              <p>Timeline Image must be 1000x350</p>
               <div class="input-group col-sm-12">
                 <input type="file" name="timeline" class="form-control" accept='image/*'>
               </div>

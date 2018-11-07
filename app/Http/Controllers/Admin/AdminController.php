@@ -110,7 +110,7 @@ class AdminController extends Controller
 
     public function page1(Request $request){
         $this->validate($request, [
-         'background' => 'image|mimes: jpeg, bmp, png|dimensions: min_width=800, min_height= 600',
+         'background' => 'image|dimensions: min_width=800, min_height= 600',
         ],[
             'background.dimensions' => "Background must be at least: 800x600"
         ]);
@@ -140,9 +140,9 @@ class AdminController extends Controller
     public function page2(Request $request){
     	$this->validate($request, [
     		'image1' => 'required|image|mimes:jpeg,bmp,png|dimensions:max_width=300,max_height=200',
-    		'image2' => 'image|mimes:jpeg,bmp,png|dimensions:min_width=800,min_height=600',
-    		'image3' => 'image|mimes:jpeg,bmp,png|dimensions:min_width=800,min_height=600',
-    		'image4' => 'image|mimes:jpeg,bmp,png|dimensions:min_width=800,min_height=600',
+    		'image2' => 'image|dimensions:min_width=800,min_height=600',
+    		'image3' => 'image|dimensions:min_width=800,min_height=600',
+    		'image4' => 'image|dimensions:min_width=800,min_height=600',
     	],
     	[
     		'image1.required' => 'First Image is required',
@@ -224,6 +224,9 @@ class AdminController extends Controller
     }
     public function page3(Request $request){
     	$input = $request->except('logo1','logo2','logo3','logo4','_token','section');
+        $this->validate($request, [
+            'logo1' => 'dimensions: min_width=420, min_height=350'
+        ]);
     	foreach ($input as $k => $rq)
     	{
     		Index::updateOrCreate(
@@ -394,7 +397,7 @@ class AdminController extends Controller
     public function page6(Request $request){
     	$input = $request->except('_token');
         $this->validate($request, [
-         'avatar' => 'image|mimes: jpeg, bmp, png|dimensions: min_width=840, min_height= 620',
+         'avatar' => 'image|dimensions: min_width=840, min_height= 620',
         ],[
             'avatar.dimensions' => "Background must be at least: 840x620"
         ]);
@@ -411,7 +414,7 @@ class AdminController extends Controller
     	$input = $request->except('imageP');
     	$destinationPath = public_path('/page/images/page6');
         $this->validate($request, [
-         'imageP' => 'image|mimes: jpeg, bmp, png|dimensions: min_width=245, min_height= 90',
+         'imageP' => 'image|dimensions: min_width=245, min_height= 90',
         ],[
             'imageP.dimensions' => "Background must be at least: 245x90"
         ]);
@@ -465,6 +468,12 @@ class AdminController extends Controller
     }
     public function brand(Request $request){
         $input = $request->except('brandImg', '_token');
+        $this->validate($request, [
+            'brandImg' => 'dimensions: min_width=300, min_height=370'
+        ],
+        [
+            'brandImg.dimensions' => "Image Size must be 300x370"
+        ]);
         $brand = Index::where('section', 'brand')->where('name', 'like', 'brandImg')->first();
         $destinationPath = public_path('/page/images/brand');
         if($request->hasFile('brandImg'))
