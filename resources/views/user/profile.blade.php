@@ -1,4 +1,7 @@
 @extends('user.layout', ['user' => $user, 'brand' => $brand, 'brandName' => $brandName])
+@section('header')
+	Profile
+@endsection
 @section('content')
 <div class="container-fluid">
 	<div class="row">

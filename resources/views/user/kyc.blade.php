@@ -1,6 +1,6 @@
 @extends('user.layout', ['user' => $user, 'brand' => $brand, 'brandName' => $brandName])
 @section('header')
-Hello and welcome to ytrade.co!
+	KYC
 @endsection
 @section('content')
 <div class="container-fluid">
