@@ -296,10 +296,10 @@
 								</div>
 
 								<div class="form-group">
-								  <label class="col-sm-6">Your Identify Card</label>
+								  <label class="col-sm-6">Your Birthday</label>
 
 								  <div class="col-sm-12">
-								    <input type="text" class="form-control" name="identify" placeholder="Provide your identify card number">
+								    <input type="date" class="form-control" name="birthday" placeholder="Provide your identify card number">
 								  </div>
 								</div>
 

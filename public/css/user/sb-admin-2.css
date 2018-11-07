@@ -495,3 +495,12 @@ a.disabled {
 .active .fa{
   color:#fff;
 }
+.carousel-control{
+  background: none !important;
+}
+.fas{
+    position: absolute;
+    color: #EA3745;
+    top: 50%;
+    font-size: 60px;  
+}

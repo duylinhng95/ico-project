@@ -55,6 +55,8 @@ Route::group(['prefix'=>'admin','middleware'=> 'auth.admin'],function (){
 		Route::get('/export', 'Admin\UserController@export');
 		Route::post('/role/{id}', 'Admin\UserController@role');
 		Route::get('/dashboard', 'Admin\UserController@dashboard');
+		Route::post('/dashboard','Admin\UserController@save_dashboard');
+		Route::get('/dashboard/delete/{id}','Admin\UserController@delete_dashboard');
 	});
 });
 // User Control

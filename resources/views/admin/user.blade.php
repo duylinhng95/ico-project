@@ -103,6 +103,7 @@
         type:'post',
         success:function(response){
           console.log(response);
+          location.reload();
         },
     });
   }

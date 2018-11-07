@@ -19,10 +19,17 @@
 						<tr>
 							<th>Name</th>
 							<th>Image</th>
+							<th>Action</th>
 						</tr>
 					</thead>
 					<tbody>
-						
+						@foreach($dashboards as $d)
+						<tr>
+							<td>{{$d->name}}</td>
+							<td><img src="{{asset('/page/images/user/dashboard')}}/{{$d->url}}" class="img-fluid" style="width: 200px; height: 400px;"></td>
+							<td><a href="{{url('/admin/user/dashboard/delete')}}/{{$d->id}}" class="btn btn-danger">Delete</a></td>
+						</tr>	
+						@endforeach
 					</tbody>
 				</table>
 			</div>
@@ -72,7 +79,19 @@
 <script type="text/javascript">
 	function submit_form(){
 		var form = new FormData($("#addForm")[0]);
-		console.log(form);
+		$.ajax({
+	      url:"{{url('admin/user/dashboard')}}",
+	      data: form,
+	      dataType:'json',
+	      async:false,
+	      type:'post',
+	      processData: false,
+	      contentType: false,
+	      success:function(response){
+	        console.log(response);
+	        $('#addModal').modal('hide');
+	      },
+	    });
 	}
 </script>
 @endsection
