@@ -22,12 +22,14 @@
               	<tbody>
 	              	<tr>
 		                <th>Title</th>
+                    <th>Description</th>
 		                <th>Link</th>
 		                <th>Action</th>
 	             	</tr>
 	             	@foreach($announcements as $a)
 	             	<tr id="announcement{{$a->id}}">
 	             		<td> {{$a->title}}</td>
+                  <td> {{$a->description}} </td>
 	             		<td> {{$a->link}} </td>
 	             		<td style="vertical-align: middle; width: 15%;">
 		                    <div style="margin: auto; text-align: center;">
@@ -63,6 +65,13 @@
 
             <div class="col-sm-12">
               <input type="text" class="form-control" name="title">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-sm-2 control-label">Description</label>
+
+            <div class="col-sm-12">
+              <input type="text" class="form-control" name="description">
             </div>
           </div>
           <div class="form-group">
@@ -129,7 +138,7 @@
 		    contentType: false,
 		     success:function(response){
 		     	res = response.data;
-		     	$('#table_announcement').find('tbody').append('<tr id="announcement'+res.id+'"><td>'+res.title+'</td><td>'+res.link+'</td><td style="vertical-align: middle; width: 15%;"><div style="margin: auto; text-align: center;"><button type="button" class="btn btn-success" onclick="editA('+res.id+')">Edit</button><button type="button" class="btn btn-danger" onclick="deleteA('+res.id+')">Delete</button></div></td></tr>')
+		     	$('#table_announcement').find('tbody').append('<tr id="announcement'+res.id+'"><td>'+res.title+'</td><td>'+res.description+'</td><td>'+res.link+'</td><td style="vertical-align: middle; width: 15%;"><div style="margin: auto; text-align: center;"><button type="button" class="btn btn-success" onclick="editA('+res.id+')">Edit</button><button type="button" class="btn btn-danger" onclick="deleteA('+res.id+')">Delete</button></div></td></tr>')
 		     },
 		});
 	};
