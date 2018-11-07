@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\User;
 use App\Index;
+use App\UserDashboard as Dashboard;
 use App\Exports\UsersExport;
 use Maatwebsite\Excel\Facades\Excel;
 
@@ -56,10 +57,33 @@ class UserController extends Controller
             'telegramKorea' => $example,
         ];
         $brands = Index::where('section', 'brand')->get();
+        $dashboards = Dashboard::all();
         foreach ($brands as $rq)
             {
                 $brand[$rq->name] = $rq;
             }
-        return view('admin.dashboard', compact('brand'));
+        return view('admin.dashboard', compact('brand', 'dashboards'));
+    }
+
+    public function save_dashboard(Request $request){
+        $input = $request->except('_token');
+        
+        $destinationPath = public_path('/page/images/user/dashboard');
+        if($request->hasFile('image'))
+        {
+            $file= $request->file('image');
+            $filename = $file->getClientOriginalName('image');
+            $file->move($destinationPath, $filename);
+            $input['url'] = $filename;
+        }
+        $dashboard = Dashboard::create($input);
+        return response()->json([
+            $dashboard
+        ]);
+    }
+
+    public function delete_dashboard($id){
+        Dashboard::where('id', $id)->delete();
+        return redirect('/admin/user/dashboard');
     }
 }

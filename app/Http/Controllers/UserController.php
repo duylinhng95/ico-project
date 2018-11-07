@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\User;
 use App\KYC;
 use App\Index;
+use App\UserDashboard as Dashboard;
 use Auth;
 class UserController extends Controller
 {
@@ -14,7 +15,8 @@ class UserController extends Controller
         $user = Auth::user();
         $brand = Index::where('section', 'brand')->where('name', 'brandImg')->first();
         $brandName = Index::where('section', 'brand')->where('name', 'brandName')->first();
-        return view('user.index', compact('user', 'brand', 'brandName'));
+        $dashboards = Dashboard::all();
+        return view('user.index', compact('user', 'brand', 'brandName', 'dashboards'));
     }
 
     public function verify($token){
