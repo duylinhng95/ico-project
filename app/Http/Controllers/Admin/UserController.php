@@ -60,6 +60,6 @@ class UserController extends Controller
             {
                 $brand[$rq->name] = $rq;
             }
-        return view('/admin/dashboard', compact('brand'));
+        return view('admin.dashboard', compact('brand'));
     }
 }

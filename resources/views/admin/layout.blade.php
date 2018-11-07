@@ -107,6 +107,14 @@ to get the desired effect
                 </li>
               </ul>
             </li>
+            <li class="nav-item">
+              <a href="/admin/password" class="nav-link">
+                <i class="nav-icon fa fa-lock"></i>
+                <p>
+                  Change Password
+                </p>
+              </a>
+            </li>
           </ul>
         </nav>
         <!-- /.sidebar-menu -->

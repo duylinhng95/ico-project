@@ -8,6 +8,8 @@ use App\Index;
 use App\Advisor;
 use App\Partner;
 use Illuminate\Support\Facades\Storage;
+use Auth;
+use Hash;
 
 class AdminController extends Controller
 {
@@ -496,4 +498,41 @@ class AdminController extends Controller
         return redirect('/admin');
     }
 
+    public function change_password(){
+        $example = '';
+        $brand = [
+            'brandName' => $example,
+            'brandImg' => $example,
+            'telegramChina' => $example,
+            'telegramGlobal' => $example,
+            'telegramKorea' => $example,
+        ];
+        $brands = Index::where('section', 'brand')->get();
+        foreach ($brands as $rq)
+            {
+                $brand[$rq->name] = $rq;
+            }
+        return view('admin.password', compact('brand'));
+    }
+
+    public function save_password(Request $request){
+        $admin = Auth::user();
+        $errors = collect();
+        if(Hash::check($request->oldPassword, $admin->password))
+        {
+            $this->validate($request, 
+                [
+                    'newPassword' => 'required|string|min:6|confirmed',
+                ]);
+            $admin->password = bcrypt($request->newPassword);
+            $admin->save();
+            Auth::logout();
+            return redirect('/login');
+        }
+        else
+        {
+            $oldPassword =['oldPassword'=>"Wrong Old Password"];
+            return redirect()->action('Admin\AdminController@change_password')->withErrors($oldPassword);
+        }
+    }
 }

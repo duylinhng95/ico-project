@@ -20,6 +20,10 @@ Route::get('/home', 'HomeController@index')->name('home');
 // Admin Page
 Route::group(['prefix'=>'admin','middleware'=> 'auth.admin'],function (){
 	Route::get('/', 'Admin\AdminController@index');
+
+	Route::get('/password','Admin\AdminController@change_password');
+	Route::post('/password', 'Admin\AdminController@save_password');
+
 	Route::group(['prefix'=>'homepage'],function(){
 		Route::post('/page1', 'Admin\AdminController@page1');
 		Route::post('/brand', 'Admin\AdminController@brand');
@@ -50,7 +54,7 @@ Route::group(['prefix'=>'admin','middleware'=> 'auth.admin'],function (){
 		Route::get('/', 'Admin\UserController@index');
 		Route::get('/export', 'Admin\UserController@export');
 		Route::post('/role/{id}', 'Admin\UserController@role');
-		Route::get('/dashboard', 'Admin\Usercontroller@dashboard');
+		Route::get('/dashboard', 'Admin\UserController@dashboard');
 	});
 });
 // User Control
