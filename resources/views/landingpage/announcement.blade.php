@@ -51,7 +51,7 @@
             </li>
             <li class="center-middle">
               <div class="dropdown show">
-                <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="{{ asset('landing-page/resources/img/loc.png') }}" class="icon-lang" align="middle">
+                <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-globe"></i>
                 </a>
                 <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
                   <a class="dropdown-item" href="/"><img src="{{ asset('landing-page/resources/img/american.png') }}" class="icon-lang" align="middle"></a>
@@ -82,18 +82,12 @@
         </div>
         <div class="modal-body">
           <div class="announcement-list">
+            @foreach($announs as $a)
             <div class="annoucement-item">
-              <h6>News</h6>
-              <p>Lorem ipsum dolor sit amet, lorem ipsum</p>
-              <span class="time"> 40m ago </span>
-              <i class="far fa-comment"> 0</i>
+              <a href="{{$a->link}}"><h6>{{$a->title}}</h6></a>
+              <p>{{$a->description}}</p>
             </div>
-            <div class="annoucement-item">
-              <h6>News</h6>
-              <p>Lorem ipsum dolor sit amet, lorem ipsum</p>
-              <span class="time"> 40m ago </span>
-              <i class="far fa-comment"> 0</i>
-            </div>
+            @endforeach
           </div>
 
         </div>
