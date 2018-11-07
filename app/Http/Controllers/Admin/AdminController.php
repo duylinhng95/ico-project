@@ -295,7 +295,7 @@ class AdminController extends Controller
     public function page4(Request $request){
     	$input = $request->except('timeline','_token','section');
         $this->validate($request, [
-         'timeline' => 'image|mimes: jpeg, bmp, png|dimensions: min_width=1000, min_height= 350',
+         'timeline' => 'image|dimensions: min_width=1000, min_height= 350',
         ],[
             'timeline.dimensions' => "Background must be at least: 1000x350"
         ]);
