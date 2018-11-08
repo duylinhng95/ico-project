@@ -15,7 +15,7 @@ class UserController extends Controller
         $user = Auth::user();
         $brand = Index::where('section', 'brand')->where('name', 'brandImg')->first();
         $brandName = Index::where('section', 'brand')->where('name', 'brandName')->first();
-        $dashboards = Dashboard::all();
+        $dashboards = array_chunk(Dashboard::all()->toArray(), 2);
         return view('user.index', compact('user', 'brand', 'brandName', 'dashboards'));
     }
 

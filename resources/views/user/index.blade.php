@@ -5,19 +5,23 @@ Hello and Welcome to Ytrade.co!
 @section('content')
 <div class="container-fluid">
 	<div class="row">
-		<div class="col-lg-6 col-lg-offset-2">
+		<div class="col-lg-12">
 			<div id="myCarousel" class="carousel slide" data-ride="carousel">
 			  <!-- Wrapper for slides -->
 			  <div class="carousel-inner">
 			    @foreach($dashboards as $k => $d)
 				  	@if($k == 0)
-				    <div class="item active">
-				      <img src="{{asset('/page/images/user/dashboard')}}/{{$d->url}}" class="img-fluid" alt="{{$d->name}}" style="margin: auto;">
+				    <div class="item active" style="margin: auto; width:100%;">
+				      	@foreach($d as $ds)
+					      <img src="{{asset('/page/images/user/dashboard')}}/{{$ds['url']}}" class="img-fluid col-md-6" alt="{{$ds['name']}}">
+				      	@endforeach
 				    </div>
 				    @else
-				    <div class="item">
-				      <img src="{{asset('/page/images/user/dashboard')}}/{{$d->url}}" class="img-fluid" alt="{{$d->name}}" style="margin: auto;">
-				    </div>
+					    <div class="item" style="margin: auto;">
+				    	@foreach($d as $ds)
+					     <img src="{{asset('/page/images/user/dashboard')}}/{{$ds['url']}}" class="img-fluid col-md-6" alt="{{$ds['name']}}">
+				      	@endforeach
+					    </div>					    
 				    @endif
 			    @endforeach
 			  </div>

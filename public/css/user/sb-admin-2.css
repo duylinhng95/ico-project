@@ -462,7 +462,7 @@ a.disabled {
   padding: 10px 0px 15px 15px;
 }
 .navbar-default {
-    background-color: #a3a3a3;
+    background-color: #fff;
     border-color: #333;
 }
 .head-menu{
@@ -470,7 +470,6 @@ a.disabled {
 }
 .panel {
   border: 0px;
-  border: 0.5px solid #ddd;
 }
 .page-header{
   border-bottom: 0px;
@@ -503,4 +502,7 @@ a.disabled {
     color: #EA3745;
     top: 50%;
     font-size: 60px;  
+}
+.panel-default>.panel-heading{
+ background-color: #fff;
 }
