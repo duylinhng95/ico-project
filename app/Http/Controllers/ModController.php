@@ -8,6 +8,8 @@ use App\KYC;
 use App\Index;
 use Auth;
 use Illuminate\Filesystem\Filesystem;
+use Mail;
+use App\Mail\KYCVerify;
 
 class ModController extends Controller
 {
@@ -39,6 +41,10 @@ class ModController extends Controller
         $file = new Filesystem;
         $destinationPath = public_path('/page/images/user/').$user->id.'_'.$user->email;
         $file->deleteDirectory($destinationPath);
+        Mail::to($user->email)
+        ->send(new KYCVerify([
+            'name'=>$user->name
+        ]));
         KYC::where('user_id', $id)->delete();
     	return response()->json([
     		'status' => 'success'
