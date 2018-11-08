@@ -290,7 +290,7 @@
                 <div class="social-icons">
                   <ul>
                     <li>
-                      <a href="#" alt="linkedin"> <i class="fab fa-linkedin"></i></a>
+                      <a href="#" alt="linkedin" class="social-advisor"> <i class="fab fa-linkedin"></i></a>
                     </li>
                   </ul>
                 </div>
