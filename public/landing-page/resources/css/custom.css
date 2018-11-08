@@ -20,3 +20,6 @@ a.dropdown-item {
 span.small-text {
     font-size: 1em !important;
 }
+a.social-advisor:hover {
+    color: #fff;
+}
