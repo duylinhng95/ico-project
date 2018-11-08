@@ -11,13 +11,13 @@ Hello and Welcome to Ytrade.co!
 			  <div class="carousel-inner">
 			    @foreach($dashboards as $k => $d)
 				  	@if($k == 0)
-				    <div class="item active" style="margin: auto; width:100%;">
+				    <div class="item active" style="margin: auto; width:70%;">
 				      	@foreach($d as $ds)
 					      <img src="{{asset('/page/images/user/dashboard')}}/{{$ds['url']}}" class="img-fluid col-md-6" alt="{{$ds['name']}}">
 				      	@endforeach
 				    </div>
 				    @else
-					    <div class="item" style="margin: auto;">
+					    <div class="item" style="margin: auto;width:70%;">
 				    	@foreach($d as $ds)
 					     <img src="{{asset('/page/images/user/dashboard')}}/{{$ds['url']}}" class="img-fluid col-md-6" alt="{{$ds['name']}}">
 				      	@endforeach

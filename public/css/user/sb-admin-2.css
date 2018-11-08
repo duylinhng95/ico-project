@@ -76,7 +76,7 @@ body {
   padding: 15px;
 }
 .sidebar ul li a.active {
-  background-color: #EA3745;
+  background-color: #f75d69;
   color:#fff;
 }
 .sidebar .arrow {
@@ -484,12 +484,12 @@ a.disabled {
     color: rgb(255, 255, 255);
     font-weight: bold;
     line-height: 1.3;
-    background-color: #EA3745;
+    background-color: #f75d69;
     padding: 4px 15px 5px 15px;
     margin-bottom: 35px;
 }
 .fa {
-  color: #EA3745;
+  color: #f75d69;
 }
 .active .fa{
   color:#fff;
@@ -499,7 +499,7 @@ a.disabled {
 }
 .fas{
     position: absolute;
-    color: #EA3745;
+    color: #f75d69;
     top: 50%;
     font-size: 60px;  
 }
