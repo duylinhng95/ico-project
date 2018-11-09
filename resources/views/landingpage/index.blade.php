@@ -122,7 +122,7 @@
           </div>
         </div>
         <div class="below-image col-md-7">
-          <img class="img-fluid right-image" src="{{asset('page/images/page1').'/'.$page1['background']->content}}" alt="ico thumbnail video">
+          <img class="img-fluid right-image" src="{{asset('page/images/page1').'/'.$page1['background']->content}}" alt="ico thumbnail video" style="width: 100%;">
 
         </div>
       </div>
