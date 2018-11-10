@@ -27,6 +27,16 @@ class ResetPasswordController extends Controller
      */
     protected $redirectTo = '/home';
 
+    public function showResetForm(Request $request, $token = null)
+    {
+        $brands = Index::where('section', 'brand')->get();
+        foreach ($brands as $rq)
+            $brand[$rq->name] = $rq;
+        return view('auth.passwords.reset')->with(
+            ['token' => $token, 'email' => $request->email , 'brand' => $brand]
+        );
+    }
+
     /**
      * Create a new controller instance.
      *

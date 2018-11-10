@@ -41,6 +41,18 @@ class RegisterController extends Controller
         $this->middleware('guest');
     }
 
+    public function showRegistrationForm(Request $request)
+    {
+        $referral_id = 0;
+        $brands = Index::where('section', 'brand')->get();
+        foreach ($brands as $rq)
+            $brand[$rq->name] = $rq;
+        if ($request->session()->has('referral_id')) {
+            $referral_id = $request->session()->get('referral_id');
+        }
+        return view('auth.register', compact('brand', 'referral_id'));
+    }
+
     /**
      * Get a validator for an incoming registration request.
      *

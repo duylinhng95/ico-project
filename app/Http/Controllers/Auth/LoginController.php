@@ -27,6 +27,13 @@ class LoginController extends Controller
      */
     protected $redirectTo = '/home';
 
+    public function showLoginForm ( ){
+        $brands = Index::where('section', 'brand')->get();
+        foreach ($brands as $rq)
+            $brand[$rq->name] = $rq;
+        return view('auth.login', compact('brand'));
+    }
+
     /**
      * Create a new controller instance.
      *

@@ -377,11 +377,14 @@
           <ul class="footer-list">
           <li><a href="#">Contact</a></li>
             <li><a href="#">Annoucement</a></li>
-
-
           </ul>
         </div>
-      </div>
+  </div>
+  <div class="row">
+    <div class="col-lg-6 col-md-6 offset-lg-3 offset-md-3 col-sm-12">
+      <p class="text-center">© 2018 YT. All Rights Reserved</p>
+    </div>
+  </div>
   </footer>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/popper.min.js"></script>
   <script src="{{ asset('landing-page/vendors/js/jquery.min.js') }}"></script>

@@ -20,6 +20,16 @@ class ForgotPasswordController extends Controller
 
     use SendsPasswordResetEmails;
 
+
+    public function showLinkRequestForm()
+    {
+        $brands = Index::where('section', 'brand')->get();
+        foreach ($brands as $rq)
+            $brand[$rq->name] = $rq;
+        return view('auth.passwords.email', compact('brand'));
+    }
+
+
     /**
      * Create a new controller instance.
      *
