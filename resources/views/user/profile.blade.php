@@ -352,7 +352,7 @@
 							  <label class="col-sm-6">Date of birth</label>
 
 							  <div class="col-sm-12">
-							    <input value="{{$user->identify}}" class="form-control" disabled>
+							    <input value="{{$user->birthday}}" class="form-control" disabled>
 							  </div>
 							</div>
 
