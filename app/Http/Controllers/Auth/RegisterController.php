@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Mail;
 use App\Mail\Verify;
+use App\Index;
 
 class RegisterController extends Controller
 {
