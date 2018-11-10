@@ -90,6 +90,7 @@
 	      success:function(response){
 	        console.log(response);
 	        $('#addModal').modal('hide');
+	        location.reload();
 	      },
 	    });
 	}
