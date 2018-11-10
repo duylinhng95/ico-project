@@ -9,7 +9,7 @@ use Illuminate\Foundation\Auth\RegistersUsers;
 use Mail;
 use App\Mail\Verify;
 use App\Index;
-use Request;
+use Illuminate\Http\Request;
 
 class RegisterController extends Controller
 {
