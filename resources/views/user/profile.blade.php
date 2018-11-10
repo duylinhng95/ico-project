@@ -296,10 +296,10 @@
 								</div>
 
 								<div class="form-group">
-								  <label class="col-sm-6">Your Birthday</label>
+								  <label class="col-sm-6">Date of Birth</label>
 
 								  <div class="col-sm-12">
-								    <input type="date" class="form-control" name="birthday" placeholder="Provide your identify card number">
+								    <input type="date" class="form-control" name="birthday" placeholder="Provide your date of birth number">
 								  </div>
 								</div>
 
@@ -349,7 +349,7 @@
 							</div>
 
 							<div class="form-group">
-							  <label class="col-sm-6">Your Identify Card</label>
+							  <label class="col-sm-6">Date of birth</label>
 
 							  <div class="col-sm-12">
 							    <input value="{{$user->identify}}" class="form-control" disabled>

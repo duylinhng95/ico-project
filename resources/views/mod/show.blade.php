@@ -86,10 +86,10 @@
                                 </div>
 
                                 <div class="form-group">
-                                  <label class="col-sm-6">Your Identify Card</label>
+                                  <label class="col-sm-6">Date of birth</label>
 
                                   <div class="col-sm-12">
-                                    <input type="text" class="form-control" name="Identify" placeholder="Provide your identify card number" disabled="disabled" value="{{$profile['identify']}}">
+                                    <input type="date" class="form-control" name="Identify" placeholder="Provide Date of birth number" disabled="disabled" value="{{$profile['birthday']}}">
                                   </div>
                                 </div>
 

@@ -27,7 +27,7 @@ class ModController extends Controller
             'phone' => $user->phone,
             'city' => $user->city,
             'country' => $user->country,
-            'identify' => $user->identify,
+            'birthday' => $user->birthday,
         ];
     	$kyc_image = KYC::where('user_id', $user->id)->first();
     	$path = asset('/page/images/user').'/'.$user->id.'_'.$user->email;
