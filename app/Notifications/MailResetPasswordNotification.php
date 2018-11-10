@@ -44,7 +44,7 @@ class MailResetPasswordNotification extends Notification
     {
         return (new MailMessage)
             ->subject('Reset Password from Ytrade')
-            ->from(env('MAIL_USERNAME'), env('MAIL_NAME'))
+            ->from('devilking195@gmail.com', 'YTrade')
             ->line('We have received a request to reset your password. If you did, pllease use the link below to proceed.')
             ->action('Reset Password', url(config('app.url').route('password.reset', $this->token, false)))
             ->line("If you didn't request to reset your password, you should ignore this message.")
