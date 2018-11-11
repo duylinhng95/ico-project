@@ -23,3 +23,9 @@ span.small-text {
 a.social-advisor:hover {
     color: #fff;
 }
+@media screen and (max-width: 452px)
+{
+    .feature-box{
+        padding: 0 !important;
+    }
+}

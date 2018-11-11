@@ -15,6 +15,7 @@
   <link href="{{ asset('landing-page/resources/css/queries.min.css') }}" rel="stylesheet">
   <link href="{{ asset('landing-page/resources/css/login.min.css') }}" rel="stylesheet">
   <link href="{{ asset('landing-page/resources/css/login-queries.min.css') }}" rel="stylesheet">
+  <link href="{{ asset('landing-page/resources/css/login-custom.css') }}" rel="stylesheet">
 
   
 
