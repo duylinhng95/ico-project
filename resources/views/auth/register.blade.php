@@ -26,7 +26,7 @@
 <body>
   <div class="fluid-container w-100">
     <div class="col-md-4 offset-md-4">
-      <div class=" login-wrapper">
+      <div class="login-wrapper">
         <div  id="register-box" class="login-box register " style="max-width: 750px;">
           <a href="/">
               <img src="{{asset('page/images/brand').'/'.$brand['brandImg']->content}}" alt="logo" class="img-fluid logo">

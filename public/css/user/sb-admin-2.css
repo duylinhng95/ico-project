@@ -506,3 +506,16 @@ a.disabled {
 .panel-default>.panel-heading{
  background-color: #fff;
 }
+@media screen and (min-width: 992px){
+  .mobileview{
+    display: none;
+  }
+}
+@media screen and (max-width: 991px){
+  .webview {
+    display: none;
+  }
+  .mobileview{
+    display: block;
+  }
+}

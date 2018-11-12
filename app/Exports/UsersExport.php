@@ -13,6 +13,6 @@ class UsersExport implements FromCollection, ShouldAutoSize
     */
     public function collection()
     {
-        return User::where('role', null)->get(['name', 'email']);
+        return User::where('role', null)->where('role', '0')->get(['name', 'email']);
     }
 }
