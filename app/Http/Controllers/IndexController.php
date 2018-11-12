@@ -168,6 +168,7 @@ class IndexController extends Controller
         $data = $this->data_index();
         $announs = Announcement::all();
         $brand = $data['brand'];
-        return view('landingpage.announcement', compact('announs', 'brand'));
+        $whitepaper = Index::where('name', 'whitepaper')->first();        
+        return view('landingpage.announcement', compact('announs', 'brand', 'whitepaper'));
     }
 }

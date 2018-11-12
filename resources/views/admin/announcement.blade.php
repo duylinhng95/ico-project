@@ -111,6 +111,13 @@
             </div>
           </div>
           <div class="form-group">
+            <label class="col-sm-2 control-label">Description</label>
+
+            <div class="col-sm-12">
+              <input type="text" class="form-control" name="description" id="desA">
+            </div>
+          </div>
+          <div class="form-group">
             <label class="col-sm-2 control-label">Link</label>
 
             <div class="col-sm-12">
@@ -151,6 +158,7 @@
 				res = response.data;
 				$("#titleA").val(res.title);
 			    $("#linkA").val(res.link);
+          $("#desA").val(res.description);
 			    $("#submitButton").attr('onclick', "submitEditA("+res.id+")")
 			    $("#modalEditA").modal('show');
 			},
@@ -169,7 +177,7 @@
 		    success:function(response){
 		    	res = response.data;
 		    	console.log(res);
-		    	$('#table_announcement').find('#announcement'+id).html('<td>'+res.title+'</td><td>'+res.link+'</td><td style="vertical-align: middle; width: 15%;"><div style="margin: auto; text-align: center;"><button type="button" class="btn btn-success" onclick="editA('+id+')">Edit</button><button type="button" class="btn btn-danger" onclick="deleteA('+id+')">Delete</button></div></td>')
+		    	$('#table_announcement').find('#announcement'+id).html('<td>'+res.title+'</td><td>'+res.description+'</td><td>'+res.link+'</td><td style="vertical-align: middle; width: 15%;"><div style="margin: auto; text-align: center;"><button type="button" class="btn btn-success" onclick="editA('+id+')">Edit</button><button type="button" class="btn btn-danger" onclick="deleteA('+id+')">Delete</button></div></td>')
 		    },
 		});
 	}

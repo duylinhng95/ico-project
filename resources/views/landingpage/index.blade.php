@@ -48,7 +48,7 @@
             <a class="nav-link" href="/announcement" >Annoucement</a>            
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Whitepaper</a>
+              <a class="nav-link" href="{{$page2['whitepaper']->content}}">Whitepaper</a>
             </li>
             <li class="nav-item">
               <a class="nav-link " href="/login" >Login </a>
@@ -148,7 +148,7 @@
               <h3>{{$page2['title2']->content}}</h3>
               <p>{{$page2['description2']->content}}</p>
               <a href="{{$page2['whitepaper']->content}}" class="btn red-button">Whitepaper</a>
-              <a href="#" class="btn red-button">Annoucement</a>
+              <a href="/announcement" class="btn red-button">Annoucement</a>
              
             </div>
 
