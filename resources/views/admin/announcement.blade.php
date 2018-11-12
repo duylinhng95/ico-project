@@ -112,7 +112,7 @@
           </div>
           <div class="form-group">
             <label class="col-sm-2 control-label">Description</label>
-
+            <p>Maximum of 191 characters</p>
             <div class="col-sm-12">
               <input type="text" class="form-control" name="description" id="desA">
             </div>

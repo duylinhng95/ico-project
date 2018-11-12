@@ -75,7 +75,7 @@
         <div class="modal-header">
 
           <a href="#">
-            <img src="landing-page/resources/img/logo.png" alt=" logo" class="logo">
+            <img src="{{asset('page/images/brand').'/'.$brand['brandImg']->content}}" alt=" logo" class="logo">
           </a>
           <h5 class="modal-title" id="annoucementModalTitle">Annoucement</h5>
 
@@ -101,7 +101,7 @@
   <footer>
     <div class="row">
         <div class="col-lg-3 col-md-3 col-sm-12">
-          <img class="img-fluid footer-logo" src="/landing-page/resources/img/logo.png" alt="logo">
+          <img class="img-fluid footer-logo" src="{{asset('page/images/brand').'/'.$brand['brandImg']->content}}" alt="logo">
         </div>
         <div class="col-lg-3 col-md-3 col-sm-12">
           <h2 class="footer-heading">Social</h2>
